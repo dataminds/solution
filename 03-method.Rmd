@@ -1,23 +1,383 @@
 # Methods
 
-We describe our methods in this chapter.
+## 분석
 
-Math can be added in body using usual syntax like this 
+먼저 비지도 LDA로 토픽을 군집한 다음, 씨앗주제사전을 만들어, 반지도 LDA로 토픽을 군집한다. 이를 위해서는 먼저 `quanteda`패키지로 DFM(Data Feature Matrix)를 만들어야 한다. `quanteda`패키지의 DFM은 `topicmodels`패키지에서 사용하는 DTM(Data Term Matrix)에 해당한다. 행에 개별 단어(data), 열에는 주제(feature 또는 term)이 배치된 행렬(matrix)데이터다. 
 
-## math example
+.
 
-$p$ is unknown but expected to be around 1/3. Standard error will be approximated
+```{r mc2pre, message=FALSE, warning=FALSE}
+pkg_v <- c(
+  "tidyverse", "tidytext", "lubridate", "quanteda", "readtext", "seededlda")
+purrr::map(pkg_v, require, ch = T)
+```
 
-$$
-SE = \sqrt(\frac{p(1-p)}{n}) \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
-$$
 
-You can also use math in footnotes like this^[where we mention $p = \frac{a}{b}$].
+#### 말뭉치
 
-We will approximate standard error to 0.027[^longnote]
+먼저 말뭉치를 만든다음, dfm을 만든다. 
 
-[^longnote]: $p$ is unknown but expected to be around 1/3. Standard error will be approximated
+`quanteda`패키지로 말뭉치를 만든다. text2열에 토큰화한 값이 있다. 
+https://tutorials.quanteda.io/basic-operations/dfm/dfm/
 
-    $$
-    SE = \sqrt(\frac{p(1-p)}{n}) \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
-    $$
+```{r include=FALSE}
+readRDS("combined.rds") -> combined_df
+```
+
+
+```{r mc2}
+combined_df %>% 
+  corpus(text_field = "text2") -> c_corp
+c_corp %>% glimpse()
+
+```
+
+.
+
+말뭉치의 내용을 보다 간결하게 보기 위해서는 `docvars()`함수를 이용한다. 
+
+```{r mc2-1a}
+c_corp %>% docvars() %>% glimpse()
+```
+
+.
+
+### DFM 구성
+
+dfm을 구성할 때 `dfm()`함수만을 이용하기도 하지만, `dfm_trim()`함수를 추가로 투입해 분석대상을 추려냄으로써 추출한 주제의 변별성을 높일 수 있다. 
+
+자세한 내용은 매뉴얼(https://quanteda.io/reference/dfm_trim.html) 참조. 
+
+여기서는 가장 빈번한 feature 5%를 추렸다.  feature의 문서빈도 값을 10% 미만(max_docfreq = 0.1)으로 설정하고, 모든 문서의 feature 빈도 80% 이상(min_termfreq = 0.8)으로 설정.  
+
+`topfeatures()` 함수를 이용해 가장 빈번하게 등장하는 feature를 확인할 수 있따. 
+
+`tokens()` 함수를 이용해 불용어나 구두점 등 정제작업을 할수 있다. 이미 앞 단계에서 정제 작업을 수행했기 때문에 여기서는 사용하지 않는다. 
+
+```{r mc2-1b}
+c_corp %>% 
+  #tokens(remove_punct = T) %>% 
+  dfm() %>%
+  dfm_trim(min_termfreq = 0.8, 
+           # 
+           termfreq_type = "quantile",
+           max_docfreq = 0.1, 
+           docfreq_type = "prop") -> c_dfm
+
+c_dfm %>% topfeatures(n = 20)
+
+```
+.
+
+### 비지도 LDA 
+
+먼저 비지도 LDA를 수행해 보도된 기사의 주제가 어떻게 군집되는지 확인한다. 여기서는 주제를 편의상 16개 (k = 16)로 설정했다. 
+
+```{r mc2-2a}
+set.seed(37)
+c_dfm %>% textmodel_lda(k = 16) -> c_lda
+c_lda %>% glimpse()
+
+```
+
+14,508개 문서의 982,813개의 단어에서 13,973개 단어를 16개의 주제로 분류했다. 
+
+phi열의 값이 `토픽x단어` 행렬이다. `topicmodels`나 `stm`패키지의 `beta`에 해당한다. 각 각 단어가 토픽별 할당되는 확률 값이다.
+
+theta열의 값이 `문서x토픽` 행렬이다. `topicmodels`나 `stm`패키지의 `gamma`에 해당한다. 각 문서가 토픽별로 포함될 확률 값이다. 
+
+.
+
+8개의 주제별로 전형적인 단어 10개(n = 10)를 추출해보자. 토픽별 단어의 phi값을 내림차순으로 산출한다.
+
+```{r mc2-2b}
+c_lda %>% terms(n = 10) %>% as.data.frame() %>% 
+  select(topic1:topic8)
+```
+```{r mc2-2b1}
+c_lda %>% terms(n = 10) %>% as.data.frame() %>% 
+  select(topic9:topic16)
+```
+.
+
+
+topic9를 phi값의 내림차 순으로 정렬해보면 topic1의 단어가 동일하게 산출된다. 
+
+
+```{r mc2-2a1}
+c_lda$phi %>% t() %>% 
+  as.data.frame() %>% 
+  arrange(topic9 %>% desc) %>% 
+  round(digits = 3) %>% 
+  head(10)
+
+```
+
+각 토픽 단어를 통해 각 토픽의 제목을 다음과 같이 부여할 수 있다. 
+
+- topic1: 청해부대 감염
+- topic2: 세계 추가접종
+- topic3: 이상반응 청원
+- topic4: 일상회복 
+- topic5: 돌파감염 
+- topic6: 기타:진료활동
+- topic7: 집단면역
+- topic8: 집단감염
+
+- topic9: 치료제 승인
+- topic10: 기타: 건강
+- topic11: 기타: 노동
+- topic12: 연휴 감염 
+- topic13: 백신수급
+- topic14: 백신접종
+- topic15: 치료
+- topic16: 이상반응
+
+
+.
+
+`문서x토픽` 행렬인 theta는 다음과 같다. 
+
+```{r mc2-2a2}
+c_lda$theta %>% as.data.frame() -> clda_theta_df
+clda_theta_df %>% 
+  select(topic1:topic8) %>% 
+  round(digits = 3) %>% head(3)
+
+```
+.
+```{r mc2-2a3}
+c_lda$theta %>% as.data.frame() -> clda_theta_df
+clda_theta_df %>% 
+  select(topic9:topic16) %>% 
+  round(digits = 3) %>% head(3)
+
+```
+
+.
+
+text3은 topic8(집단감염)에 속할 확률이 0.562이고, 다른 토픽에 속할 확률은 0.002에서 0.085다. 
+
+
+. 
+
+text3이 어떤 문서인지 해당 기사를 선택해 보자. 이를 위해서는 토픽모델링 산출물의 각 주제와 앞서 구성한 말뭉치를 결합해야 한다. 이를 위해 산출물에서 문서별 주제 할당 확률값인 theta 정보를 데이터프레임으로 저장하고, 말뭉치에서 변수(열)를 추출해 데이터프레임으로 저장.  
+
+
+먼저 토픽모델링 산출물에서 문서별 theta 값 추출. 벡터이므로 데이터프레임으로 변환.
+
+
+말뭉치의 `docvars()`함수로 기사의 변수(열) 추출해 데이터프레임으로 저장.
+
+```{r mc2-2b11}
+c_corp %>% docvars() -> docvars_df  
+docvars_df  %>% glimpse()
+
+```
+
+.
+
+두 데이터프레임 결합
+
+```{r mc2-2c}
+bind_cols(docvars_df, clda_theta_df) %>% 
+  mutate(textID = factor(row_number()), .before = ID) -> theta_df
+theta_df %>% glimpse()
+```
+
+
+```{r mc2-2c1, echo=FALSE}
+theta_df %>% 
+  writexl::write_xlsx("theta_df.xlsx")
+theta_df %>% saveRDS("theta_df.rds")
+```
+text3의 기사가 topic8(집단감염)에 포함될만 한지 다른 기사(text1)와 비교 
+
+```{r mc2-2d}
+theta_df %>% 
+  filter(textID == 1 | textID == 3) %>% 
+  pull(text)
+  
+```
+
+개별 문서가 설정한 토픽에 해당할 확률의 총합은 1이다. 따라서 각 문서행 별로 토픽에 해당하는 확률을 모두 더하면 1이 된다. (참고: `purrr`패키지의 `pmap()`함수는 행을 순차적으로 계산.) 
+
+```{r mc2-2e}
+theta_df %>% 
+  select(topic1:topic16) %>% 
+  pmap(sum) %>% head(3)
+
+```
+토픽별로 할당된 확률을 더하면 각 토픽이 말뭉치에서 등장하는 정도를 파악할 수 있다. 
+
+```{r mc2-2f}
+theta_df %>% 
+  select(topic1:topic16) %>% 
+  map_dfc(sum) %>% t() %>% as.data.frame() %>% 
+  arrange(V1 %>% desc)
+
+```
+말뭉치에서 자주 등장하는 토픽이 topic 12(연휴감염), 2(세계 추가접종), 13(백신수급) 등이다. 
+
+topic12(연휴감염세계 추가접종)에 속할 확률이 높은 기사를 추리면 다음과 같다. 
+
+```{r mc2-2g}
+theta_df %>% 
+  arrange(topic12 %>% desc) %>% 
+  pull(title) %>% head(5)
+
+```
+
+.
+
+## 반지도LDA 
+
+반지도학습 방식의 토픽모델링은 미리 구성한 주제어를 이용해 토픽을 군집하는 분석방법이다. 먼저 투입할 주제어사전을 구성한다.
+
+### 씨앗주제어 사전 구성
+
+비지도LDA로 구성한 토픽의 주제어를 이용해 씨앗주제어사전을 구성한다. 
+
+```{r mc2-3a}
+c_lda %>% terms(n = 5) %>% as.data.frame() -> c_ldaterm5_df 
+
+c_lda %>% terms(n = 40) %>% 
+  as.data.frame() %>% 
+  writexl::write_xlsx("ldaterms.xlsx")
+
+```
+
+16개 토픽중 코로나19와 관련이 없는 토픽은 그대로 두고, 코로나19 관련 토픽의 단어만 재구성. 
+
+- topic1: 청해부대 감염
+- topic2: 세계 추가접종
+- topic3: 이상반응 청원
+- topic4: 일상회복 
+- topic5: 돌파감염 
+- topic6: 기타:진료활동
+- topic7: 집단면역
+- topic8: 집단감염
+
+- topic9: 치료제 승인
+- topic10: 기타: 건강
+- topic11: 기타: 노동
+- topic12: 연휴 감염 
+- topic13: 백신수급
+- topic14: 백신접종
+- topic15: 치료
+- topic16: 이상반응
+
+재구성하는 토픽은 위험(코로나19 감염, 허위정보), 유령위험(이상반응), 대응(백신접종, 병상, 검사) 관련어 5개로 구성 
+
+사전은 `quanteda`패키지의 `dictionary()`함수로 구성한다. 
+https://quanteda.io/reference/dictionary.html
+
+
+```{r mc2-3b}
+c_ldaterm5_df %>% 
+  select(topic6, topic9, topic10, topic11) %>% 
+  as.list() -> ldaterm_noncovid_l
+
+list(
+  risk1감염 = c("감염", "위중증", "중증", "사망", "중환자"),
+  #risk2허위 = c("허위정보", "가짜뉴스", "음모","음모론", "조작정보"),
+  risk3이상 = c("이상반응", "부작용", "혈전", "혈전증", "심근염"),
+  resp1검사 = c("진단", "검사", "진단검사", "선별", "진단"),
+  resp2백신 = c("백신", "접종", "추가접종", "부스터", "부스터샷"),
+  resp3병상 = c("병상", "의료기관", "병원", "보건소", "병실")
+  ) -> ldaterm_covid_l
+
+c(ldaterm_noncovid_l, ldaterm_covid_l) -> ldaterm_l
+dictionary(ldaterm_l) -> dict_topic
+```
+
+.
+
+### seededlda 
+
+씨앗주제어사전을 투입해 반지도학습 LDA 수행. 
+분석결과는 `terms()`함수로 각 토픽 별로 10개씩 출력.
+
+
+```{r mc2-3c}
+set.seed(37)
+Sys.time() -> t1
+c_dfm %>% 
+  textmodel_seededlda(dictionary = dict_topic) -> c_slda
+Sys.time() -> t2
+t2 - t1
+terms(c_slda, 10)
+
+```
+
+
+```{r mc2-3c1}
+c_slda$theta %>% as.data.frame() -> cslda_theta_df
+
+# c_corp %>% docvars() -> docvars_df 
+
+bind_cols(docvars_df, cslda_theta_df) %>% 
+  mutate(textID = row_number(), .before = ID) -> slda_theta_df
+
+slda_theta_df %>% glimpse()
+slda_theta_df %>% 
+  writexl::write_xlsx("slda_theta_df.xlsx")
+
+```
+
+
+```{r mc2-3c3}
+slda_theta_df %>% 
+  select(topic6:resp3병상) %>% 
+  map_dfc(sum) %>% t() %>% as.data.frame() %>% 
+  arrange(V1 %>% desc) 
+
+```
+
+```{r mc2-3c4}
+slda_theta_df %>% 
+  arrange(risk1감염 %>% desc) %>% 
+  select(title, Nword) %>% 
+  head(10)
+```
+
+```{r mc2-3c4a}
+slda_theta_df %>% 
+  arrange(risk1감염 %>% desc) %>% 
+  select(title, Nword) %>% 
+  tail(10)
+```
+
+
+```{r mc2-3c5}
+slda_theta_df %>% 
+  arrange(risk1감염 %>% desc) %>% head(5) %>% .$textID -> id_v
+
+slda_theta_df %>% 
+  filter(textID %in% id_v) %>% 
+  pull(text)
+
+
+```
+
+
+
+`topics()`함수는 각 문서의 할당확률이 높은 주제 산출. 
+
+```{r mc2-3d}
+topics(c_slda) %>% head()
+```
+
+각 주제 별로 할당 가능성이 높은 기사의 수. 
+
+```{r mc2-3d1}
+topics(c_slda) -> slda_theta_df$topic2
+
+slda_theta_df$topic2 %>% table() %>% as.data.frame() %>% 
+  arrange(Freq %>% desc) -> topic_freq_df
+topic_freq_df
+
+```
+
+
+

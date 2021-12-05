@@ -13,9 +13,13 @@
 안도현 (2021b) 위험-기회 모형과 성공적인 방역소통의 조건. <팬데믹 시대 감염병 대응을 위한 사회적 소통과 공공PR> (정의철 편 pp. 200-234) 지금.
 
 
+Blei, D. M., Ng, A. Y., Jordan, M. I. (2003). Latent Dirichlet Allocation. _Journal of Machine Learning Research, 3_, 993–1022
+
 Bro, P. (2008). Normative navigation in the news media. _Journalism, 9_(3), 309-329.
 
 Frank, P., & Ottoboni, M. A. (2011). The dose makes the poison: A plain-language guide to toxicology(3rd Ed.). Wiley.
+
+Grimmer, J., & Stewart, B. M. (2013). Text as data: The promise and pitfalls of automatic content analysis methods for political texts. _Political analysis, 21_(3), 267-297.
 
 ISO (2018). Risk management – guidelines. ISO 31000:2018(en). https://www.iso.org/obp/ui/#iso:std:iso:31000:ed-2:v1:en
 
@@ -25,5 +29,4 @@ Shoemaker, P. J. (1996). Hardwired for news: Using biological and cultural evolu
 
 Shoemaker, P. J., Danielian, L. H., & Brendlinger, N. (1991). Deviant acts, risky business and US interests: The newsworthiness of world events. _Journalism Quarterly, 68_(4), 781-795.
 
-
-
+Watanabe, K., & Zhou, Y. (2020). Theory-driven analysis of large corpora: Semisupervised topic classification of the UN speeches. _Social Science Computer Review_, 0894439320907027.

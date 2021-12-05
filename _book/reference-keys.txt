@@ -204,3 +204,12 @@ fig:lit5
 측정-방법론-1
 품질측정1-위험-기회-모형을-이용한-해결지향-감염병보도-품질측정-제안-1
 분석-사례-1
+기존-분석방법의-한계
+지도학습
+비지도학습
+사전분석
+지도학습supervised-learning
+비지도학습unsupervised-learning
+사전분석dictionary-analysis
+반지도학습semisupervised-learing
+씨앗주제어-구성

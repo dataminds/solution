@@ -1,7 +1,7 @@
 --- 
-title: "해결지향 감염병 보도 품질측정"
-author: "안도현"
-date: "`r Sys.Date()`"
+title: ""
+author: ""
+date: ""
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -9,14 +9,28 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: dataminds/solution
-description: "해결지향 감염병보도 품질측정 이론과 방법"
+description: "해결지향과 기계학습을 적용한 감염병보도 품질측정 이론과 방법 모색"
 ---
 
-# Prerequisites
+# 감염병보도 품질측정 {-}
+### 해결지향과 기계학습의 적용 {-}
 
-해결지향 감염병보도 품질측정
+```{r echo=F, cover, dpi=80}
+knitr::include_graphics("images/cover.JPG")
+```
+
+언론은 코로나19 상황에 대해 신속하게 많은 양의 뉴스를 제공해 신종바이러스로 인한 위기 극복에 기여했지만 과오도 적지 않다. 문제의 지적에 치중해 과도한 불안과 공포를 조장했을 뿐 아니라 오보도 적지 않았다. 
+
+한국헬스커뮤니케이션학회는 한국언론진흥재단의 후원을 통해 과도하게 부정적인 측면을 강조하는 기존 감염병보도의 한계를 극복하기 위한 방법을 모색했다. 이를 위해 감염병보도의 품질측정에 대한 이론과 방법론을 탐색하는 과제를 수행했다. 
+
+이론적으로는 해결지향 접근을 통해 건설적인 감염병보도가 언론 현장에 확산됨으로써 감염병보도의 품질을 제고할 수 있는 방안을 마련을 시도했다. 
 
 
+방법론적으로는 기계학습 방법을 적용해 보도품질측정의 자동화 방법을 모색했다. 
+
+
+
+---------------------
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
@@ -24,3 +38,8 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+
+![](images/by-nc-sa.png)
+
+The online version of this book is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International  License](http://creativecommons.org/licenses/by-nc-sa/4.0/).

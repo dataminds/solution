@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 분석사례 | bookdown-demo.utf8</title>
+  <meta name="description" content="해결지향과 기계학습을 적용한 감염병보도 품질측정 이론과 방법 모색" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 분석사례 | bookdown-demo.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="해결지향과 기계학습을 적용한 감염병보도 품질측정 이론과 방법 모색" />
+  <meta name="github-repo" content="dataminds/solution" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 분석사례 | bookdown-demo.utf8" />
+  
+  <meta name="twitter:description" content="해결지향과 기계학습을 적용한 감염병보도 품질측정 이론과 방법 모색" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="method.html"/>
+<link rel="next" href="맺음말.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">해결지향 감염병보도 품질측정</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>감염병보도 품질측정</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#해결지향과-기계학습의-적용"><i class="fa fa-check"></i>해결지향과 기계학습의 적용</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="구성.html"><a href="구성.html"><i class="fa fa-check"></i>구성</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="구성.html"><a href="구성.html#쟁점과-과제"><i class="fa fa-check"></i><b>0.1</b> 쟁점과 과제</a></li>
+<li class="chapter" data-level="0.2" data-path="구성.html"><a href="구성.html#이론-해결지향과-보도품질"><i class="fa fa-check"></i><b>0.2</b> 이론: 해결지향과 보도품질</a>
+<ul>
+<li class="chapter" data-level="0.2.1" data-path="구성.html"><a href="구성.html#해결지향과-보도품질-개념"><i class="fa fa-check"></i><b>0.2.1</b> 해결지향과 보도품질 개념</a></li>
+</ul></li>
+<li class="chapter" data-level="0.3" data-path="구성.html"><a href="구성.html#품질측정1-이론기반-토픽모델링"><i class="fa fa-check"></i><b>0.3</b> 품질측정1: 이론기반 토픽모델링</a>
+<ul>
+<li class="chapter" data-level="0.3.1" data-path="구성.html"><a href="구성.html#반지도학습"><i class="fa fa-check"></i><b>0.3.1</b> 반지도학습</a></li>
+</ul></li>
+<li class="chapter" data-level="0.4" data-path="구성.html"><a href="구성.html#품질측정2-자연어생성"><i class="fa fa-check"></i><b>0.4</b> 품질측정2: 자연어생성</a>
+<ul>
+<li class="chapter" data-level="0.4.1" data-path="구성.html"><a href="구성.html#자연어-생성"><i class="fa fa-check"></i><b>0.4.1</b> 자연어 생성</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> 쟁점과 과제</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#해결중심-감염병보도의-쟁점과-과제"><i class="fa fa-check"></i>해결중심 감염병보도의 쟁점과 과제</a></li>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#기존-논의"><i class="fa fa-check"></i><b>1.1</b> 기존 논의</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#해결지향보도의-범위"><i class="fa fa-check"></i><b>1.1.1</b> 해결지향보도의 범위</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#솔루션저널리즘네트워크의-접근"><i class="fa fa-check"></i><b>1.1.2</b> 솔루션저널리즘네트워크의 접근</a></li>
+<li class="chapter" data-level="1.1.3" data-path="intro.html"><a href="intro.html#기존-연구의-개념화-종합"><i class="fa fa-check"></i><b>1.1.3</b> 기존 연구의 개념화 종합</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#쟁점"><i class="fa fa-check"></i><b>1.2</b> 쟁점</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#정의-1"><i class="fa fa-check"></i><b>1.2.1</b> 정의</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#측정방법판단기준"><i class="fa fa-check"></i><b>1.2.2</b> 측정방법/판단기준</a></li>
+<li class="chapter" data-level="1.2.3" data-path="intro.html"><a href="intro.html#용어-관련"><i class="fa fa-check"></i><b>1.2.3</b> 용어 관련</a></li>
+<li class="chapter" data-level="1.2.4" data-path="intro.html"><a href="intro.html#범위"><i class="fa fa-check"></i><b>1.2.4</b> 범위</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#과제"><i class="fa fa-check"></i><b>1.3</b> 과제</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#전문성"><i class="fa fa-check"></i><b>1.3.1</b> 전문성</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#상업적-경쟁력"><i class="fa fa-check"></i><b>1.3.2</b> 상업적 경쟁력</a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#부정성의-영향"><i class="fa fa-check"></i><b>1.3.3</b> 부정성의 영향</a></li>
+<li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#언론비평의-문제"><i class="fa fa-check"></i><b>1.3.4</b> 언론비평의 문제</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>2</b> 이론: 해결지향과 보도품질</a>
+<ul>
+<li class="chapter" data-level="" data-path="literature.html"><a href="literature.html#위험-기회-모형을-이용한-해결지향-감염병보도-품질측정-제안"><i class="fa fa-check"></i>위험-기회 모형을 이용한 해결지향 감염병보도 품질측정 제안</a></li>
+<li class="chapter" data-level="2.1" data-path="literature.html"><a href="literature.html#보도품질"><i class="fa fa-check"></i><b>2.1</b> 보도품질</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="literature.html"><a href="literature.html#정의-2"><i class="fa fa-check"></i><b>2.1.1</b> 정의</a></li>
+<li class="chapter" data-level="2.1.2" data-path="literature.html"><a href="literature.html#뉴스의-가치"><i class="fa fa-check"></i><b>2.1.2</b> 뉴스의 가치</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="literature.html"><a href="literature.html#위험-기회모형"><i class="fa fa-check"></i><b>2.2</b> 위험-기회모형</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="literature.html"><a href="literature.html#위험의-4유형"><i class="fa fa-check"></i><b>2.2.1</b> 위험의 4유형</a></li>
+<li class="chapter" data-level="2.2.2" data-path="literature.html"><a href="literature.html#위험과-기회"><i class="fa fa-check"></i><b>2.2.2</b> 위험과 기회</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="literature.html"><a href="literature.html#해결지향-감염병보도"><i class="fa fa-check"></i><b>2.3</b> 해결지향 감염병보도</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="literature.html"><a href="literature.html#해결지향-보도의-정의"><i class="fa fa-check"></i><b>2.3.1</b> 해결지향 보도의 정의</a></li>
+<li class="chapter" data-level="2.3.2" data-path="literature.html"><a href="literature.html#감염병보도의-가치"><i class="fa fa-check"></i><b>2.3.2</b> 감염병보도의 가치</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="literature.html"><a href="literature.html#품질측정"><i class="fa fa-check"></i><b>2.4</b> 품질측정</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="literature.html"><a href="literature.html#보도해야-하는-내용"><i class="fa fa-check"></i><b>2.4.1</b> 보도해야 하는 내용</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="method.html"><a href="method.html"><i class="fa fa-check"></i><b>3</b> 방법론</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="method.html"><a href="method.html#품질측정1-이론기반-토픽모델링-1"><i class="fa fa-check"></i><b>3.1</b> 품질측정1: 이론기반 토픽모델링</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="method.html"><a href="method.html#품질-측정의-자동화"><i class="fa fa-check"></i><b>3.1.1</b> 품질 측정의 자동화</a></li>
+<li class="chapter" data-level="3.1.2" data-path="method.html"><a href="method.html#기계보조-내용분석"><i class="fa fa-check"></i><b>3.1.2</b> 기계보조 내용분석</a></li>
+<li class="chapter" data-level="3.1.3" data-path="method.html"><a href="method.html#기계보조-내용분석-1"><i class="fa fa-check"></i><b>3.1.3</b> 기계보조 내용분석</a></li>
+<li class="chapter" data-level="3.1.4" data-path="method.html"><a href="method.html#지도학습-비지도학습-반지도학습"><i class="fa fa-check"></i><b>3.1.4</b> 지도학습, 비지도학습, 반지도학습</a></li>
+<li class="chapter" data-level="3.1.5" data-path="method.html"><a href="method.html#절차"><i class="fa fa-check"></i><b>3.1.5</b> 절차</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="method.html"><a href="method.html#품질측정2-자연어-생성"><i class="fa fa-check"></i><b>3.2</b> 품질측정2: 자연어 생성</a>
+<ul>
+<li class="chapter" data-level="" data-path="method.html"><a href="method.html#자연어-생성을-통한-감염병-보도-기사-품질-측정의-여정"><i class="fa fa-check"></i>자연어 생성을 통한 감염병 보도 기사 품질 측정의 여정</a></li>
+<li class="chapter" data-level="" data-path="method.html"><a href="method.html#목차"><i class="fa fa-check"></i>목차</a></li>
+<li class="chapter" data-level="" data-path="method.html"><a href="method.html#본문과-코드"><i class="fa fa-check"></i>본문과 코드</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="application.html"><a href="application.html"><i class="fa fa-check"></i><b>4</b> 분석사례</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="application.html"><a href="application.html#자료준비"><i class="fa fa-check"></i><b>4.1</b> 자료준비</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="application.html"><a href="application.html#기사-자료-확보"><i class="fa fa-check"></i><b>4.1.1</b> 기사 자료 확보</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="application.html"><a href="application.html#전처리"><i class="fa fa-check"></i><b>4.2</b> 전처리</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="application.html"><a href="application.html#말뭉치"><i class="fa fa-check"></i><b>4.2.1</b> 말뭉치</a></li>
+<li class="chapter" data-level="4.2.2" data-path="application.html"><a href="application.html#dfm-구성"><i class="fa fa-check"></i><b>4.2.2</b> DFM 구성</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="application.html"><a href="application.html#비지도-lda"><i class="fa fa-check"></i><b>4.3</b> 비지도 LDA</a></li>
+<li class="chapter" data-level="4.4" data-path="application.html"><a href="application.html#반지도-lda"><i class="fa fa-check"></i><b>4.4</b> 반지도 LDA</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="application.html"><a href="application.html#씨앗주제어-사전-구성"><i class="fa fa-check"></i><b>4.4.1</b> 씨앗주제어 사전 구성</a></li>
+<li class="chapter" data-level="4.4.2" data-path="application.html"><a href="application.html#seededlda"><i class="fa fa-check"></i><b>4.4.2</b> seededlda</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="application.html"><a href="application.html#검정"><i class="fa fa-check"></i><b>4.5</b> 검정</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="맺음말.html"><a href="맺음말.html"><i class="fa fa-check"></i><b>5</b> 맺음말</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="application" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> 분석사례</h1>
+<div id="자료준비" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> 자료준비</h2>
+<p>국내 주요 언론에서 코로나19 상황에 대한 위험과 기회를 어느 정도로 실재적인 측면을 반영하는지 가늠하기 위해, 코로나19 상황의 위험과 기회를 반영하는 주제어를 구성하고, 이 주제어를 통해 반지도학습 토픽모델링을 수행한다.</p>
+<p>데이터는 <code>tidyverse</code>와 <code>quanteda</code>를 이용해 마련하고, LDA토픽모델링은 <code>seededlda</code>를 이용한다.</p>
+<p><code>quanteda</code>패키지는 <code>dfm</code>에 메타정보를 추가하는데 사용한다. <code>quanteda</code>에서는 한글형태소 분석기를 사용할 수 없기 때문에, <code>tidyverse</code>와 <code>tidytext</code>로 먼저 형태소분석한 데이터프레임을 만들어 <code>quanteda</code>에 투입한다.</p>
+<div id="패키지-로딩" class="section level4" number="4.1.0.1">
+<h4><span class="header-section-number">4.1.0.1</span> 패키지 로딩</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="application.html#cb1-1" aria-hidden="true" tabindex="-1"></a>pkg_v <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb1-2"><a href="application.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;tidytext&quot;</span>, <span class="st">&quot;lubridate&quot;</span>, <span class="st">&quot;quanteda&quot;</span>, <span class="st">&quot;readtext&quot;</span>, <span class="st">&quot;seededlda&quot;</span>)</span>
+<span id="cb1-3"><a href="application.html#cb1-3" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map</span>(pkg_v, require, <span class="at">ch =</span> T)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] TRUE
+## 
+## [[2]]
+## [1] TRUE
+## 
+## [[3]]
+## [1] TRUE
+## 
+## [[4]]
+## [1] TRUE
+## 
+## [[5]]
+## [1] TRUE
+## 
+## [[6]]
+## [1] TRUE</code></pre>
+<p>.</p>
+</div>
+<div id="기사-자료-확보" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> 기사 자료 확보</h3>
+<p>말뭉치는 빅카인즈를 통해 확보한다. 코로나19 관련 기사를 추출하기 위해 다음의 방법을통해 기사를 검색해 다운로드 받는다. 빅카인즈는 저작권 문제로 기사는 200자만 제공하지만, 기사 전문에 대해 키워드를 제공한다. 이 키워드는 형태소 분석을 통한 추출한 명사에 해당한다.</p>
+<ol style="list-style-type: decimal">
+<li><p>키워드
+((코로나19) OR (코로나) OR (코로나 바이러스) OR (신종 코로나바이러스) OR (COVID-19) OR (코비드19))</p></li>
+<li><p>세부 설정</p></li>
+</ol>
+<ul>
+<li><p>언론사:
+경향 국민 동아 문화 서울 세계 조선 중앙 한겨레 한국 KBS MBC SBS</p></li>
+<li><p>분류
+사회: 의료건강
+인사, 부고, 동정 등 제외</p></li>
+<li><p>기간: 2021년 5월 1일부터 10월 31일
+2021-05-01 ~ 2021-10-31
+16,288건
+(분석편의를 위해 2만건을 넘기지 않도록 했다. 빅카인즈는 한번에 2만건 까지만 다운로드를 받을 수 있도록 했다. 2만건이 넘어가면 일반 개인 컴퓨터로는 분석시간이 오래 걸리는 문제도 있다.)</p></li>
+</ul>
+<p>.</p>
+<p>다운로드 받은 파일을 작업디렉토리의 <code>data</code>폴더에 복사한다. 제대로 복사돼 있는지 확인.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="application.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">&#39;data&#39;</span>, <span class="at">pattern =</span> <span class="st">&#39;^News.*</span><span class="sc">\\</span><span class="st">.xlsx$&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;NewsResult_20191101-20200430.xlsx&quot; &quot;NewsResult_20200501-20201031.xlsx&quot;
+## [3] &quot;NewsResult_20201101-20210430.xlsx&quot; &quot;NewsResult_20210501-20211031.xlsx&quot;</code></pre>
+<p>.</p>
+<p>5월 ~ 10월에 해당하는 파일 선택.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="application.html#cb5-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="st">&quot;data/NewsResult_20210501-20211031.xlsx&quot;</span></span>
+<span id="cb5-2"><a href="application.html#cb5-2" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_excel</span>(file_path) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="application.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 16,288
+## Columns: 19
+## $ `뉴스 식별자`                  &lt;chr&gt; &quot;01100701.20211031230241001&quot;, &quot;01100201.2021~
+## $ 일자                           &lt;chr&gt; &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;2021~
+## $ 언론사                         &lt;chr&gt; &quot;세계일보&quot;, &quot;국민일보&quot;, &quot;KBS&quot;, &quot;중앙일보&quot;, &quot;KBS&quot;, &quot;KBS~
+## $ 기고자                         &lt;chr&gt; &quot;정진수&quot;, &quot;박용미&quot;, &quot;오정현&quot;, &quot;오병상(oh.byungsang@joo~
+## $ 제목                           &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요”&quot;, &quot;새에덴교~
+## $ `통합 분류1`                   &lt;chr&gt; &quot;사회&gt;의료_건강&quot;, &quot;사회&gt;의료_건강&quot;, &quot;사회&gt;의료_건강&quot;, &quot;사회&gt;의료_~
+## $ `통합 분류2`                   &lt;chr&gt; &quot;사회&gt;여성&quot;, &quot;지역&gt;경기&quot;, &quot;사회&gt;여성&quot;, NA, &quot;지역&gt;충남&quot;, &quot;사회~
+## $ `통합 분류3`                   &lt;chr&gt; &quot;사회&gt;교육_시험&quot;, &quot;지역&gt;충남&quot;, NA, NA, &quot;사회&gt;의료_건강&quot;, &quot;지~
+## $ `사건/사고 분류1`              &lt;chr&gt; NA, NA, NA, NA, NA, NA, &quot;범죄&gt;기업범죄&gt;거래제한&quot;, NA, N~
+## $ `사건/사고 분류2`              &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ `사건/사고 분류3`              &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ 인물                           &lt;chr&gt; &quot;김정환,이상지&quot;, &quot;이,이재훈,김용선,소강석,김근수&quot;, &quot;강영석&quot;, NA~
+## $ 위치                           &lt;chr&gt; &quot;의정부을지대학교병원,방콕&quot;, &quot;용인,경기도&quot;, &quot;한문현,전북,군산,전북지~
+## $ 기관                           &lt;chr&gt; &quot;대한비만학회,BRCA,게티이미지뱅크,서울아산병원,BRCA1,선우성,선종&quot;~
+## $ 키워드                         &lt;chr&gt; &quot;방콕,몸무게,심혈관질환,게티,이미지,뱅크,연말,병원,건강검진,사람들,북새통~
+## $ `특성추출(가중치순 상위 50개)` &lt;chr&gt; &quot;대장암,유방암,고혈압,건강검진,간염,방사선,코로나19,유전자,난소암,ct,40세,코로나,~
+## $ 본문                           &lt;chr&gt; &quot;게티이미지뱅크 연말이면 많은 병원이 건강검진을 받으려는 사람들도 북새통을~
+## $ URL                            &lt;chr&gt; &quot;http://www.segye.com/content/html/2021~
+## $ `분석제외 여부`                &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~</code></pre>
+<p>.</p>
+<p>분석에 필요한 열만 선택한다.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="application.html#cb7-1" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_excel</span>(file_path) <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="application.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(일자, 제목, 본문, 키워드, 언론사, <span class="at">cat =</span> <span class="st">`</span><span class="at">통합 분류1</span><span class="st">`</span>,  URL) <span class="ot">-&gt;</span> vac_df</span>
+<span id="cb7-3"><a href="application.html#cb7-3" aria-hidden="true" tabindex="-1"></a>vac_df <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 7
+##   일자   제목         본문           키워드          언론사 cat    URL          
+##   &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;        
+## 1 20211~ 길어진 방콕에 확 늘~ &quot;게티이미지뱅크 연말이면~ 방콕,몸무게,심혈관질환,게~ 세계일보~ 사회&gt;의료~ http://www.s~
+## 2 20211~ 새에덴교회, 칼빈대 ~ &quot;경기도 용인 새에덴교회~ 새에덴교회,칼빈대,교직원,~ 국민일보~ 사회&gt;의료~ http://news.~
+## 3 20211~ 전북, ‘단계적 일상~ &quot;[KBS 전주]\n [~ 전북,단계,일상회복,집단,~ KBS    사회&gt;의료~ https://news~</code></pre>
+<p>.</p>
+<p>정제. 불용어 부호 중복기사 공백 등 제거</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="application.html#cb9-1" aria-hidden="true" tabindex="-1"></a>fullchar_v <span class="ot">&lt;-</span> <span class="st">&quot;ㆍ|ㅣ|‘|’|“|”|○|●|◎|◇|◆|□|■|△|▲|▽|▼|〓|◁|◀|▷|▶|♤|♠|♡|♥|♧|♣|⊙|◈|▣&quot;</span></span>
+<span id="cb9-2"><a href="application.html#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="application.html#cb9-3" aria-hidden="true" tabindex="-1"></a>vac_df <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="application.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 인터뷰 기고 등 제거</span></span>
+<span id="cb9-5"><a href="application.html#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(제목, <span class="st">&quot;(</span></span>
+<span id="cb9-6"><a href="application.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[인터뷰|</span><span class="sc">\\</span><span class="st">인터뷰</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-7"><a href="application.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[전문|전문</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-8"><a href="application.html#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[기고|기고</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-9"><a href="application.html#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[Q|A</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-10"><a href="application.html#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[논담|논담</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-11"><a href="application.html#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[좌담회|좌담회</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-12"><a href="application.html#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="st">    답</span><span class="sc">\\</span><span class="st">&gt;|</span></span>
+<span id="cb9-13"><a href="application.html#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="st">    답</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-14"><a href="application.html#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">&lt;파워|</span></span>
+<span id="cb9-15"><a href="application.html#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[사람|사람</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-16"><a href="application.html#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[탐방|탐방</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-17"><a href="application.html#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[속보|속보</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-18"><a href="application.html#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[팩트|</span></span>
+<span id="cb9-19"><a href="application.html#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[브리핑|브리핑</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-20"><a href="application.html#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[시평|시평</span><span class="sc">\\</span><span class="st">]|</span></span>
+<span id="cb9-21"><a href="application.html#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="st">    )&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-22"><a href="application.html#cb9-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 중복기사 제거</span></span>
+<span id="cb9-23"><a href="application.html#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(제목, <span class="at">.keep_all =</span> T) <span class="sc">%&gt;%</span></span>
+<span id="cb9-24"><a href="application.html#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 기사 공백제거</span></span>
+<span id="cb9-25"><a href="application.html#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(제목 <span class="ot">=</span> <span class="fu">str_squish</span>(제목)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-26"><a href="application.html#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 기사 공백제거</span></span>
+<span id="cb9-27"><a href="application.html#cb9-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(본문 <span class="ot">=</span> <span class="fu">str_squish</span>(본문)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-28"><a href="application.html#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 특수문자 제거</span></span>
+<span id="cb9-29"><a href="application.html#cb9-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(키워드 <span class="ot">=</span> <span class="fu">str_remove_all</span>(키워드, <span class="st">&quot;[^(</span><span class="sc">\\</span><span class="st">w+|</span><span class="sc">\\</span><span class="st">d+|,)]&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-30"><a href="application.html#cb9-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(키워드 <span class="ot">=</span> <span class="fu">str_remove_all</span>(키워드, fullchar_v)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-31"><a href="application.html#cb9-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 기사별 ID부여</span></span>
+<span id="cb9-32"><a href="application.html#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="fu">factor</span>(<span class="fu">row_number</span>())) <span class="sc">%&gt;%</span></span>
+<span id="cb9-33"><a href="application.html#cb9-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 월별로 구분한 열 추가(lubridate 패키지) %&gt;% </span></span>
+<span id="cb9-34"><a href="application.html#cb9-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ym =</span> <span class="fu">str_sub</span>(일자, <span class="dv">1</span>, <span class="dv">6</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-35"><a href="application.html#cb9-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ym =</span> <span class="fu">as.integer</span>(ym)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-36"><a href="application.html#cb9-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">title =</span> 제목) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-37"><a href="application.html#cb9-37" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 기사 제목과 본문 결합</span></span>
+<span id="cb9-38"><a href="application.html#cb9-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(제목, 본문, <span class="at">col =</span> <span class="st">&quot;text&quot;</span>, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-39"><a href="application.html#cb9-39" aria-hidden="true" tabindex="-1"></a>  <span class="co">#키워드 갯수 계산</span></span>
+<span id="cb9-40"><a href="application.html#cb9-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Nword =</span> <span class="fu">str_count</span>(키워드, <span class="at">pattern =</span> <span class="st">&#39;,&#39;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-41"><a href="application.html#cb9-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(Nword, <span class="at">after =</span> 일자) <span class="sc">%&gt;%</span></span>
+<span id="cb9-42"><a href="application.html#cb9-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 기사 분류 구분</span></span>
+<span id="cb9-43"><a href="application.html#cb9-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(cat, <span class="at">sep =</span> <span class="st">&quot;&gt;&quot;</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;cat2&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-44"><a href="application.html#cb9-44" aria-hidden="true" tabindex="-1"></a>  <span class="co"># IT_과학, 경제, 사회 만 선택</span></span>
+<span id="cb9-45"><a href="application.html#cb9-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>cat2) <span class="sc">%&gt;%</span></span>
+<span id="cb9-46"><a href="application.html#cb9-46" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 분류 구분: 사회, 비사회</span></span>
+<span id="cb9-47"><a href="application.html#cb9-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(cat, <span class="at">after =</span> Nword) <span class="sc">%&gt;%</span></span>
+<span id="cb9-48"><a href="application.html#cb9-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">catSoc =</span> <span class="fu">case_when</span>(</span>
+<span id="cb9-49"><a href="application.html#cb9-49" aria-hidden="true" tabindex="-1"></a>    cat <span class="sc">==</span> <span class="st">&quot;사회&quot;</span> <span class="sc">~</span> <span class="st">&quot;사회면&quot;</span>,</span>
+<span id="cb9-50"><a href="application.html#cb9-50" aria-hidden="true" tabindex="-1"></a>    cat <span class="sc">==</span> <span class="st">&quot;지역&quot;</span> <span class="sc">~</span> <span class="st">&quot;사회면&quot;</span>,</span>
+<span id="cb9-51"><a href="application.html#cb9-51" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;비사회면&quot;</span>) ) <span class="ot">-&gt;</span> vac2_df</span>
+<span id="cb9-52"><a href="application.html#cb9-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-53"><a href="application.html#cb9-53" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 15,553
+## Columns: 11
+## $ cat    &lt;chr&gt; &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;지역&quot;, &quot;지역&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;IT_과학&quot;, &quot;사회&quot;, ~
+## $ Nword  &lt;int&gt; 462, 79, 114, 163, 135, 132, 172, 53, 282, 180, 181, 263, 147, ~
+## $ 일자   &lt;chr&gt; &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;2021~
+## $ text   &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요” 게티이미지뱅크 연말이면 많은 병원이 건강검진을 받으려~
+## $ 키워드 &lt;chr&gt; &quot;방콕,몸무게,심혈관질환,게티,이미지,뱅크,연말,병원,건강검진,사람들,북새통,예약,대기,사례,1일,위드,코로나,시행,감~
+## $ 언론사 &lt;chr&gt; &quot;세계일보&quot;, &quot;국민일보&quot;, &quot;KBS&quot;, &quot;중앙일보&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;경향신문&quot;,~
+## $ URL    &lt;chr&gt; &quot;http://www.segye.com/content/html/2021/10/31/20211031508024.ht~
+## $ ID     &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ~
+## $ ym     &lt;int&gt; 202110, 202110, 202110, 202110, 202110, 202110, 202110, 202110,~
+## $ title  &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요”&quot;, &quot;새에덴교회, 칼빈대 교직원에 독감 예방접종 봉사~
+## $ catSoc &lt;chr&gt; &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;비사회면&quot;,~</code></pre>
+<p>.</p>
+<p>정제 데이터 확인</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="application.html#cb11-1" aria-hidden="true" tabindex="-1"></a>vac2_df<span class="sc">$</span>ym <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span></code></pre></div>
+<pre><code>## [1] 202110 202109 202108 202107 202106 202105</code></pre>
+<p>.</p>
+<p>사회 분류의 의료_건강만 선택했지만, 다른 영역의 기사도 포함된다.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="application.html#cb13-1" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span> <span class="fu">count</span>(cat, <span class="at">sort =</span> T)</span></code></pre></div>
+<pre><code>## # A tibble: 8 x 2
+##   cat         n
+##   &lt;chr&gt;   &lt;int&gt;
+## 1 사회    11914
+## 2 지역     1468
+## 3 국제     1097
+## 4 IT_과학   434
+## 5 문화      234
+## 6 정치      219
+## 7 경제      177
+## 8 스포츠     10</code></pre>
+<p>.</p>
+<p>기사 길이 확인</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="application.html#cb15-1" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span> .<span class="sc">$</span>Nword <span class="sc">%&gt;%</span> <span class="fu">summary</span>()</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##     7.0   123.0   158.0   179.5   219.0  1527.0</code></pre>
+<p>.</p>
+<p>기사의 길이가 일정 수준까지는 기사의 품질과 정비례의 관계가 있다는 전제하에 단어수가 70개 이상한 기사만 선택.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="application.html#cb17-1" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="application.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Nword <span class="sc">&gt;=</span> <span class="dv">70</span>) <span class="ot">-&gt;</span> vac2_df</span>
+<span id="cb17-3"><a href="application.html#cb17-3" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span> .<span class="sc">$</span>Nword <span class="sc">%&gt;%</span> <span class="fu">summary</span>()</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    70.0   130.0   164.0   189.1   225.0  1527.0</code></pre>
+<p>.</p>
+<p>tidytext 방식으로 토큰화.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="application.html#cb19-1" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="application.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, 키워드, <span class="at">token =</span> <span class="st">&quot;regex&quot;</span>, <span class="at">pattern =</span> <span class="st">&quot;,&quot;</span>) <span class="ot">-&gt;</span> vac_tk</span>
+<span id="cb19-3"><a href="application.html#cb19-3" aria-hidden="true" tabindex="-1"></a>vac_tk <span class="sc">%&gt;%</span> </span>
+<span id="cb19-4"><a href="application.html#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ym, title, word) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-5"><a href="application.html#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 3
+##       ym title                                                       word    
+##    &lt;int&gt; &lt;chr&gt;                                                       &lt;chr&gt;   
+## 1 202108 “백신예약 대란 없었다” LG CNS, 병목 현상 90% 이상 개선 완료 백신예약
+## 2 202108 “백신예약 대란 없었다” LG CNS, 병목 현상 90% 이상 개선 완료 lg      
+## 3 202108 “백신예약 대란 없었다” LG CNS, 병목 현상 90% 이상 개선 완료 cns     
+## 4 202108 “백신예약 대란 없었다” LG CNS, 병목 현상 90% 이상 개선 완료 90      
+## 5 202108 “백신예약 대란 없었다” LG CNS, 병목 현상 90% 이상 개선 완료 개선</code></pre>
+<p>.</p>
+<p>토큰 빈도 계산</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="application.html#cb21-1" aria-hidden="true" tabindex="-1"></a>vac_tk <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="application.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> T) <span class="ot">-&gt;</span> count_df </span>
+<span id="cb21-3"><a href="application.html#cb21-3" aria-hidden="true" tabindex="-1"></a>count_df <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 2
+##    word          n
+##    &lt;chr&gt;     &lt;int&gt;
+##  1 접종     113809
+##  2 백신      96320
+##  3 코로나19  42458
+##  4 확진자    28675
+##  5 감염      21406
+##  6 환자      17946
+##  7 정부      16702
+##  8 예약      14485
+##  9 방역      13600
+## 10 발생      13562</code></pre>
+<p>.</p>
+<p>tidytext방식(한 행에 하나의 값 배치)의 토큰을 각 기사의 행에 재배치 <code>text2</code>열에 할당한다. 다른 변수가 포함된 데이터프레임과 결합. <code>quanteda</code>로 <code>dfm</code>을 만들기 위해 필요한 작업. <code>dfm</code>에 개별 기사에 대한 변수가 포함돼 있어야 추가적인 분석이 가능하다.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="application.html#cb23-1" aria-hidden="true" tabindex="-1"></a>combined_df <span class="ot">&lt;-</span></span>
+<span id="cb23-2"><a href="application.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  vac_tk <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="application.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ID) <span class="sc">%&gt;%</span></span>
+<span id="cb23-4"><a href="application.html#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">text2 =</span> <span class="fu">str_flatten</span>(word, <span class="st">&quot; &quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb23-5"><a href="application.html#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb23-6"><a href="application.html#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(vac2_df, <span class="at">by =</span> <span class="st">&quot;ID&quot;</span>)</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="application.html#cb25-1" aria-hidden="true" tabindex="-1"></a>combined_df <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 14,508
+## Columns: 12
+## $ ID     &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,~
+## $ text2  &lt;chr&gt; &quot;방콕 몸무게 심혈관질환 게티 이미지 뱅크 연말 병원 건강검진 사람들 북새통 예약 대기 사례 1일 위드 코로나 시~
+## $ cat    &lt;chr&gt; &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;지역&quot;, &quot;지역&quot;, &quot;사회&quot;, &quot;IT_과학&quot;, &quot;사회&quot;, &quot;사회&quot;, ~
+## $ Nword  &lt;int&gt; 462, 79, 114, 163, 135, 132, 172, 282, 180, 181, 263, 147, 162,~
+## $ 일자   &lt;chr&gt; &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;2021~
+## $ text   &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요” 게티이미지뱅크 연말이면 많은 병원이 건강검진을 받으려~
+## $ 키워드 &lt;chr&gt; &quot;방콕,몸무게,심혈관질환,게티,이미지,뱅크,연말,병원,건강검진,사람들,북새통,예약,대기,사례,1일,위드,코로나,시행,감~
+## $ 언론사 &lt;chr&gt; &quot;세계일보&quot;, &quot;국민일보&quot;, &quot;KBS&quot;, &quot;중앙일보&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;경향신문&quot;, &quot;KBS&quot;,~
+## $ URL    &lt;chr&gt; &quot;http://www.segye.com/content/html/2021/10/31/20211031508024.ht~
+## $ ym     &lt;int&gt; 202110, 202110, 202110, 202110, 202110, 202110, 202110, 202110,~
+## $ title  &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요”&quot;, &quot;새에덴교회, 칼빈대 교직원에 독감 예방접종 봉사~
+## $ catSoc &lt;chr&gt; &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;비사회면&quot;, &quot;사회면&quot;,~</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="application.html#cb27-1" aria-hidden="true" tabindex="-1"></a>combined_df <span class="sc">%&gt;%</span> <span class="fu">saveRDS</span>(<span class="st">&quot;combined.rds&quot;</span>)</span></code></pre></div>
+<p>.</p>
+</div>
+</div>
+<div id="전처리" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> 전처리</h2>
+<p>먼저 비지도 LDA로 토픽을 군집한 다음, 씨앗주제사전을 만들어, 반지도 LDA로 토픽을 군집한다. 이를 위해서는 먼저 <code>quanteda</code>패키지로 DFM(Data Feature Matrix)를 만들어야 한다. <code>quanteda</code>패키지의 DFM은 <code>topicmodels</code>패키지에서 사용하는 DTM(Data Term Matrix)에 해당한다. 행에 개별 단어(data), 열에는 주제(feature 또는 term)이 배치된 행렬(matrix)데이터다.</p>
+<p>.</p>
+<div id="말뭉치" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> 말뭉치</h3>
+<p>먼저 말뭉치를 만든다음, dfm을 만든다.</p>
+<p><code>quanteda</code>패키지로 말뭉치를 만든다. text2열에 토큰화한 값이 있다.
+<a href="https://tutorials.quanteda.io/basic-operations/dfm/dfm/" class="uri">https://tutorials.quanteda.io/basic-operations/dfm/dfm/</a></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="application.html#cb28-1" aria-hidden="true" tabindex="-1"></a>combined_df <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="application.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">corpus</span>(<span class="at">text_field =</span> <span class="st">&quot;text2&quot;</span>) <span class="ot">-&gt;</span> c_corp</span>
+<span id="cb28-3"><a href="application.html#cb28-3" aria-hidden="true" tabindex="-1"></a>c_corp <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>##  &#39;corpus&#39; Named chr [1:14508] &quot;방콕 몸무게 심혈관질환 게티 이미지 뱅크 연말 병원 건강검진 사람들 북새통 예약 대기 사례 1일 위드 코로나 시행 감&quot;| __truncated__ ...
+##  - attr(*, &quot;names&quot;)= chr [1:14508] &quot;text1&quot; &quot;text2&quot; &quot;text3&quot; &quot;text4&quot; ...
+##  - attr(*, &quot;docvars&quot;)=&#39;data.frame&#39;:  14508 obs. of  14 variables:
+##   ..$ docname_: chr [1:14508] &quot;text1&quot; &quot;text2&quot; &quot;text3&quot; &quot;text4&quot; ...
+##   ..$ docid_  : Factor w/ 14508 levels &quot;text1&quot;,&quot;text2&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
+##   ..$ segid_  : int [1:14508] 1 1 1 1 1 1 1 1 1 1 ...
+##   ..$ ID      : Factor w/ 15553 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 1 2 3 4 5 6 7 9 10 11 ...
+##   ..$ cat     : chr [1:14508] &quot;사회&quot; &quot;사회&quot; &quot;사회&quot; &quot;사회&quot; ...
+##   ..$ Nword   : int [1:14508] 462 79 114 163 135 132 172 282 180 181 ...
+##   ..$ 일자    : chr [1:14508] &quot;20211031&quot; &quot;20211031&quot; &quot;20211031&quot; &quot;20211031&quot; ...
+##   ..$ text    : chr [1:14508] &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요” 게티이미지뱅크 연말이면 많은 병원이 건강검진을 받으려&quot;| __truncated__ &quot;새에덴교회, 칼빈대 교직원에 독감 예방접종 봉사 경기도 용인 새에덴교회(소강석 목사) 산하 메디컬처치(위원장 김용&quot;| __truncated__ &quot;전북, ‘단계적 일상회복’ 앞두고 집단감염 지속 [KBS 전주] [앵커] 전북에서 코로나19 확진자가 34명 늘었습니다. 곳&quot;| __truncated__ &quot;[오병상의 코멘터리] 위드코로나..‘최악의 겨울’될까? ━ 핼러윈 맞은 이태원 풍경에.. ━ 코로나대응 공동체의식 희&quot;| __truncated__ ...
+##   ..$ 키워드  : chr [1:14508] &quot;방콕,몸무게,심혈관질환,게티,이미지,뱅크,연말,병원,건강검진,사람들,북새통,예약,대기,사례,1일,위드,코로나,시행,감&quot;| __truncated__ &quot;새에덴교회,칼빈대,교직원,봉사,독감,예방,접종,새에덴교회,경기도,용인,소강석,목사,산하,메디컬처치,위원장,김용선,&quot;| __truncated__ &quot;전북,단계,일상회복,집단,감염,지속,앵커,전북,코로나19,확진자,34명,집단감염,단계,일상,회복,시작,오정현,리포트,재&quot;| __truncated__ &quot;위드코,최악,겨울,핼러윈,이태원,풍경,희박,코로나대응,공동체,의식,코로나,1,위드,corona,시작,주말,핼러윈,파티,젊은&quot;| __truncated__ ...
+##   ..$ 언론사  : chr [1:14508] &quot;세계일보&quot; &quot;국민일보&quot; &quot;KBS&quot; &quot;중앙일보&quot; ...
+##   ..$ URL     : chr [1:14508] &quot;http://www.segye.com/content/html/2021/10/31/20211031508024.html&quot; &quot;http://news.kmib.co.kr/article/view.asp?arcid=0016419698&amp;code=61171811&amp;cp=kd&quot; &quot;https://news.kbs.co.kr/news/view.do?ncd=5313648&amp;amp;ref=DA&quot; &quot;https://www.joongang.co.kr/article/25019705&quot; ...
+##   ..$ ym      : int [1:14508] 202110 202110 202110 202110 202110 202110 202110 202110 202110 202110 ...
+##   ..$ title   : chr [1:14508] &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요”&quot; &quot;새에덴교회, 칼빈대 교직원에 독감 예방접종 봉사&quot; &quot;전북, ‘단계적 일상회복’ 앞두고 집단감염 지속&quot; &quot;[오병상의 코멘터리] 위드코로나..‘최악의 겨울’될까?&quot; ...
+##   ..$ catSoc  : chr [1:14508] &quot;사회면&quot; &quot;사회면&quot; &quot;사회면&quot; &quot;사회면&quot; ...
+##  - attr(*, &quot;meta&quot;)=List of 3
+##   ..$ system:List of 6
+##   .. ..$ package-version:Classes &#39;package_version&#39;, &#39;numeric_version&#39;  hidden list of 1
+##   .. ..$ r-version      :Classes &#39;R_system_version&#39;, &#39;package_version&#39;, &#39;numeric_version&#39;  hidden list of 1
+##   .. ..$ system         : Named chr [1:3] &quot;Windows&quot; &quot;x86-64&quot; &quot;J&quot;
+##   .. .. ..- attr(*, &quot;names&quot;)= chr [1:3] &quot;sysname&quot; &quot;machine&quot; &quot;user&quot;
+##   .. ..$ directory      : chr &quot;E:/data/textData/solution&quot;
+##   .. ..$ created        : Date[1:1], format: &quot;2021-12-06&quot;
+##   .. ..$ source         : chr &quot;data.frame&quot;
+##   ..$ object:List of 2
+##   .. ..$ unit   : chr &quot;documents&quot;
+##   .. ..$ summary:List of 2
+##   ..$ user  : list()</code></pre>
+<p>.</p>
+<p>말뭉치의 내용을 보다 간결하게 보기 위해서는 <code>docvars()</code>함수를 이용한다.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="application.html#cb30-1" aria-hidden="true" tabindex="-1"></a>c_corp <span class="sc">%&gt;%</span> <span class="fu">docvars</span>() <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 14,508
+## Columns: 11
+## $ ID     &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,~
+## $ cat    &lt;chr&gt; &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;지역&quot;, &quot;지역&quot;, &quot;사회&quot;, &quot;IT_과학&quot;, &quot;사회&quot;, &quot;사회&quot;, ~
+## $ Nword  &lt;int&gt; 462, 79, 114, 163, 135, 132, 172, 282, 180, 181, 263, 147, 162,~
+## $ 일자   &lt;chr&gt; &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;2021~
+## $ text   &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요” 게티이미지뱅크 연말이면 많은 병원이 건강검진을 받으려~
+## $ 키워드 &lt;chr&gt; &quot;방콕,몸무게,심혈관질환,게티,이미지,뱅크,연말,병원,건강검진,사람들,북새통,예약,대기,사례,1일,위드,코로나,시행,감~
+## $ 언론사 &lt;chr&gt; &quot;세계일보&quot;, &quot;국민일보&quot;, &quot;KBS&quot;, &quot;중앙일보&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;경향신문&quot;, &quot;KBS&quot;,~
+## $ URL    &lt;chr&gt; &quot;http://www.segye.com/content/html/2021/10/31/20211031508024.ht~
+## $ ym     &lt;int&gt; 202110, 202110, 202110, 202110, 202110, 202110, 202110, 202110,~
+## $ title  &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요”&quot;, &quot;새에덴교회, 칼빈대 교직원에 독감 예방접종 봉사~
+## $ catSoc &lt;chr&gt; &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;비사회면&quot;, &quot;사회면&quot;,~</code></pre>
+<p>.</p>
+</div>
+<div id="dfm-구성" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> DFM 구성</h3>
+<p>dfm을 구성할 때 <code>dfm()</code>함수만을 이용하기도 하지만, <code>dfm_trim()</code>함수를 추가로 투입해 분석대상을 추려냄으로써 추출한 주제의 변별성을 높일 수 있다.</p>
+<p>자세한 내용은 매뉴얼(<a href="https://quanteda.io/reference/dfm_trim.html" class="uri">https://quanteda.io/reference/dfm_trim.html</a>) 참조.</p>
+<p>여기서는 가장 빈번한 feature 5%를 추렸다. feature의 문서빈도 값을 10% 미만(max_docfreq = 0.1)으로 설정하고, 모든 문서의 feature 빈도 80% 이상(min_termfreq = 0.8)으로 설정.</p>
+<p><code>topfeatures()</code> 함수를 이용해 가장 빈번하게 등장하는 feature를 확인할 수 있따.</p>
+<p><code>tokens()</code> 함수를 이용해 불용어나 구두점 등 정제작업을 할수 있다. 이미 앞 단계에서 정제 작업을 수행했기 때문에 여기서는 사용하지 않는다.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="application.html#cb32-1" aria-hidden="true" tabindex="-1"></a>c_corp <span class="sc">%&gt;%</span> </span>
+<span id="cb32-2"><a href="application.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#tokens(remove_punct = T) %&gt;% </span></span>
+<span id="cb32-3"><a href="application.html#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb32-4"><a href="application.html#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm_trim</span>(<span class="at">min_termfreq =</span> <span class="fl">0.8</span>, </span>
+<span id="cb32-5"><a href="application.html#cb32-5" aria-hidden="true" tabindex="-1"></a>           <span class="co"># </span></span>
+<span id="cb32-6"><a href="application.html#cb32-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">termfreq_type =</span> <span class="st">&quot;quantile&quot;</span>,</span>
+<span id="cb32-7"><a href="application.html#cb32-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">max_docfreq =</span> <span class="fl">0.1</span>, </span>
+<span id="cb32-8"><a href="application.html#cb32-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">docfreq_type =</span> <span class="st">&quot;prop&quot;</span>) <span class="ot">-&gt;</span> c_dfm</span>
+<span id="cb32-9"><a href="application.html#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="application.html#cb32-10" aria-hidden="true" tabindex="-1"></a>c_dfm <span class="sc">%&gt;%</span> <span class="fu">topfeatures</span>(<span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
+<pre><code>##     병상     회분       건   부스터     추석     인력       씨     연휴 
+##     4698     3934     3566     3533     3225     3097     2955     2949 
+##       천        a     격리     신고   청소년 부스터샷     위드     승인 
+##     2852     2823     2803     2795     2760     2690     2684     2511 
+##     임상     연령     항체   감염병 
+##     2485     2460     2453     2407</code></pre>
+<p>.</p>
+</div>
+</div>
+<div id="비지도-lda" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> 비지도 LDA</h2>
+<p>먼저 비지도 LDA를 수행해 보도된 기사의 주제가 어떻게 군집되는지 확인한다. 여기서는 주제를 편의상 16개 (k = 16)로 설정했다.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="application.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">37</span>)</span>
+<span id="cb34-2"><a href="application.html#cb34-2" aria-hidden="true" tabindex="-1"></a>c_dfm <span class="sc">%&gt;%</span> <span class="fu">textmodel_lda</span>(<span class="at">k =</span> <span class="dv">16</span>) <span class="ot">-&gt;</span> c_lda</span>
+<span id="cb34-3"><a href="application.html#cb34-3" aria-hidden="true" tabindex="-1"></a>c_lda <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## List of 10
+##  $ k        : int 16
+##  $ max_iter : int 2000
+##  $ last_iter: int 2000
+##  $ alpha    : num 0.5
+##  $ beta     : num 0.1
+##  $ phi      : num [1:16, 1:13073] 1.90e-06 1.22e-06 1.00e-06 1.07e-06 7.91e-07 ...
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. ..$ : chr [1:16] &quot;topic1&quot; &quot;topic2&quot; &quot;topic3&quot; &quot;topic4&quot; ...
+##   .. ..$ : chr [1:13073] &quot;방콕&quot; &quot;몸무게&quot; &quot;심혈관질환&quot; &quot;게티&quot; ...
+##  $ theta    : num [1:14508, 1:16] 0.00178 0.03125 0.00769 0.005 0.01875 ...
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. ..$ : chr [1:14508] &quot;text1&quot; &quot;text2&quot; &quot;text3&quot; &quot;text4&quot; ...
+##   .. ..$ : chr [1:16] &quot;topic1&quot; &quot;topic2&quot; &quot;topic3&quot; &quot;topic4&quot; ...
+##  $ words    :Formal class &#39;dgCMatrix&#39; [package &quot;Matrix&quot;] with 6 slots
+##   .. ..@ i       : int [1:44638] 4 8 15 16 20 26 39 40 44 45 ...
+##   .. ..@ p       : int [1:17] 0 2490 4654 7047 9735 12705 16166 18550 21222 23751 ...
+##   .. ..@ Dim     : int [1:2] 13073 16
+##   .. ..@ Dimnames:List of 2
+##   .. ..@ x       : num [1:44638] 2 3 32 22 2 3 2 12 2 12 ...
+##   .. ..@ factors : list()
+##  $ data     :Formal class &#39;dfm&#39; [package &quot;quanteda&quot;] with 8 slots
+##   .. ..@ docvars :&#39;data.frame&#39;:  14508 obs. of  14 variables:
+##   .. ..@ meta    :List of 3
+##   .. ..@ i       : int [1:982813] 0 199 207 1259 2421 2481 7347 7611 7624 7626 ...
+##   .. ..@ p       : int [1:13074] 0 22 76 97 112 169 186 334 398 412 ...
+##   .. ..@ Dim     : int [1:2] 14508 13073
+##   .. ..@ Dimnames:List of 2
+##   .. ..@ x       : num [1:982813] 1 2 1 1 1 2 1 8 10 4 ...
+##   .. ..@ factors : list()
+##  $ call     : language lda(x = x, k = k, label = label, max_iter = max_iter, alpha = alpha, beta = beta,      seeds = NULL, words = NULL| __truncated__
+##  - attr(*, &quot;class&quot;)= chr [1:3] &quot;textmodel_lda&quot; &quot;textmodel&quot; &quot;list&quot;</code></pre>
+<p>14,508개 문서의 982,813개의 단어에서 13,973개 단어를 16개의 주제로 분류했다.</p>
+<p>phi열의 값이 <code>토픽x단어</code> 행렬이다. <code>topicmodels</code>나 <code>stm</code>패키지의 <code>beta</code>에 해당한다. 각 각 단어가 토픽별 할당되는 확률 값이다.</p>
+<p>theta열의 값이 <code>문서x토픽</code> 행렬이다. <code>topicmodels</code>나 <code>stm</code>패키지의 <code>gamma</code>에 해당한다. 각 문서가 토픽별로 포함될 확률 값이다.</p>
+<p>.</p>
+<p>8개의 주제별로 전형적인 단어 10개(n = 10)를 추출해보자. 토픽별 단어의 phi값을 내림차순으로 산출한다.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="application.html#cb36-1" aria-hidden="true" tabindex="-1"></a>c_lda <span class="sc">%&gt;%</span> <span class="fu">terms</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="application.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(topic1<span class="sc">:</span>topic8)</span></code></pre></div>
+<pre><code>##      topic1   topic2   topic3   topic4   topic5   topic6       topic7   topic8
+## 1  청해부대   부스터       씨     허용     위드 이스라엘         병상   외국인
+## 2      장병   청소년        a     식당     전환     의무         재택 집단감염
+## 3    국방부 부스터샷     신고 인센티브 전문가들     세계         전담     부산
+## 4      부대     승인       건     카페     내과     인도           개     대구
+## 5      격리      fda     인정     면제     체계      cdc     재택치료     접촉
+## 6      현지   임신부 이상반응     입국   치명률   의무화         이송   접촉자
+## 7      음성     소아   인과성     패스     달성 현지시간         생활     경남
+## 8       pcr 추가접종     의심       인     반장     실내         격리     요양
+## 9      사태      cdc     남성   증명서   방대본   감염자 생활치료센터 요양병원
+## 10     파병   어린이   혈전증     면회     전파     지침         경증     직원</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="application.html#cb38-1" aria-hidden="true" tabindex="-1"></a>c_lda <span class="sc">%&gt;%</span> <span class="fu">terms</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb38-2"><a href="application.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(topic9<span class="sc">:</span>topic16)</span></code></pre></div>
+<pre><code>##      topic9 topic10 topic11  topic12  topic13  topic14 topic15 topic16
+## 1      임상    질환    인력     추석     휴가     회분  대통령    마음
+## 2      항체    운동    학생     연휴   보건소     잔여    진료  간호사
+## 3    치료제    수술  간호사       천   오접종     간격  감염병    걱정
+## 4      시험    원인    학교 비수도권     의원     연령    보험    자신
+## 5      교차    음식    노조   위중증     일본     수급  서비스    아이
+## 6      허가    섭취    파업     연속     직원 사전예약    한국    사진
+## 7    식약처    통증    공공     주말     안내   상반기    부담    의사
+## 8      비교    피부  교직원     최다     보관     차질      억    치매
+## 9    연구진    주의  교육부     차지 의료기관 잔여백신    비용    여성
+## 10 교차접종    도움    요구 영상편집     주사   고령층    사업    불안</code></pre>
+<p>.</p>
+<p>topic9를 phi값의 내림차 순으로 정렬해보면 topic1의 단어가 동일하게 산출된다.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="application.html#cb40-1" aria-hidden="true" tabindex="-1"></a>c_lda<span class="sc">$</span>phi <span class="sc">%&gt;%</span> <span class="fu">t</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb40-2"><a href="application.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb40-3"><a href="application.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(topic9 <span class="sc">%&gt;%</span> desc) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-4"><a href="application.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-5"><a href="application.html#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##          topic1 topic2 topic3 topic4 topic5 topic6 topic7 topic8 topic9 topic10
+## 임상      0.000  0.000  0.000      0  0.000  0.000      0      0  0.033   0.000
+## 항체      0.001  0.005  0.000      0  0.001  0.000      0      0  0.025   0.000
+## 치료제    0.000  0.000  0.000      0  0.000  0.000      0      0  0.019   0.000
+## 시험      0.000  0.000  0.000      0  0.000  0.000      0      0  0.016   0.000
+## 교차      0.000  0.002  0.001      0  0.000  0.000      0      0  0.014   0.000
+## 허가      0.002  0.004  0.000      0  0.000  0.000      0      0  0.012   0.000
+## 식약처    0.000  0.000  0.000      0  0.000  0.000      0      0  0.009   0.000
+## 비교      0.000  0.001  0.000      0  0.003  0.001      0      0  0.007   0.001
+## 연구진    0.000  0.001  0.000      0  0.000  0.000      0      0  0.007   0.001
+## 교차접종  0.000  0.001  0.000      0  0.000  0.000      0      0  0.007   0.000
+##          topic11 topic12 topic13 topic14 topic15 topic16
+## 임상       0.000   0.000       0   0.000       0       0
+## 항체       0.000   0.000       0   0.000       0       0
+## 치료제     0.000   0.000       0   0.000       0       0
+## 시험       0.005   0.000       0   0.000       0       0
+## 교차       0.000   0.000       0   0.001       0       0
+## 허가       0.000   0.000       0   0.001       0       0
+## 식약처     0.000   0.000       0   0.000       0       0
+## 비교       0.000   0.003       0   0.000       0       0
+## 연구진     0.000   0.000       0   0.000       0       0
+## 교차접종   0.000   0.000       0   0.002       0       0</code></pre>
+<p>각 토픽 단어를 통해 각 토픽의 제목을 다음과 같이 부여할 수 있다.</p>
+<ul>
+<li><p>topic1: 청해부대 감염</p></li>
+<li><p>topic2: 세계 추가접종</p></li>
+<li><p>topic3: 이상반응 청원</p></li>
+<li><p>topic4: 일상회복</p></li>
+<li><p>topic5: 돌파감염</p></li>
+<li><p>topic6: 기타:진료활동</p></li>
+<li><p>topic7: 집단면역</p></li>
+<li><p>topic8: 집단감염</p></li>
+<li><p>topic9: 치료제 승인</p></li>
+<li><p>topic10: 기타: 건강</p></li>
+<li><p>topic11: 기타: 노동</p></li>
+<li><p>topic12: 연휴 감염</p></li>
+<li><p>topic13: 백신수급</p></li>
+<li><p>topic14: 백신접종</p></li>
+<li><p>topic15: 치료</p></li>
+<li><p>topic16: 이상반응</p></li>
+</ul>
+<p>.</p>
+<p><code>문서x토픽</code> 행렬인 theta는 다음과 같다.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="application.html#cb42-1" aria-hidden="true" tabindex="-1"></a>c_lda<span class="sc">$</span>theta <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="ot">-&gt;</span> clda_theta_df</span>
+<span id="cb42-2"><a href="application.html#cb42-2" aria-hidden="true" tabindex="-1"></a>clda_theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb42-3"><a href="application.html#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(topic1<span class="sc">:</span>topic8) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-4"><a href="application.html#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##       topic1 topic2 topic3 topic4 topic5 topic6 topic7 topic8
+## text1  0.002  0.002  0.002   0.02  0.052  0.002  0.012  0.005
+## text2  0.031  0.010  0.010   0.01  0.010  0.073  0.052  0.052
+## text3  0.008  0.023  0.008   0.10  0.054  0.008  0.085  0.577</code></pre>
+<p>.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="application.html#cb44-1" aria-hidden="true" tabindex="-1"></a>c_lda<span class="sc">$</span>theta <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="ot">-&gt;</span> clda_theta_df</span>
+<span id="cb44-2"><a href="application.html#cb44-2" aria-hidden="true" tabindex="-1"></a>clda_theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb44-3"><a href="application.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(topic9<span class="sc">:</span>topic16) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-4"><a href="application.html#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##       topic9 topic10 topic11 topic12 topic13 topic14 topic15 topic16
+## text1  0.002   0.763   0.002   0.002   0.002   0.005   0.016   0.112
+## text2  0.010   0.010   0.115   0.010   0.302   0.010   0.135   0.156
+## text3  0.008   0.023   0.008   0.023   0.008   0.038   0.023   0.008</code></pre>
+<p>.</p>
+<p>text3은 topic8(집단감염)에 속할 확률이 0.562이고, 다른 토픽에 속할 확률은 0.002에서 0.085다.</p>
+<p>.</p>
+<p>text3이 어떤 문서인지 해당 기사를 선택해 보자. 이를 위해서는 토픽모델링 산출물의 각 주제와 앞서 구성한 말뭉치를 결합해야 한다. 이를 위해 산출물에서 문서별 주제 할당 확률값인 theta 정보를 데이터프레임으로 저장하고, 말뭉치에서 변수(열)를 추출해 데이터프레임으로 저장.</p>
+<p>먼저 토픽모델링 산출물에서 문서별 theta 값 추출. 벡터이므로 데이터프레임으로 변환.</p>
+<p>말뭉치의 <code>docvars()</code>함수로 기사의 변수(열) 추출해 데이터프레임으로 저장.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="application.html#cb46-1" aria-hidden="true" tabindex="-1"></a>c_corp <span class="sc">%&gt;%</span> <span class="fu">docvars</span>() <span class="ot">-&gt;</span> docvars_df  </span>
+<span id="cb46-2"><a href="application.html#cb46-2" aria-hidden="true" tabindex="-1"></a>docvars_df  <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 14,508
+## Columns: 11
+## $ ID     &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,~
+## $ cat    &lt;chr&gt; &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;지역&quot;, &quot;지역&quot;, &quot;사회&quot;, &quot;IT_과학&quot;, &quot;사회&quot;, &quot;사회&quot;, ~
+## $ Nword  &lt;int&gt; 462, 79, 114, 163, 135, 132, 172, 282, 180, 181, 263, 147, 162,~
+## $ 일자   &lt;chr&gt; &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;2021~
+## $ text   &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요” 게티이미지뱅크 연말이면 많은 병원이 건강검진을 받으려~
+## $ 키워드 &lt;chr&gt; &quot;방콕,몸무게,심혈관질환,게티,이미지,뱅크,연말,병원,건강검진,사람들,북새통,예약,대기,사례,1일,위드,코로나,시행,감~
+## $ 언론사 &lt;chr&gt; &quot;세계일보&quot;, &quot;국민일보&quot;, &quot;KBS&quot;, &quot;중앙일보&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;경향신문&quot;, &quot;KBS&quot;,~
+## $ URL    &lt;chr&gt; &quot;http://www.segye.com/content/html/2021/10/31/20211031508024.ht~
+## $ ym     &lt;int&gt; 202110, 202110, 202110, 202110, 202110, 202110, 202110, 202110,~
+## $ title  &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요”&quot;, &quot;새에덴교회, 칼빈대 교직원에 독감 예방접종 봉사~
+## $ catSoc &lt;chr&gt; &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;비사회면&quot;, &quot;사회면&quot;,~</code></pre>
+<p>.</p>
+<p>두 데이터프레임 결합</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="application.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_cols</span>(docvars_df, clda_theta_df) <span class="sc">%&gt;%</span> </span>
+<span id="cb48-2"><a href="application.html#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">textID =</span> <span class="fu">factor</span>(<span class="fu">row_number</span>()), <span class="at">.before =</span> ID) <span class="ot">-&gt;</span> theta_df</span>
+<span id="cb48-3"><a href="application.html#cb48-3" aria-hidden="true" tabindex="-1"></a>theta_df <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 14,508
+## Columns: 28
+## $ textID  &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,~
+## $ ID      &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19~
+## $ cat     &lt;chr&gt; &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;지역&quot;, &quot;지역&quot;, &quot;사회&quot;, &quot;IT_과학&quot;, &quot;사회&quot;, &quot;사회&quot;,~
+## $ Nword   &lt;int&gt; 462, 79, 114, 163, 135, 132, 172, 282, 180, 181, 263, 147, 162~
+## $ 일자    &lt;chr&gt; &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;202~
+## $ text    &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요” 게티이미지뱅크 연말이면 많은 병원이 건강검진을 받으~
+## $ 키워드  &lt;chr&gt; &quot;방콕,몸무게,심혈관질환,게티,이미지,뱅크,연말,병원,건강검진,사람들,북새통,예약,대기,사례,1일,위드,코로나,시행,~
+## $ 언론사  &lt;chr&gt; &quot;세계일보&quot;, &quot;국민일보&quot;, &quot;KBS&quot;, &quot;중앙일보&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;경향신문&quot;, &quot;KBS&quot;~
+## $ URL     &lt;chr&gt; &quot;http://www.segye.com/content/html/2021/10/31/20211031508024.h~
+## $ ym      &lt;int&gt; 202110, 202110, 202110, 202110, 202110, 202110, 202110, 202110~
+## $ title   &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요”&quot;, &quot;새에덴교회, 칼빈대 교직원에 독감 예방접종 봉~
+## $ catSoc  &lt;chr&gt; &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;비사회면&quot;, &quot;사회면&quot;~
+## $ topic1  &lt;dbl&gt; 0.001779359, 0.031250000, 0.007692308, 0.005000000, 0.01875000~
+## $ topic2  &lt;dbl&gt; 0.001779359, 0.010416667, 0.023076923, 0.015000000, 0.00625000~
+## $ topic3  &lt;dbl&gt; 0.001779359, 0.010416667, 0.007692308, 0.005000000, 0.00625000~
+## $ topic4  &lt;dbl&gt; 0.019572954, 0.010416667, 0.100000000, 0.035000000, 0.21875000~
+## $ topic5  &lt;dbl&gt; 0.051601423, 0.010416667, 0.053846154, 0.335000000, 0.20625000~
+## $ topic6  &lt;dbl&gt; 0.001779359, 0.072916667, 0.007692308, 0.325000000, 0.03125000~
+## $ topic7  &lt;dbl&gt; 0.012455516, 0.052083333, 0.084615385, 0.035000000, 0.00625000~
+## $ topic8  &lt;dbl&gt; 0.005338078, 0.052083333, 0.576923077, 0.015000000, 0.35625000~
+## $ topic9  &lt;dbl&gt; 0.001779359, 0.010416667, 0.007692308, 0.005000000, 0.00625000~
+## $ topic10 &lt;dbl&gt; 0.763345196, 0.010416667, 0.023076923, 0.005000000, 0.01875000~
+## $ topic11 &lt;dbl&gt; 0.001779359, 0.114583333, 0.007692308, 0.005000000, 0.03125000~
+## $ topic12 &lt;dbl&gt; 0.001779359, 0.010416667, 0.023076923, 0.045000000, 0.05625000~
+## $ topic13 &lt;dbl&gt; 0.001779359, 0.302083333, 0.007692308, 0.015000000, 0.00625000~
+## $ topic14 &lt;dbl&gt; 0.005338078, 0.010416667, 0.038461538, 0.005000000, 0.00625000~
+## $ topic15 &lt;dbl&gt; 0.016014235, 0.135416667, 0.023076923, 0.005000000, 0.01875000~
+## $ topic16 &lt;dbl&gt; 0.112099644, 0.156250000, 0.007692308, 0.145000000, 0.00625000~</code></pre>
+<p>text3의 기사가 topic8(집단감염)에 포함될만 한지 다른 기사(text1)와 비교</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="application.html#cb50-1" aria-hidden="true" tabindex="-1"></a>theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb50-2"><a href="application.html#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(textID <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> textID <span class="sc">==</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href="application.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(text)</span></code></pre></div>
+<pre><code>## [1] &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요” 게티이미지뱅크 연말이면 많은 병원이 건강검진을 받으려는 사람들도 북새통을 이룬다. 예약이 꽉 차 한 달 이상 대기하는 사례도 많다. 특히 1일부터는 ‘위드 코로나’가 시행되면서 신종 코로나바이러스 감염증(코로나19)으로 병원 방문과 건강검진을 미루던 사람들이 더 많이 몰릴 것으로 보인다. 그러나 건강검진은 “받았다”는 사실만으로 만족하고 끝내면 ..&quot;
+## [2] &quot;전북, ‘단계적 일상회복’ 앞두고 집단감염 지속 [KBS 전주] [앵커] 전북에서 코로나19 확진자가 34명 늘었습니다. 곳곳에서 집단감염이 이어지고 있는 가운데, 내일(1)부터 단계적 일상회복이 시작됩니다. 오정현 기자입니다. [리포트] 전라북도 감염 재생산지수는 일주일째 &#39;유행 확산&#39; 기준인 1을 웃돌고 있습니다. 크고 작은 집단감염이 곳곳에서 끊이지 않은 탓입니다. 군..&quot;</code></pre>
+<p>개별 문서가 설정한 토픽에 해당할 확률의 총합은 1이다. 따라서 각 문서행 별로 토픽에 해당하는 확률을 모두 더하면 1이 된다. (참고: <code>purrr</code>패키지의 <code>pmap()</code>함수는 행을 순차적으로 계산.)</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="application.html#cb52-1" aria-hidden="true" tabindex="-1"></a>theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb52-2"><a href="application.html#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(topic1<span class="sc">:</span>topic16) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-3"><a href="application.html#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmap</span>(sum) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 1
+## 
+## [[3]]
+## [1] 1</code></pre>
+<p>토픽별로 할당된 확률을 더하면 각 토픽이 말뭉치에서 등장하는 정도를 파악할 수 있다.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="application.html#cb54-1" aria-hidden="true" tabindex="-1"></a>theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb54-2"><a href="application.html#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(topic1<span class="sc">:</span>topic16) <span class="sc">%&gt;%</span> </span>
+<span id="cb54-3"><a href="application.html#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_dfc</span>(sum) <span class="sc">%&gt;%</span> <span class="fu">t</span>() <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb54-4"><a href="application.html#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(V1 <span class="sc">%&gt;%</span> desc)</span></code></pre></div>
+<pre><code>##                V1
+## topic12 1479.2586
+## topic14 1466.0685
+## topic5  1240.4583
+## topic8  1122.3959
+## topic6  1077.0033
+## topic3  1003.6251
+## topic4   924.2123
+## topic2   910.6859
+## topic16  758.0115
+## topic9   711.8461
+## topic15  685.1158
+## topic13  665.7916
+## topic7   643.5296
+## topic11  641.7275
+## topic10  636.3617
+## topic1   541.9084</code></pre>
+<p>말뭉치에서 자주 등장하는 토픽이 topic 12(연휴감염), 2(세계 추가접종), 13(백신수급) 등이다.</p>
+<p>topic12(연휴감염세계 추가접종)에 속할 확률이 높은 기사를 추리면 다음과 같다.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="application.html#cb56-1" aria-hidden="true" tabindex="-1"></a>theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb56-2"><a href="application.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(topic12 <span class="sc">%&gt;%</span> desc) <span class="sc">%&gt;%</span> </span>
+<span id="cb56-3"><a href="application.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(title) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;토요일 기준 5주만에 1400명대 &#39;주말 효과&#39; 영향&quot;   
+## [2] &quot;확진자 1500명 육박 사흘 연속 요일 최대 확진자&quot;   
+## [3] &quot;신규 확진 602명 나흘만에 다시 600명선 넘어&quot;      
+## [4] &quot;코로나19 신규 확진자 429명 ‘이틀 연속 400명대’&quot;
+## [5] &quot;신규 확진 1892명 수도권 74.6%, 일평균 역대 최다&quot;</code></pre>
+<p>.</p>
+</div>
+<div id="반지도-lda" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> 반지도 LDA</h2>
+<p>반지도학습 방식의 토픽모델링은 미리 구성한 주제어를 이용해 토픽을 군집하는 분석방법이다. 먼저 투입할 주제어사전을 구성한다.</p>
+<div id="씨앗주제어-사전-구성" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> 씨앗주제어 사전 구성</h3>
+<p>비지도LDA로 구성한 토픽의 주제어를 이용해 씨앗주제어사전을 구성한다.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="application.html#cb58-1" aria-hidden="true" tabindex="-1"></a>c_lda <span class="sc">%&gt;%</span> <span class="fu">terms</span>(<span class="at">n =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="ot">-&gt;</span> c_ldaterm5_df </span>
+<span id="cb58-2"><a href="application.html#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="application.html#cb58-3" aria-hidden="true" tabindex="-1"></a>c_lda <span class="sc">%&gt;%</span> <span class="fu">terms</span>(<span class="at">n =</span> <span class="dv">40</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb58-4"><a href="application.html#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb58-5"><a href="application.html#cb58-5" aria-hidden="true" tabindex="-1"></a>  writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(<span class="st">&quot;ldaterms.xlsx&quot;</span>)</span></code></pre></div>
+<p>16개 토픽중 코로나19와 관련이 없는 토픽은 그대로 두고, 코로나19 관련 토픽의 단어만 재구성.</p>
+<ul>
+<li><p>topic1: 청해부대 감염</p></li>
+<li><p>topic2: 세계 추가접종</p></li>
+<li><p>topic3: 이상반응 청원</p></li>
+<li><p>topic4: 일상회복</p></li>
+<li><p>topic5: 돌파감염</p></li>
+<li><p>topic6: 기타:진료활동</p></li>
+<li><p>topic7: 집단면역</p></li>
+<li><p>topic8: 집단감염</p></li>
+<li><p>topic9: 치료제 승인</p></li>
+<li><p>topic10: 기타: 건강</p></li>
+<li><p>topic11: 기타: 노동</p></li>
+<li><p>topic12: 연휴 감염</p></li>
+<li><p>topic13: 백신수급</p></li>
+<li><p>topic14: 백신접종</p></li>
+<li><p>topic15: 치료</p></li>
+<li><p>topic16: 이상반응</p></li>
+</ul>
+<p>재구성하는 토픽은 위험(코로나19 감염, 허위정보), 유령위험(이상반응), 대응(백신접종, 병상, 검사) 관련어 5개로 구성</p>
+<p>사전은 <code>quanteda</code>패키지의 <code>dictionary()</code>함수로 구성한다.
+<a href="https://quanteda.io/reference/dictionary.html" class="uri">https://quanteda.io/reference/dictionary.html</a></p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="application.html#cb59-1" aria-hidden="true" tabindex="-1"></a>c_ldaterm5_df <span class="sc">%&gt;%</span> </span>
+<span id="cb59-2"><a href="application.html#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(topic6, topic9, topic10, topic11) <span class="sc">%&gt;%</span> </span>
+<span id="cb59-3"><a href="application.html#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.list</span>() <span class="ot">-&gt;</span> ldaterm_noncovid_l</span>
+<span id="cb59-4"><a href="application.html#cb59-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-5"><a href="application.html#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb59-6"><a href="application.html#cb59-6" aria-hidden="true" tabindex="-1"></a>  risk1감염 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;감염&quot;</span>, <span class="st">&quot;위중증&quot;</span>, <span class="st">&quot;중증&quot;</span>, <span class="st">&quot;사망&quot;</span>, <span class="st">&quot;중환자&quot;</span>),</span>
+<span id="cb59-7"><a href="application.html#cb59-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#risk2허위 = c(&quot;허위정보&quot;, &quot;가짜뉴스&quot;, &quot;음모&quot;,&quot;음모론&quot;, &quot;조작정보&quot;),</span></span>
+<span id="cb59-8"><a href="application.html#cb59-8" aria-hidden="true" tabindex="-1"></a>  risk3이상 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;이상반응&quot;</span>, <span class="st">&quot;부작용&quot;</span>, <span class="st">&quot;혈전&quot;</span>, <span class="st">&quot;혈전증&quot;</span>, <span class="st">&quot;심근염&quot;</span>),</span>
+<span id="cb59-9"><a href="application.html#cb59-9" aria-hidden="true" tabindex="-1"></a>  resp1검사 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;진단&quot;</span>, <span class="st">&quot;검사&quot;</span>, <span class="st">&quot;진단검사&quot;</span>, <span class="st">&quot;선별&quot;</span>, <span class="st">&quot;진단&quot;</span>),</span>
+<span id="cb59-10"><a href="application.html#cb59-10" aria-hidden="true" tabindex="-1"></a>  resp2백신 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;백신&quot;</span>, <span class="st">&quot;접종&quot;</span>, <span class="st">&quot;추가접종&quot;</span>, <span class="st">&quot;부스터&quot;</span>, <span class="st">&quot;부스터샷&quot;</span>),</span>
+<span id="cb59-11"><a href="application.html#cb59-11" aria-hidden="true" tabindex="-1"></a>  resp3병상 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;병상&quot;</span>, <span class="st">&quot;의료기관&quot;</span>, <span class="st">&quot;병원&quot;</span>, <span class="st">&quot;보건소&quot;</span>, <span class="st">&quot;병실&quot;</span>)</span>
+<span id="cb59-12"><a href="application.html#cb59-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="ot">-&gt;</span> ldaterm_covid_l</span>
+<span id="cb59-13"><a href="application.html#cb59-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-14"><a href="application.html#cb59-14" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(ldaterm_noncovid_l, ldaterm_covid_l) <span class="ot">-&gt;</span> ldaterm_l</span>
+<span id="cb59-15"><a href="application.html#cb59-15" aria-hidden="true" tabindex="-1"></a><span class="fu">dictionary</span>(ldaterm_l) <span class="ot">-&gt;</span> dict_topic</span></code></pre></div>
+<p>.</p>
+</div>
+<div id="seededlda" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> seededlda</h3>
+<p>씨앗주제어사전을 투입해 반지도학습 LDA 수행.
+분석결과는 <code>terms()</code>함수로 각 토픽 별로 10개씩 출력.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="application.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">37</span>)</span>
+<span id="cb60-2"><a href="application.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>() <span class="ot">-&gt;</span> t1</span>
+<span id="cb60-3"><a href="application.html#cb60-3" aria-hidden="true" tabindex="-1"></a>c_dfm <span class="sc">%&gt;%</span> </span>
+<span id="cb60-4"><a href="application.html#cb60-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">textmodel_seededlda</span>(<span class="at">dictionary =</span> dict_topic) <span class="ot">-&gt;</span> c_slda</span>
+<span id="cb60-5"><a href="application.html#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>() <span class="ot">-&gt;</span> t2</span>
+<span id="cb60-6"><a href="application.html#cb60-6" aria-hidden="true" tabindex="-1"></a>t2 <span class="sc">-</span> t1</span></code></pre></div>
+<pre><code>## Time difference of 5.37585 mins</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="application.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">terms</span>(c_slda, <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##       topic6     topic9   topic10 topic11  risk1감염  risk3이상  resp1검사 
+##  [1,] &quot;이스라엘&quot; &quot;임상&quot;   &quot;질환&quot;  &quot;인력&quot;   &quot;위중증&quot;   &quot;이상반응&quot; &quot;선별&quot;    
+##  [2,] &quot;세계&quot;     &quot;항체&quot;   &quot;원인&quot;  &quot;간호사&quot; &quot;중환자&quot;   &quot;혈전증&quot;   &quot;진단검사&quot;
+##  [3,] &quot;의무&quot;     &quot;시험&quot;   &quot;수술&quot;  &quot;학교&quot;   &quot;추석&quot;     &quot;심근염&quot;   &quot;외국인&quot;  
+##  [4,] &quot;cdc&quot;      &quot;치료제&quot; &quot;운동&quot;  &quot;학생&quot;   &quot;연휴&quot;     &quot;혈전&quot;     &quot;집단감염&quot;
+##  [5,] &quot;인도&quot;     &quot;교차&quot;   &quot;음식&quot;  &quot;노조&quot;   &quot;천&quot;       &quot;씨&quot;       &quot;부산&quot;    
+##  [6,] &quot;승인&quot;     &quot;독감&quot;   &quot;의사&quot;  &quot;공공&quot;   &quot;비수도권&quot; &quot;건&quot;       &quot;직원&quot;    
+##  [7,] &quot;fda&quot;      &quot;허가&quot;   &quot;치매&quot;  &quot;감염병&quot; &quot;연속&quot;     &quot;a&quot;        &quot;격리&quot;    
+##  [8,] &quot;현지시간&quot; &quot;형성&quot;   &quot;아이&quot;  &quot;진료&quot;   &quot;방대본&quot;   &quot;신고&quot;     &quot;청해부대&quot;
+##  [9,] &quot;의무화&quot;   &quot;의학&quot;   &quot;여성&quot;  &quot;파업&quot;   &quot;최다&quot;     &quot;인정&quot;     &quot;접촉&quot;    
+## [10,] &quot;성인&quot;     &quot;비교&quot;   &quot;마음&quot;  &quot;현장&quot;   &quot;주말&quot;     &quot;남성&quot;     &quot;양성&quot;    
+##       resp2백신  resp3병상 
+##  [1,] &quot;부스터&quot;   &quot;병상&quot;    
+##  [2,] &quot;부스터샷&quot; &quot;보건소&quot;  
+##  [3,] &quot;추가접종&quot; &quot;의료기관&quot;
+##  [4,] &quot;회분&quot;     &quot;병실&quot;    
+##  [5,] &quot;잔여&quot;     &quot;위드&quot;    
+##  [6,] &quot;간격&quot;     &quot;체계&quot;    
+##  [7,] &quot;연령&quot;     &quot;전환&quot;    
+##  [8,] &quot;청소년&quot;   &quot;격리&quot;    
+##  [9,] &quot;수급&quot;     &quot;허용&quot;    
+## [10,] &quot;사전예약&quot; &quot;식당&quot;</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="application.html#cb64-1" aria-hidden="true" tabindex="-1"></a>c_slda<span class="sc">$</span>theta <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="ot">-&gt;</span> cslda_theta_df</span>
+<span id="cb64-2"><a href="application.html#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-3"><a href="application.html#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co"># c_corp %&gt;% docvars() -&gt; docvars_df </span></span>
+<span id="cb64-4"><a href="application.html#cb64-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-5"><a href="application.html#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_cols</span>(docvars_df, cslda_theta_df) <span class="sc">%&gt;%</span> </span>
+<span id="cb64-6"><a href="application.html#cb64-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">textID =</span> <span class="fu">row_number</span>(), <span class="at">.before =</span> ID) <span class="ot">-&gt;</span> slda_theta_df</span>
+<span id="cb64-7"><a href="application.html#cb64-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-8"><a href="application.html#cb64-8" aria-hidden="true" tabindex="-1"></a>slda_theta_df <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 14,508
+## Columns: 21
+## $ textID    &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1~
+## $ ID        &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ~
+## $ cat       &lt;chr&gt; &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;지역&quot;, &quot;지역&quot;, &quot;사회&quot;, &quot;IT_과학&quot;, &quot;사회&quot;, &quot;사회~
+## $ Nword     &lt;int&gt; 462, 79, 114, 163, 135, 132, 172, 282, 180, 181, 263, 147, 1~
+## $ 일자      &lt;chr&gt; &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;2~
+## $ text      &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요” 게티이미지뱅크 연말이면 많은 병원이 건강검진을 ~
+## $ 키워드    &lt;chr&gt; &quot;방콕,몸무게,심혈관질환,게티,이미지,뱅크,연말,병원,건강검진,사람들,북새통,예약,대기,사례,1일,위드,코로나,시~
+## $ 언론사    &lt;chr&gt; &quot;세계일보&quot;, &quot;국민일보&quot;, &quot;KBS&quot;, &quot;중앙일보&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;경향신문&quot;, &quot;KB~
+## $ URL       &lt;chr&gt; &quot;http://www.segye.com/content/html/2021/10/31/20211031508024~
+## $ ym        &lt;int&gt; 202110, 202110, 202110, 202110, 202110, 202110, 202110, 2021~
+## $ title     &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요”&quot;, &quot;새에덴교회, 칼빈대 교직원에 독감 예방접종~
+## $ catSoc    &lt;chr&gt; &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;비사회면&quot;, &quot;사회~
+## $ topic6    &lt;dbl&gt; 0.009009009, 0.011235955, 0.008130081, 0.398963731, 0.006535~
+## $ topic9    &lt;dbl&gt; 0.091891892, 0.235955056, 0.008130081, 0.025906736, 0.045751~
+## $ topic10   &lt;dbl&gt; 0.870270270, 0.213483146, 0.024390244, 0.056994819, 0.071895~
+## $ topic11   &lt;dbl&gt; 0.005405405, 0.303370787, 0.040650407, 0.005181347, 0.006535~
+## $ risk1감염 &lt;dbl&gt; 0.005405405, 0.011235955, 0.073170732, 0.067357513, 0.21568627~
+## $ risk3이상 &lt;dbl&gt; 0.001801802, 0.123595506, 0.008130081, 0.005181347, 0.01960784~
+## $ resp1검사 &lt;dbl&gt; 0.001801802, 0.033707865, 0.528455285, 0.025906736, 0.13725490~
+## $ resp2백신 &lt;dbl&gt; 0.005405405, 0.011235955, 0.073170732, 0.005181347, 0.01960784~
+## $ resp3병상 &lt;dbl&gt; 0.009009009, 0.056179775, 0.235772358, 0.409326425, 0.47712418~</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="application.html#cb66-1" aria-hidden="true" tabindex="-1"></a>slda_theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb66-2"><a href="application.html#cb66-2" aria-hidden="true" tabindex="-1"></a>  writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(<span class="st">&quot;slda_theta_df.xlsx&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="검정" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> 검정</h2>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="application.html#cb67-1" aria-hidden="true" tabindex="-1"></a>slda_theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb67-2"><a href="application.html#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(topic6<span class="sc">:</span>resp3병상) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-3"><a href="application.html#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_dfc</span>(sum) <span class="sc">%&gt;%</span> <span class="fu">t</span>() <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb67-4"><a href="application.html#cb67-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(V1 <span class="sc">%&gt;%</span> desc) </span></code></pre></div>
+<pre><code>##                 V1
+## risk1감염 2214.483
+## resp2백신 2130.821
+## topic6    1714.828
+## resp3병상 1708.261
+## resp1검사 1622.662
+## risk3이상 1414.029
+## topic11   1273.375
+## topic10   1257.624
+## topic9    1171.917</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="application.html#cb69-1" aria-hidden="true" tabindex="-1"></a>slda_theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb69-2"><a href="application.html#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(risk1감염 <span class="sc">%&gt;%</span> desc) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-3"><a href="application.html#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(title, Nword) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-4"><a href="application.html#cb69-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##                                                                                        title
+## 1                                   오후 6시까지 신규 확진 1263명...4차 대유행 파고 올라갔다
+## 2  ‘수도권 중심 4차유행 본격화’ 3명 중 1명 변이 감염 당국 “지난주 델타가 알파의 배 이상”
+## 3                                    월요일인데 1500명 육박 ‘또 최다’ “곧 2000명대” 우려
+## 4                                              확진자 1500명 육박 사흘 연속 요일 최대 확진자
+## 5                                      1500명대, 또 일요일 최다 전국 확산에 속속 ‘4단계’로
+## 6                                            &quot;코로나 단시간 통제 쉽지 않아 긴장 늦추면 폭증&quot;
+## 7                                  잇단 연휴에도 확진자 20% 떨어져...정부 &quot;백신 효과 나타나&quot;
+## 8                        코로나19 수도권 비중 다시 70% 돌파 . 추석 이후 비수도권 재확산 우려
+## 9                                              다시 2000명 안팎 수도권 이미 재확산 국면 진입
+## 10                                                   신규 확진 2천87명 금요일 집계 기준 최다
+##    Nword
+## 1    170
+## 2    225
+## 3    247
+## 4    135
+## 5    253
+## 6    183
+## 7    148
+## 8    199
+## 9    285
+## 10   152</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="application.html#cb71-1" aria-hidden="true" tabindex="-1"></a>slda_theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb71-2"><a href="application.html#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(risk1감염 <span class="sc">%&gt;%</span> desc) <span class="sc">%&gt;%</span> </span>
+<span id="cb71-3"><a href="application.html#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(title, Nword) <span class="sc">%&gt;%</span> </span>
+<span id="cb71-4"><a href="application.html#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tail</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##                                                                                    title
+## 14499                                      [코로나리포트] 코로나19, 마음 방역도 필요하다
+## 14500                       백신 맞고 월경 이상? 여성들의 불안은 과민반응이 아니다[플랫]
+## 14501                 회춘 비결은 ‘피’ 노화는 치료가능한 질병일까[서영아의 100세 카페]
+## 14502 [농업이 IT(잇)다] 경노겸 한국축산데이터 “축산 디지털 전환과 원 헬스 부문 리더로”
+## 14503            정창현 한국한의약진흥원장 “국민과 함께하는 한의약의 가치 만들겠습니다&quot;
+## 14504                 [모빌리티 인사이트] 택시처럼 의료 서비스도 호출한다, 의료 모빌리티
+## 14505                                외국인 환자들, 푸드테라피에 관심 매년 10% 이상 증가
+## 14506             [가만한 당신] 정신질환 진단의 과학적-윤리적 해이를 고발한 임상심리학자
+## 14507                                &quot;코로나 경험 잊고 단순한 &#39;정상&#39; 복귀는 심각한 실수&quot;
+## 14508                               [청해부대 인터뷰 논란] ②&quot;문무대왕함은 지옥이었나?”
+##       Nword
+## 14499   956
+## 14500   787
+## 14501   766
+## 14502   727
+## 14503   729
+## 14504   795
+## 14505   885
+## 14506  1009
+## 14507   921
+## 14508  1061</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="application.html#cb73-1" aria-hidden="true" tabindex="-1"></a>slda_theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb73-2"><a href="application.html#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(risk1감염 <span class="sc">%&gt;%</span> desc) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> .<span class="sc">$</span>textID <span class="ot">-&gt;</span> id_v</span>
+<span id="cb73-3"><a href="application.html#cb73-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-4"><a href="application.html#cb73-4" aria-hidden="true" tabindex="-1"></a>slda_theta_df <span class="sc">%&gt;%</span> </span>
+<span id="cb73-5"><a href="application.html#cb73-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(textID <span class="sc">%in%</span> id_v) <span class="sc">%&gt;%</span> </span>
+<span id="cb73-6"><a href="application.html#cb73-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(text)</span></code></pre></div>
+<pre><code>## [1] &quot;확진자 1500명 육박 사흘 연속 요일 최대 확진자 코로나19 4차 대유행의 확산세로 하루 확진자 총합이 사흘 연속 ‘요일별’ 최대치를 기록하고 있다. 10일 중앙방역대책본부(방대본)에 따르면 전날 0시 기준 국내 신규 확진자는 1492명이다. 직전일 1729명보다는 237명 줄어든 수치이지만, 주간 단위로 같은 요일을 비교하면 증가세는 더욱 가파른 추세다. 일요일(발표일 월요일) 기준 1492명은 ..&quot;                                                        
+## [2] &quot;월요일인데 1500명 육박 ‘또 최다’ “곧 2000명대” 우려 국내 코로나19 4차 대유행이 무서운 기세로 확산하면서 일일 신규 확진자가 5주째 1000명을 훌쩍 웃도는 네 자릿수를 이어가고 있다. 특히 통상 주 중반으로 접어드는 수요일부터는 확진자가 전일 대비 500여명씩 급증하는 패턴이 반복되고 있는 만큼 자칫 이번 주에 2000명 선을 넘을 수 있다는 우려도 나온다. 10일 중앙방역대책본부(방대본)..&quot;                                                 
+## [3] &quot;1500명대, 또 일요일 최다 전국 확산에 속속 ‘4단계’로 국내 코로나19 확산세가 진정될 기미를 보이지 않으면서 하루 신규 확진자는 벌써 한 달 넘게 1000명을 훌쩍 웃도는 네 자릿수를 이어가고 있다. 특히 수도권에 이어 비수도권의 확산세가 점점 더 거세진 영향으로 검사 건수가 대폭 줄어든 토요일에도 1700명대 확진자가 쏟아져 당국이 촉각을 세우고 있다. 토요일은 물론이고 일요일 기준 확진자도 이미 ..&quot;                                        
+## [4] &quot;오후 6시까지 신규 확진 1263명...4차 대유행 파고 올라갔다 신종 코로나바이러스 감염증(코로나19) 4차 대유행의 파고가 상승했다. 14일 오후 6시 기준 집계한 코로나19 신규 확진자는 1200명을 훌쩍 넘었다. 자정까지 더하면 1500~1600명대까지 환자가 나올 것으로 예상된다. 코로나19 사태 속 역대 최고 확진자 발생은 1615명(14일 0시 기준)였다. 1000명 선을 넘더니 1200명, 다시 1500..&quot;                                                              
+## [5] &quot;‘수도권 중심 4차유행 본격화’ 3명 중 1명 변이 감염 당국 “지난주 델타가 알파의 배 이상” 코로나19 &#39;4차 대유행&#39;으로 수도권 사회적 거리두기 4단계 실시를 하루 앞둔 11일 오후 제주국제공항 3층 출발장에 관광을 마친 여행객들의 발걸음이 이어지고 있다. 제주=뉴시스 국내 신종 코로나바이러스 감염증(코로나19) ‘4차 대유행’이 본격화하는 가운데 수도권에서 전파력이 더 센 인도 유래 ‘델타형’ 변이 바이러스의 영향력이 계속해서 커지고 있..&quot;</code></pre>
+<p><code>topics()</code>함수는 각 문서의 할당확률이 높은 주제 산출.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="application.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">topics</span>(c_slda) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>## [1] topic10   topic11   resp1검사 resp3병상 resp3병상 resp1검사
+## 9 Levels: topic6 topic9 topic10 topic11 risk1감염 risk3이상 ... resp3병상</code></pre>
+<p>각 주제 별로 할당 가능성이 높은 기사의 수.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="application.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">topics</span>(c_slda) <span class="ot">-&gt;</span> slda_theta_df<span class="sc">$</span>topic2</span>
+<span id="cb77-2"><a href="application.html#cb77-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-3"><a href="application.html#cb77-3" aria-hidden="true" tabindex="-1"></a>slda_theta_df<span class="sc">$</span>topic2 <span class="sc">%&gt;%</span> <span class="fu">table</span>() <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb77-4"><a href="application.html#cb77-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Freq <span class="sc">%&gt;%</span> desc) <span class="ot">-&gt;</span> topic_freq_df</span>
+<span id="cb77-5"><a href="application.html#cb77-5" aria-hidden="true" tabindex="-1"></a>topic_freq_df</span></code></pre></div>
+<pre><code>##           . Freq
+## 1 risk1감염 2323
+## 2 resp2백신 2277
+## 3    topic6 1971
+## 4 resp3병상 1663
+## 5 resp1검사 1644
+## 6 risk3이상 1401
+## 7   topic10 1128
+## 8   topic11 1107
+## 9    topic9  994</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="method.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="맺음말.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-application.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

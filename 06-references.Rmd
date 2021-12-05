@@ -1,3 +1,29 @@
 `r if (knitr:::is_html_output()) '
 # References {-}
 '`
+
+김영욱 진민정 강신규 (2014) 저널리즘의 품질: 평가 기준과 모델. <한국언론진흥재단 연구서 2014-05>.
+
+네이버검색 (2021.7.21). 네이버 뉴스 추천 알고리즘에 대해 (Part 2). https://blog.naver.com/naver_search/222439351406.
+
+오세욱 송해엽 (2020) 뉴스기사 신뢰도 측정방안: 뉴스트러스트 사례를 중심으로, <언론진흥재단 연구서 2020-03>.
+
+안도현 (2021a). 유령위험과 무시된 위해: 위험의 개념화와 유형화. <언론정보연구>, 58(2), 5-65.
+
+안도현 (2021b) 위험-기회 모형과 성공적인 방역소통의 조건. <팬데믹 시대 감염병 대응을 위한 사회적 소통과 공공PR> (정의철 편 pp. 200-234) 지금.
+
+
+Bro, P. (2008). Normative navigation in the news media. _Journalism, 9_(3), 309-329.
+
+Frank, P., & Ottoboni, M. A. (2011). The dose makes the poison: A plain-language guide to toxicology(3rd Ed.). Wiley.
+
+ISO (2018). Risk management – guidelines. ISO 31000:2018(en). https://www.iso.org/obp/ui/#iso:std:iso:31000:ed-2:v1:en
+
+Lough, K., & McIntyre, K. (2019). Visualizing the Solution: An analysis of the images that accompany solutions-oriented news stories. _Journalism, 20_(4), 583-599.
+
+Shoemaker, P. J. (1996). Hardwired for news: Using biological and cultural evolution to explain the surveillance function. _Journal of communication, 46_(3), 32-47.
+
+Shoemaker, P. J., Danielian, L. H., & Brendlinger, N. (1991). Deviant acts, risky business and US interests: The newsworthiness of world events. _Journalism Quarterly, 68_(4), 781-795.
+
+
+

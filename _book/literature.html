@@ -4,27 +4,25 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Literature | 해결지향 감염병 보도 품질측정</title>
-  <meta name="description" content="해결지향 감염병보도 품질측정 이론과 방법" />
+  <title>Chapter 2 이론: 해결지향과 보도품질 | bookdown-demo.utf8</title>
+  <meta name="description" content="해결지향과 기계학습을 적용한 감염병보도 품질측정 이론과 방법 모색" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Literature | 해결지향 감염병 보도 품질측정" />
+  <meta property="og:title" content="Chapter 2 이론: 해결지향과 보도품질 | bookdown-demo.utf8" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="해결지향 감염병보도 품질측정 이론과 방법" />
+  <meta property="og:description" content="해결지향과 기계학습을 적용한 감염병보도 품질측정 이론과 방법 모색" />
   <meta name="github-repo" content="dataminds/solution" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Literature | 해결지향 감염병 보도 품질측정" />
+  <meta name="twitter:title" content="Chapter 2 이론: 해결지향과 보도품질 | bookdown-demo.utf8" />
   
-  <meta name="twitter:description" content="해결지향 감염병보도 품질측정 이론과 방법" />
+  <meta name="twitter:description" content="해결지향과 기계학습을 적용한 감염병보도 품질측정 이론과 방법 모색" />
   
 
-<meta name="author" content="안도현" />
 
 
-<meta name="date" content="2021-11-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +30,7 @@
   
   
 <link rel="prev" href="intro.html"/>
-<link rel="next" href="methods.html"/>
+<link rel="next" href="method.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,72 +49,12 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -134,36 +72,103 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">해결지향 감염병보도 품질측정</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>감염병보도 품질측정</a>
 <ul>
-<li class="chapter" data-level="2.0.1" data-path="intro.html"><a href="intro.html#기계보조-내용분석"><i class="fa fa-check"></i><b>2.0.1</b> 기계보조 내용분석</a></li>
-<li class="chapter" data-level="2.0.2" data-path="intro.html"><a href="intro.html#지도학습-비지도학습-반지도학습"><i class="fa fa-check"></i><b>2.0.2</b> 지도학습, 비지도학습, 반지도학습</a></li>
-<li class="chapter" data-level="2.0.3" data-path="intro.html"><a href="intro.html#절차"><i class="fa fa-check"></i><b>2.0.3</b> 절차</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#해결지향과-기계학습의-적용"><i class="fa fa-check"></i>해결지향과 기계학습의 적용</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a>
+<li class="chapter" data-level="" data-path="구성.html"><a href="구성.html"><i class="fa fa-check"></i>구성</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="literature.html"><a href="literature.html#자료준비"><i class="fa fa-check"></i><b>3.1</b> 자료준비</a>
+<li class="chapter" data-level="0.1" data-path="구성.html"><a href="구성.html#쟁점과-과제"><i class="fa fa-check"></i><b>0.1</b> 쟁점과 과제</a></li>
+<li class="chapter" data-level="0.2" data-path="구성.html"><a href="구성.html#이론-해결지향과-보도품질"><i class="fa fa-check"></i><b>0.2</b> 이론: 해결지향과 보도품질</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="literature.html"><a href="literature.html#기사-자료-확보"><i class="fa fa-check"></i><b>3.1.1</b> 기사 자료 확보</a></li>
+<li class="chapter" data-level="0.2.1" data-path="구성.html"><a href="구성.html#해결지향과-보도품질-개념"><i class="fa fa-check"></i><b>0.2.1</b> 해결지향과 보도품질 개념</a></li>
 </ul></li>
+<li class="chapter" data-level="0.3" data-path="구성.html"><a href="구성.html#품질측정1-이론기반-토픽모델링"><i class="fa fa-check"></i><b>0.3</b> 품질측정1: 이론기반 토픽모델링</a>
+<ul>
+<li class="chapter" data-level="0.3.1" data-path="구성.html"><a href="구성.html#반지도학습"><i class="fa fa-check"></i><b>0.3.1</b> 반지도학습</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a>
+<li class="chapter" data-level="0.4" data-path="구성.html"><a href="구성.html#품질측정2-자연어생성"><i class="fa fa-check"></i><b>0.4</b> 품질측정2: 자연어생성</a>
 <ul>
-<li class="chapter" data-level="4.0.1" data-path="methods.html"><a href="methods.html#dfm-구성"><i class="fa fa-check"></i><b>4.0.1</b> DFM 구성</a></li>
-<li class="chapter" data-level="4.0.2" data-path="methods.html"><a href="methods.html#비지도-lda"><i class="fa fa-check"></i><b>4.0.2</b> 비지도 LDA</a></li>
-<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#반지도lda"><i class="fa fa-check"></i><b>4.1</b> 반지도LDA</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="methods.html"><a href="methods.html#씨앗주제어-사전-구성"><i class="fa fa-check"></i><b>4.1.1</b> 씨앗주제어 사전 구성</a></li>
-<li class="chapter" data-level="4.1.2" data-path="methods.html"><a href="methods.html#seededlda"><i class="fa fa-check"></i><b>4.1.2</b> seededlda</a></li>
+<li class="chapter" data-level="0.4.1" data-path="구성.html"><a href="구성.html#자연어-생성"><i class="fa fa-check"></i><b>0.4.1</b> 자연어 생성</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> 쟁점과 과제</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#해결중심-감염병보도의-쟁점과-과제"><i class="fa fa-check"></i>해결중심 감염병보도의 쟁점과 과제</a></li>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#기존-논의"><i class="fa fa-check"></i><b>1.1</b> 기존 논의</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#해결지향보도의-범위"><i class="fa fa-check"></i><b>1.1.1</b> 해결지향보도의 범위</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#솔루션저널리즘네트워크의-접근"><i class="fa fa-check"></i><b>1.1.2</b> 솔루션저널리즘네트워크의 접근</a></li>
+<li class="chapter" data-level="1.1.3" data-path="intro.html"><a href="intro.html#기존-연구의-개념화-종합"><i class="fa fa-check"></i><b>1.1.3</b> 기존 연구의 개념화 종합</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#쟁점"><i class="fa fa-check"></i><b>1.2</b> 쟁점</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#정의-1"><i class="fa fa-check"></i><b>1.2.1</b> 정의</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#측정방법판단기준"><i class="fa fa-check"></i><b>1.2.2</b> 측정방법/판단기준</a></li>
+<li class="chapter" data-level="1.2.3" data-path="intro.html"><a href="intro.html#용어-관련"><i class="fa fa-check"></i><b>1.2.3</b> 용어 관련</a></li>
+<li class="chapter" data-level="1.2.4" data-path="intro.html"><a href="intro.html#범위"><i class="fa fa-check"></i><b>1.2.4</b> 범위</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#과제"><i class="fa fa-check"></i><b>1.3</b> 과제</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#전문성"><i class="fa fa-check"></i><b>1.3.1</b> 전문성</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#상업적-경쟁력"><i class="fa fa-check"></i><b>1.3.2</b> 상업적 경쟁력</a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#부정성의-영향"><i class="fa fa-check"></i><b>1.3.3</b> 부정성의 영향</a></li>
+<li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#언론비평의-문제"><i class="fa fa-check"></i><b>1.3.4</b> 언론비평의 문제</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>2</b> 이론: 해결지향과 보도품질</a>
+<ul>
+<li class="chapter" data-level="" data-path="literature.html"><a href="literature.html#위험-기회-모형을-이용한-해결지향-감염병보도-품질측정-제안"><i class="fa fa-check"></i>위험-기회 모형을 이용한 해결지향 감염병보도 품질측정 제안</a></li>
+<li class="chapter" data-level="2.1" data-path="literature.html"><a href="literature.html#보도품질"><i class="fa fa-check"></i><b>2.1</b> 보도품질</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="literature.html"><a href="literature.html#정의-2"><i class="fa fa-check"></i><b>2.1.1</b> 정의</a></li>
+<li class="chapter" data-level="2.1.2" data-path="literature.html"><a href="literature.html#뉴스의-가치"><i class="fa fa-check"></i><b>2.1.2</b> 뉴스의 가치</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="literature.html"><a href="literature.html#위험-기회모형"><i class="fa fa-check"></i><b>2.2</b> 위험-기회모형</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="literature.html"><a href="literature.html#위험의-4유형"><i class="fa fa-check"></i><b>2.2.1</b> 위험의 4유형</a></li>
+<li class="chapter" data-level="2.2.2" data-path="literature.html"><a href="literature.html#위험과-기회"><i class="fa fa-check"></i><b>2.2.2</b> 위험과 기회</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="literature.html"><a href="literature.html#해결지향-감염병보도"><i class="fa fa-check"></i><b>2.3</b> 해결지향 감염병보도</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="literature.html"><a href="literature.html#해결지향-보도의-정의"><i class="fa fa-check"></i><b>2.3.1</b> 해결지향 보도의 정의</a></li>
+<li class="chapter" data-level="2.3.2" data-path="literature.html"><a href="literature.html#감염병보도의-가치"><i class="fa fa-check"></i><b>2.3.2</b> 감염병보도의 가치</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="literature.html"><a href="literature.html#품질측정"><i class="fa fa-check"></i><b>2.4</b> 품질측정</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="literature.html"><a href="literature.html#보도해야-하는-내용"><i class="fa fa-check"></i><b>2.4.1</b> 보도해야 하는 내용</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="method.html"><a href="method.html"><i class="fa fa-check"></i><b>3</b> 방법론</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="method.html"><a href="method.html#품질-측정의-자동화"><i class="fa fa-check"></i><b>3.0.1</b> 품질 측정의 자동화</a></li>
+<li class="chapter" data-level="3.1" data-path="method.html"><a href="method.html#품질측정1-이론기반-토픽모델링-1"><i class="fa fa-check"></i><b>3.1</b> 품질측정1: 이론기반 토픽모델링</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="method.html"><a href="method.html#기계보조-내용분석"><i class="fa fa-check"></i><b>3.1.1</b> 기계보조 내용분석</a></li>
+<li class="chapter" data-level="3.1.2" data-path="method.html"><a href="method.html#기계보조-내용분석-1"><i class="fa fa-check"></i><b>3.1.2</b> 기계보조 내용분석</a></li>
+<li class="chapter" data-level="3.1.3" data-path="method.html"><a href="method.html#지도학습-비지도학습-반지도학습"><i class="fa fa-check"></i><b>3.1.3</b> 지도학습, 비지도학습, 반지도학습</a></li>
+<li class="chapter" data-level="3.1.4" data-path="method.html"><a href="method.html#절차"><i class="fa fa-check"></i><b>3.1.4</b> 절차</a></li>
+<li class="chapter" data-level="3.1.5" data-path="method.html"><a href="method.html#자료준비"><i class="fa fa-check"></i><b>3.1.5</b> 자료준비</a></li>
+<li class="chapter" data-level="3.1.6" data-path="method.html"><a href="method.html#기사-자료-확보"><i class="fa fa-check"></i><b>3.1.6</b> 기사 자료 확보</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="method.html"><a href="method.html#품질측정2-자연어-생성"><i class="fa fa-check"></i><b>3.2</b> 품질측정2: 자연어 생성</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="application.html"><a href="application.html"><i class="fa fa-check"></i><b>4</b> 분석사례</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="application.html"><a href="application.html#전처리"><i class="fa fa-check"></i><b>4.1</b> 전처리</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="application.html"><a href="application.html#말뭉치"><i class="fa fa-check"></i><b>4.1.1</b> 말뭉치</a></li>
+<li class="chapter" data-level="4.1.2" data-path="application.html"><a href="application.html#dfm-구성"><i class="fa fa-check"></i><b>4.1.2</b> DFM 구성</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="application.html"><a href="application.html#비지도-lda"><i class="fa fa-check"></i><b>4.2</b> 비지도 LDA</a></li>
+<li class="chapter" data-level="4.3" data-path="application.html"><a href="application.html#반지도-lda"><i class="fa fa-check"></i><b>4.3</b> 반지도 LDA</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="application.html"><a href="application.html#씨앗주제어-사전-구성"><i class="fa fa-check"></i><b>4.3.1</b> 씨앗주제어 사전 구성</a></li>
+<li class="chapter" data-level="4.3.2" data-path="application.html"><a href="application.html#seededlda"><i class="fa fa-check"></i><b>4.3.2</b> seededlda</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="application.html"><a href="application.html#검정"><i class="fa fa-check"></i><b>4.4</b> 검정</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="맺음말.html"><a href="맺음말.html"><i class="fa fa-check"></i><b>5</b> 맺음말</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -177,7 +182,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">해결지향 감염병 보도 품질측정</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
           </h1>
         </div>
 
@@ -185,257 +190,326 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="literature" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Literature</h1>
-<div id="자료준비" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> 자료준비</h2>
-<p>국내 주요 언론에서 코로나19 상황에 대한 위험과 기회를 어느 정도로 실재적인 측면을 반영하는지 가늠하기 위해, 코로나19 상황의 위험과 기회를 반영하는 주제어를 구성하고, 이 주제어를 통해 반지도학습 토픽모델링을 수행한다.</p>
-<p>데이터는 <code>tidyverse</code>와 <code>quanteda</code>를 이용해 마련하고, LDA토픽모델링은 <code>seededlda</code>를 이용한다.</p>
-<p><code>quanteda</code>패키지는 <code>dfm</code>에 메타정보를 추가하는데 사용한다. <code>quanteda</code>에서는 한글형태소 분석기를 사용할 수 없기 때문에, <code>tidyverse</code>와 <code>tidytext</code>로 먼저 형태소분석한 데이터프레임을 만들어 <code>quanteda</code>에 투입한다.</p>
-<p>.</p>
-<div id="패키지-로딩" class="section level4" number="3.1.0.1">
-<h4><span class="header-section-number">3.1.0.1</span> 패키지 로딩</h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="literature.html#cb1-1" aria-hidden="true" tabindex="-1"></a>pkg_v <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb1-2"><a href="literature.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;tidytext&quot;</span>, <span class="st">&quot;lubridate&quot;</span>, <span class="st">&quot;quanteda&quot;</span>, <span class="st">&quot;readtext&quot;</span>, <span class="st">&quot;seededlda&quot;</span>)</span>
-<span id="cb1-3"><a href="literature.html#cb1-3" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map</span>(pkg_v, require, <span class="at">ch =</span> T)</span></code></pre></div>
-<pre><code>## [[1]]
-## [1] TRUE
-## 
-## [[2]]
-## [1] TRUE
-## 
-## [[3]]
-## [1] TRUE
-## 
-## [[4]]
-## [1] TRUE
-## 
-## [[5]]
-## [1] TRUE
-## 
-## [[6]]
-## [1] TRUE</code></pre>
-<p>.</p>
+<div id="literature" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> 이론: 해결지향과 보도품질</h1>
+<div id="위험-기회-모형을-이용한-해결지향-감염병보도-품질측정-제안" class="section level3 unnumbered">
+<h3>위험-기회 모형을 이용한 해결지향 감염병보도 품질측정 제안</h3>
+<div id="안도현" class="section level5 unnumbered">
+<h5>안도현</h5>
 </div>
-<div id="기사-자료-확보" class="section level3" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> 기사 자료 확보</h3>
-<p>말뭉치는 빅카인즈를 통해 확보한다. 코로나19 관련 기사를 추출하기 위해 다음의 방법을통해 기사를 검색해 다운로드 받는다. 빅카인즈는 저작권 문제로 기사는 200자만 제공하지만, 기사 전문에 대해 키워드를 제공한다. 이 키워드는 형태소 분석을 통한 추출한 명사에 해당한다.</p>
-<ol style="list-style-type: decimal">
-<li><p>키워드
-((코로나19) OR (코로나) OR (코로나 바이러스) OR (신종 코로나바이러스) OR (COVID-19) OR (코비드19))</p></li>
-<li><p>세부 설정</p></li>
-</ol>
-<ul>
-<li><p>언론사:
-경향 국민 동아 문화 서울 세계 조선 중앙 한겨레 한국 KBS MBC SBS</p></li>
-<li><p>분류
-사회: 의료건강
-인사, 부고, 동정 등 제외</p></li>
-<li><p>기간: 2021년 5월 1일부터 10월 31일
-2021-05-01 ~ 2021-10-31
-16,288건
-(분석편의를 위해 2만건을 넘기지 않도록 했다. 빅카인즈는 한번에 2만건 까지만 다운로드를 받을 수 있도록 했다. 2만건이 넘어가면 일반 개인 컴퓨터로는 분석시간이 오래 걸리는 문제도 있다.)</p></li>
-</ul>
-<p>.</p>
-<p>다운로드 받은 파일을 작업디렉토리의 <code>data</code>폴더에 복사한다. 제대로 복사돼 있는지 확인.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="literature.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">&#39;data&#39;</span>, <span class="at">pattern =</span> <span class="st">&#39;^News.*</span><span class="sc">\\</span><span class="st">.xlsx$&#39;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;NewsResult_20191101-20200430.xlsx&quot; &quot;NewsResult_20200501-20201031.xlsx&quot;
-## [3] &quot;NewsResult_20201101-20210430.xlsx&quot; &quot;NewsResult_20210501-20211031.xlsx&quot;</code></pre>
-<p>.</p>
-<p>5월 ~ 10월에 해당하는 파일 선택.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="literature.html#cb5-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="st">&quot;data/NewsResult_20210501-20211031.xlsx&quot;</span></span>
-<span id="cb5-2"><a href="literature.html#cb5-2" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_excel</span>(file_path) <span class="sc">%&gt;%</span></span>
-<span id="cb5-3"><a href="literature.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
-<pre><code>## Rows: 16,288
-## Columns: 19
-## $ `뉴스 식별자`                  &lt;chr&gt; &quot;01100701.20211031230241001&quot;, &quot;01100201.2021~
-## $ 일자                           &lt;chr&gt; &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;2021~
-## $ 언론사                         &lt;chr&gt; &quot;세계일보&quot;, &quot;국민일보&quot;, &quot;KBS&quot;, &quot;중앙일보&quot;, &quot;KBS&quot;, &quot;KBS~
-## $ 기고자                         &lt;chr&gt; &quot;정진수&quot;, &quot;박용미&quot;, &quot;오정현&quot;, &quot;오병상(oh.byungsang@joo~
-## $ 제목                           &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요”&quot;, &quot;새에덴교~
-## $ `통합 분류1`                   &lt;chr&gt; &quot;사회&gt;의료_건강&quot;, &quot;사회&gt;의료_건강&quot;, &quot;사회&gt;의료_건강&quot;, &quot;사회&gt;의료_~
-## $ `통합 분류2`                   &lt;chr&gt; &quot;사회&gt;여성&quot;, &quot;지역&gt;경기&quot;, &quot;사회&gt;여성&quot;, NA, &quot;지역&gt;충남&quot;, &quot;사회~
-## $ `통합 분류3`                   &lt;chr&gt; &quot;사회&gt;교육_시험&quot;, &quot;지역&gt;충남&quot;, NA, NA, &quot;사회&gt;의료_건강&quot;, &quot;지~
-## $ `사건/사고 분류1`              &lt;chr&gt; NA, NA, NA, NA, NA, NA, &quot;범죄&gt;기업범죄&gt;거래제한&quot;, NA, N~
-## $ `사건/사고 분류2`              &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
-## $ `사건/사고 분류3`              &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
-## $ 인물                           &lt;chr&gt; &quot;김정환,이상지&quot;, &quot;이,이재훈,김용선,소강석,김근수&quot;, &quot;강영석&quot;, NA~
-## $ 위치                           &lt;chr&gt; &quot;의정부을지대학교병원,방콕&quot;, &quot;용인,경기도&quot;, &quot;한문현,전북,군산,전북지~
-## $ 기관                           &lt;chr&gt; &quot;대한비만학회,BRCA,게티이미지뱅크,서울아산병원,BRCA1,선우성,선종&quot;~
-## $ 키워드                         &lt;chr&gt; &quot;방콕,몸무게,심혈관질환,게티,이미지,뱅크,연말,병원,건강검진,사람들,북새통~
-## $ `특성추출(가중치순 상위 50개)` &lt;chr&gt; &quot;대장암,유방암,고혈압,건강검진,간염,방사선,코로나19,유전자,난소암,ct,40세,코로나,~
-## $ 본문                           &lt;chr&gt; &quot;게티이미지뱅크 연말이면 많은 병원이 건강검진을 받으려는 사람들도 북새통을~
-## $ URL                            &lt;chr&gt; &quot;http://www.segye.com/content/html/2021~
-## $ `분석제외 여부`                &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~</code></pre>
-<p>.</p>
-<p>분석에 필요한 열만 선택한다.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="literature.html#cb7-1" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_excel</span>(file_path) <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="literature.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(일자, 제목, 본문, 키워드, 언론사, <span class="at">cat =</span> <span class="st">`</span><span class="at">통합 분류1</span><span class="st">`</span>,  URL) <span class="ot">-&gt;</span> vac_df</span>
-<span id="cb7-3"><a href="literature.html#cb7-3" aria-hidden="true" tabindex="-1"></a>vac_df <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 7
-##   일자   제목         본문           키워드          언론사 cat    URL          
-##   &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;        
-## 1 20211~ 길어진 방콕에 확 늘~ &quot;게티이미지뱅크 연말이면~ 방콕,몸무게,심혈관질환,게~ 세계일보~ 사회&gt;의료~ http://www.s~
-## 2 20211~ 새에덴교회, 칼빈대 ~ &quot;경기도 용인 새에덴교회~ 새에덴교회,칼빈대,교직원,~ 국민일보~ 사회&gt;의료~ http://news.~
-## 3 20211~ 전북, ‘단계적 일상~ &quot;[KBS 전주]\n [~ 전북,단계,일상회복,집단,~ KBS    사회&gt;의료~ https://news~</code></pre>
-<p>.</p>
-<p>정제. 불용어 부호 중복기사 공백 등 제거</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="literature.html#cb9-1" aria-hidden="true" tabindex="-1"></a>fullchar_v <span class="ot">&lt;-</span> <span class="st">&quot;ㆍ|ㅣ|‘|’|“|”|○|●|◎|◇|◆|□|■|△|▲|▽|▼|〓|◁|◀|▷|▶|♤|♠|♡|♥|♧|♣|⊙|◈|▣&quot;</span></span>
-<span id="cb9-2"><a href="literature.html#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="literature.html#cb9-3" aria-hidden="true" tabindex="-1"></a>vac_df <span class="sc">%&gt;%</span></span>
-<span id="cb9-4"><a href="literature.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 인터뷰 기고 등 제거</span></span>
-<span id="cb9-5"><a href="literature.html#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(제목, <span class="st">&quot;(</span></span>
-<span id="cb9-6"><a href="literature.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[인터뷰|</span><span class="sc">\\</span><span class="st">인터뷰</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-7"><a href="literature.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[전문|전문</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-8"><a href="literature.html#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[기고|기고</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-9"><a href="literature.html#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[Q|A</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-10"><a href="literature.html#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[논담|논담</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-11"><a href="literature.html#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[좌담회|좌담회</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-12"><a href="literature.html#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="st">    답</span><span class="sc">\\</span><span class="st">&gt;|</span></span>
-<span id="cb9-13"><a href="literature.html#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="st">    답</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-14"><a href="literature.html#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">&lt;파워|</span></span>
-<span id="cb9-15"><a href="literature.html#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[사람|사람</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-16"><a href="literature.html#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[탐방|탐방</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-17"><a href="literature.html#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[속보|속보</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-18"><a href="literature.html#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[팩트|</span></span>
-<span id="cb9-19"><a href="literature.html#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[브리핑|브리핑</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-20"><a href="literature.html#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="sc">\\</span><span class="st">[시평|시평</span><span class="sc">\\</span><span class="st">]|</span></span>
-<span id="cb9-21"><a href="literature.html#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="st">    )&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-22"><a href="literature.html#cb9-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 중복기사 제거</span></span>
-<span id="cb9-23"><a href="literature.html#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(제목, <span class="at">.keep_all =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb9-24"><a href="literature.html#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 기사 공백제거</span></span>
-<span id="cb9-25"><a href="literature.html#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(제목 <span class="ot">=</span> <span class="fu">str_squish</span>(제목)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-26"><a href="literature.html#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 기사 공백제거</span></span>
-<span id="cb9-27"><a href="literature.html#cb9-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(본문 <span class="ot">=</span> <span class="fu">str_squish</span>(본문)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-28"><a href="literature.html#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 특수문자 제거</span></span>
-<span id="cb9-29"><a href="literature.html#cb9-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(키워드 <span class="ot">=</span> <span class="fu">str_remove_all</span>(키워드, <span class="st">&quot;[^(</span><span class="sc">\\</span><span class="st">w+|</span><span class="sc">\\</span><span class="st">d+|,)]&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-30"><a href="literature.html#cb9-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(키워드 <span class="ot">=</span> <span class="fu">str_remove_all</span>(키워드, fullchar_v)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-31"><a href="literature.html#cb9-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 기사별 ID부여</span></span>
-<span id="cb9-32"><a href="literature.html#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="fu">factor</span>(<span class="fu">row_number</span>())) <span class="sc">%&gt;%</span></span>
-<span id="cb9-33"><a href="literature.html#cb9-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 월별로 구분한 열 추가(lubridate 패키지) %&gt;% </span></span>
-<span id="cb9-34"><a href="literature.html#cb9-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ym =</span> <span class="fu">str_sub</span>(일자, <span class="dv">1</span>, <span class="dv">6</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-35"><a href="literature.html#cb9-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ym =</span> <span class="fu">as.integer</span>(ym)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-36"><a href="literature.html#cb9-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">title =</span> 제목) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-37"><a href="literature.html#cb9-37" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 기사 제목과 본문 결합</span></span>
-<span id="cb9-38"><a href="literature.html#cb9-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(제목, 본문, <span class="at">col =</span> <span class="st">&quot;text&quot;</span>, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-39"><a href="literature.html#cb9-39" aria-hidden="true" tabindex="-1"></a>  <span class="co">#키워드 갯수 계산</span></span>
-<span id="cb9-40"><a href="literature.html#cb9-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Nword =</span> <span class="fu">str_count</span>(키워드, <span class="at">pattern =</span> <span class="st">&#39;,&#39;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-41"><a href="literature.html#cb9-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(Nword, <span class="at">after =</span> 일자) <span class="sc">%&gt;%</span></span>
-<span id="cb9-42"><a href="literature.html#cb9-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 기사 분류 구분</span></span>
-<span id="cb9-43"><a href="literature.html#cb9-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(cat, <span class="at">sep =</span> <span class="st">&quot;&gt;&quot;</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;cat2&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-44"><a href="literature.html#cb9-44" aria-hidden="true" tabindex="-1"></a>  <span class="co"># IT_과학, 경제, 사회 만 선택</span></span>
-<span id="cb9-45"><a href="literature.html#cb9-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>cat2) <span class="sc">%&gt;%</span></span>
-<span id="cb9-46"><a href="literature.html#cb9-46" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 분류 구분: 사회, 비사회</span></span>
-<span id="cb9-47"><a href="literature.html#cb9-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(cat, <span class="at">after =</span> Nword) <span class="sc">%&gt;%</span></span>
-<span id="cb9-48"><a href="literature.html#cb9-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">catSoc =</span> <span class="fu">case_when</span>(</span>
-<span id="cb9-49"><a href="literature.html#cb9-49" aria-hidden="true" tabindex="-1"></a>    cat <span class="sc">==</span> <span class="st">&quot;사회&quot;</span> <span class="sc">~</span> <span class="st">&quot;사회면&quot;</span>,</span>
-<span id="cb9-50"><a href="literature.html#cb9-50" aria-hidden="true" tabindex="-1"></a>    cat <span class="sc">==</span> <span class="st">&quot;지역&quot;</span> <span class="sc">~</span> <span class="st">&quot;사회면&quot;</span>,</span>
-<span id="cb9-51"><a href="literature.html#cb9-51" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;비사회면&quot;</span>) ) <span class="ot">-&gt;</span> vac2_df</span>
-<span id="cb9-52"><a href="literature.html#cb9-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-53"><a href="literature.html#cb9-53" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
-<pre><code>## Rows: 15,553
-## Columns: 11
-## $ cat    &lt;chr&gt; &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;지역&quot;, &quot;지역&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;IT_과학&quot;, &quot;사회&quot;, ~
-## $ Nword  &lt;int&gt; 462, 79, 114, 163, 135, 132, 172, 53, 282, 180, 181, 263, 147, ~
-## $ 일자   &lt;chr&gt; &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;2021~
-## $ text   &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요” 게티이미지뱅크 연말이면 많은 병원이 건강검진을 받으려~
-## $ 키워드 &lt;chr&gt; &quot;방콕,몸무게,심혈관질환,게티,이미지,뱅크,연말,병원,건강검진,사람들,북새통,예약,대기,사례,1일,위드,코로나,시행,감~
-## $ 언론사 &lt;chr&gt; &quot;세계일보&quot;, &quot;국민일보&quot;, &quot;KBS&quot;, &quot;중앙일보&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;경향신문&quot;,~
-## $ URL    &lt;chr&gt; &quot;http://www.segye.com/content/html/2021/10/31/20211031508024.ht~
-## $ ID     &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ~
-## $ ym     &lt;int&gt; 202110, 202110, 202110, 202110, 202110, 202110, 202110, 202110,~
-## $ title  &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요”&quot;, &quot;새에덴교회, 칼빈대 교직원에 독감 예방접종 봉사~
-## $ catSoc &lt;chr&gt; &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;비사회면&quot;,~</code></pre>
-<p>.</p>
-<p>정제 데이터 확인</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="literature.html#cb11-1" aria-hidden="true" tabindex="-1"></a>vac2_df<span class="sc">$</span>ym <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span></code></pre></div>
-<pre><code>## [1] 202110 202109 202108 202107 202106 202105</code></pre>
-<p>.</p>
-<p>사회 분류의 의료_건강만 선택했지만, 다른 영역의 기사도 포함된다.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="literature.html#cb13-1" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span> <span class="fu">count</span>(cat, <span class="at">sort =</span> T)</span></code></pre></div>
-<pre><code>## # A tibble: 8 x 2
-##   cat         n
-##   &lt;chr&gt;   &lt;int&gt;
-## 1 사회    11914
-## 2 지역     1468
-## 3 국제     1097
-## 4 IT_과학   434
-## 5 문화      234
-## 6 정치      219
-## 7 경제      177
-## 8 스포츠     10</code></pre>
-<p>.</p>
-<p>기사 길이 확인</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="literature.html#cb15-1" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span> .<span class="sc">$</span>Nword <span class="sc">%&gt;%</span> <span class="fu">summary</span>()</span></code></pre></div>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##     7.0   123.0   158.0   179.5   219.0  1527.0</code></pre>
-<p>.</p>
-<p>기사의 길이가 일정 수준까지는 기사의 품질과 정비례의 관계가 있다는 전제하에 단어수가 70개 이상한 기사만 선택.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="literature.html#cb17-1" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span></span>
-<span id="cb17-2"><a href="literature.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Nword <span class="sc">&gt;=</span> <span class="dv">70</span>) <span class="ot">-&gt;</span> vac2_df</span>
-<span id="cb17-3"><a href="literature.html#cb17-3" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span> .<span class="sc">$</span>Nword <span class="sc">%&gt;%</span> <span class="fu">summary</span>()</span></code></pre></div>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    70.0   130.0   164.0   189.1   225.0  1527.0</code></pre>
-<p>.</p>
-<p>tidytext 방식으로 토큰화.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="literature.html#cb19-1" aria-hidden="true" tabindex="-1"></a>vac2_df <span class="sc">%&gt;%</span></span>
-<span id="cb19-2"><a href="literature.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, 키워드, <span class="at">token =</span> <span class="st">&quot;regex&quot;</span>, <span class="at">pattern =</span> <span class="st">&quot;,&quot;</span>) <span class="ot">-&gt;</span> vac_tk</span>
-<span id="cb19-3"><a href="literature.html#cb19-3" aria-hidden="true" tabindex="-1"></a>vac_tk <span class="sc">%&gt;%</span> </span>
-<span id="cb19-4"><a href="literature.html#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ym, title, word) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-5"><a href="literature.html#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 5 x 3
-##       ym title                                                       word    
-##    &lt;int&gt; &lt;chr&gt;                                                       &lt;chr&gt;   
-## 1 202108 “백신예약 대란 없었다” LG CNS, 병목 현상 90% 이상 개선 완료 백신예약
-## 2 202108 “백신예약 대란 없었다” LG CNS, 병목 현상 90% 이상 개선 완료 lg      
-## 3 202108 “백신예약 대란 없었다” LG CNS, 병목 현상 90% 이상 개선 완료 cns     
-## 4 202108 “백신예약 대란 없었다” LG CNS, 병목 현상 90% 이상 개선 완료 90      
-## 5 202108 “백신예약 대란 없었다” LG CNS, 병목 현상 90% 이상 개선 완료 개선</code></pre>
-<p>.</p>
-<p>토큰 빈도 계산</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="literature.html#cb21-1" aria-hidden="true" tabindex="-1"></a>vac_tk <span class="sc">%&gt;%</span> </span>
-<span id="cb21-2"><a href="literature.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> T) <span class="ot">-&gt;</span> count_df </span>
-<span id="cb21-3"><a href="literature.html#cb21-3" aria-hidden="true" tabindex="-1"></a>count_df <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 10 x 2
-##    word          n
-##    &lt;chr&gt;     &lt;int&gt;
-##  1 접종     113809
-##  2 백신      96320
-##  3 코로나19  42458
-##  4 확진자    28675
-##  5 감염      21406
-##  6 환자      17946
-##  7 정부      16702
-##  8 예약      14485
-##  9 방역      13600
-## 10 발생      13562</code></pre>
-<p>.</p>
-<p>tidytext방식(한 행에 하나의 값 배치)의 토큰을 각 기사의 행에 재배치 <code>text2</code>열에 할당한다. 다른 변수가 포함된 데이터프레임과 결합. <code>quanteda</code>로 <code>dfm</code>을 만들기 위해 필요한 작업. <code>dfm</code>에 개별 기사에 대한 변수가 포함돼 있어야 추가적인 분석이 가능하다.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="literature.html#cb23-1" aria-hidden="true" tabindex="-1"></a>combined_df <span class="ot">&lt;-</span></span>
-<span id="cb23-2"><a href="literature.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  vac_tk <span class="sc">%&gt;%</span></span>
-<span id="cb23-3"><a href="literature.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ID) <span class="sc">%&gt;%</span></span>
-<span id="cb23-4"><a href="literature.html#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">text2 =</span> <span class="fu">str_flatten</span>(word, <span class="st">&quot; &quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb23-5"><a href="literature.html#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb23-6"><a href="literature.html#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(vac2_df, <span class="at">by =</span> <span class="st">&quot;ID&quot;</span>)</span></code></pre></div>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="literature.html#cb25-1" aria-hidden="true" tabindex="-1"></a>combined_df <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
-<pre><code>## Rows: 14,508
-## Columns: 12
-## $ ID     &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,~
-## $ text2  &lt;chr&gt; &quot;방콕 몸무게 심혈관질환 게티 이미지 뱅크 연말 병원 건강검진 사람들 북새통 예약 대기 사례 1일 위드 코로나 시~
-## $ cat    &lt;chr&gt; &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;사회&quot;, &quot;지역&quot;, &quot;지역&quot;, &quot;사회&quot;, &quot;IT_과학&quot;, &quot;사회&quot;, &quot;사회&quot;, ~
-## $ Nword  &lt;int&gt; 462, 79, 114, 163, 135, 132, 172, 282, 180, 181, 263, 147, 162,~
-## $ 일자   &lt;chr&gt; &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;20211031&quot;, &quot;2021~
-## $ text   &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요” 게티이미지뱅크 연말이면 많은 병원이 건강검진을 받으려~
-## $ 키워드 &lt;chr&gt; &quot;방콕,몸무게,심혈관질환,게티,이미지,뱅크,연말,병원,건강검진,사람들,북새통,예약,대기,사례,1일,위드,코로나,시행,감~
-## $ 언론사 &lt;chr&gt; &quot;세계일보&quot;, &quot;국민일보&quot;, &quot;KBS&quot;, &quot;중앙일보&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;KBS&quot;, &quot;경향신문&quot;, &quot;KBS&quot;,~
-## $ URL    &lt;chr&gt; &quot;http://www.segye.com/content/html/2021/10/31/20211031508024.ht~
-## $ ym     &lt;int&gt; 202110, 202110, 202110, 202110, 202110, 202110, 202110, 202110,~
-## $ title  &lt;chr&gt; &quot;길어진 방콕에 확 늘어난 몸무게 “심혈관질환 이상 없나요”&quot;, &quot;새에덴교회, 칼빈대 교직원에 독감 예방접종 봉사~
-## $ catSoc &lt;chr&gt; &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;사회면&quot;, &quot;비사회면&quot;, &quot;사회면&quot;,~</code></pre>
-<p>.
+<div id="문제-제기" class="section level4 unnumbered">
+<h4>문제 제기</h4>
+<p>언론보도, 언론비평, 언론연구 등 거의 모든 분야에서 관심의 초점은 잘못된 것이다. 문제에 대한 지적이 주류다. 문제의 지적도 필요하지만, 지적만으로는 문제해결이 불가능하다. 문제해결의 틀안에서 보도, 비평, 연구가 이뤄질 필요가 있다. 이를 위해 먼저 보도품질에 대해 정의하고, 감염병보도의 맥락에서의 보도품질 판단에 대한 이론적 틀로서 위험-기회 모형을 제사시한 다음, 해결지향 감염병보도의 품질측정에 대해 논의한다.</p>
+</div>
+</div>
+<div id="보도품질" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> 보도품질</h2>
+<div id="정의-2" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> 정의</h3>
+<p>보도품질에 대한 정의는 품질에 대한 일반적인 정의를 이용할 수 있다.
+<a href="https://stats.oecd.org/glossary/detail.asp?ID=5150">ISO의 품질(Quality)에 대한 정의</a>는 다음과 같다.</p>
+<blockquote>
+<p>제품 혹은 서비스의 명시적 또는 암묵적 요구를 충족하는 능력에 대한 특성의 총체(The totality of features and characteristics of a product or service that bear on its ability to satisfy stated or implied needs.)</p>
+</blockquote>
+<p>ISO의 품질정의를 보도품질에 대해 적용하면 다음과 같이 정의할 수 있다.</p>
+<blockquote>
+<p>보도의 명시적 또는 암묵적 요구를 충족하는 능력에 대한 특성의 총체</p>
+</blockquote>
+<p>언론보도에 대한 명시적 암묵적 요구로는 정확성, 독창성, 심층성, 공정성 등 다양한 품질요소가 제시돼 있다 (오세욱 송해엽, 2020). 저널리즘을 사람들에게 자신이 살고 있는 세계를 이해하고, 삶에서 부딪히는 문제를 해결하는 데 필요한 정보를 제공하는 활동의 하나로서 일반 공공의 관심과 중요성을 담은 최신의 사안들에 대한 정보를 생산하고 유포하는 사업 혹은 활동이라고 정의한다면(김영욱 진민정 강신욱, 2014), 언론 보도에 대한 요구 사항의 핵심 요소는 공공의 관심과 중요성에 있다고 할 수 있다.</p>
+</div>
+<div id="뉴스의-가치" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> 뉴스의 가치</h3>
+<p>언론 보도에 대한 공중의 요구를 파악하기 위해서는 언론보도가 공공에 제공하는 가치를 통해 판단할 수 있다. 인간행동에 대한 진화적 접근에 따르면, 인간행동은 크게 원격인(ultimate cause)과 근접인(proximate cause)에 의해 결정된다. 근접인은 직접적으로 영향을 미치는 상황과 태도와 같은 변인들이며, 원격인은 간접적으로 영향을 미치는 유전, 문화, 양육 등과 같은 변인들로서 근접인에 대한 작용을 통해 인간행동에 영향을 미친다.</p>
+<p>원격인에 작용하는 핵심요소는 개체의 생존과 종의 생존(즉, 번식)이다. 오랜 세월 생존과 번식의 문제를 반복적으로 해결하는 과정에서 원격인이 구성된다. 진화적 접근은 생존과 번식의 문제를 해결하는 기능적 요소를 통해 인간 행동을 설명하므로 기능적 접근이라고도 할 수 있다.
+진화의 틀에서 기능적 접근을 통해 뉴스의 가치를 분석한 뉴스 가치 모형(Newsworthiness model)에 따르면 시의성, 근접성, 흥미성, 신기성 등 전형적으로 제시되는 뉴스가치의 기준들은 대부분 일탈성(deviance)과 사회적 중요성(social significance) 등 2개 차원으로 환원된다 (Shoemaker et al., 1991; Shoemaker &amp; Cohen, 2006).</p>
+<p>사회적 중요성은 삶에 삶에 영향을 주는 정도를 의미하며 정치적, 경제적, 문화적, 및 공공 중요성이 있다. 사회적 중요성은 생존과 번식에 큰 영향을 주기 때문에 관심의 대상이 될수 밖에 없다.</p>
+<p>일탈성은 평균이나 규범에서 어긋나거나 사회질서를 위협하는 정도를 의미하며, 규범적(normative) 일탈성(규범이나 법에 어긋나는 정도), 사회변화(social change) 일탈성(기존 사회질서에 변화를 유발하는 정도), 그리고 통계적(statistical) 일탈성 (평균으로부터 매우 달라 새롭거나 기이하거나 신기한 정도)이 있다. 일탈성은 생존과 번식에 치명적 영향을 미칠 가능성이 있기 때문에 관심의 대상이다.</p>
+</div>
+</div>
+<div id="위험-기회모형" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> 위험-기회모형</h2>
+<p>뉴스의 가치는 맥락의존적이다. 어떤 사건의 일탈성과 사회적 중요성을 판단하기 위해서는 상황과 맥락에 대한 고려가 필요하다. 위험-기회 모형은 감염병 맥락에서 일탈성과 사회적 중요성을 판단하는데 필요한 이론적 틀을 제공한다. 위험-기회 모형은 실재와 인식의 불일치 현상을 토대로 위험소통의 실패와 성공을 설명하기 위해 제시됐다 (안도현, 2021a, 2021b).</p>
+<p>우리가 알고 있는 세상은 세상 그 자체가 아니라 우리의 마음 속에 비친 그림자(모형)이므로 존재에 대한 우리 마음 속의 모형은 실제적인 일치 여부와 일치에 대한 지각 여부에 따라 4종으로 구분가능하다 (Table <a href="literature.html#tab:lit2">2.1</a>).</p>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:lit2">Table 2.1: </span>실재와 인식의 4개 유형
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
 .
-.</p>
+</th>
+<th style="text-align:left;">
+존재 유
+</th>
+<th style="text-align:left;">
+존재 무
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+지각 유
+</td>
+<td style="text-align:left;">
+진양성
+</td>
+<td style="text-align:left;">
+위양성
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+지각 무
+</td>
+<td style="text-align:left;">
+위음성
+</td>
+<td style="text-align:left;">
+진음성
+</td>
+</tr>
+</tbody>
+</table>
+<div id="위험의-4유형" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> 위험의 4유형</h3>
+<p>실재와 인식의 4개 유형에서 실재를 피해가능성, 지각을 위해 지각으로 대치하면 피해가능성의 유무와 위해지각의 유무 등 2개 차원을 구성해 위험을 4개 유형으로 나눌 수 있다 (안도현, 2021a) (Table <a href="literature.html#tab:lit3">2.2</a>).</p>
+<table class=" lightable-classic table" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:lit3">Table 2.2: </span>위험 4유형
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+.
+</th>
+<th style="text-align:left;">
+피해가능성 유
+</th>
+<th style="text-align:left;">
+피해가능성 무
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 7em; font-weight: bold;">
+위해지각 유
+</td>
+<td style="text-align:left;">
+1유형: 피해가능성이 있고 위해로 지각(예: 손실용량을 초과하는 위해로서 위해 현저성이 높은 경우: 고농도 화학물질, 병원성 바이러스, 자연재해, 테러 등)
+</td>
+<td style="text-align:left;">
+2유형(유령위험): 피해가능성이 미미한데 위해로 지각. (예: 손실용량을 초과하지 않는 위해에 대해 위해로 지각: 승인GMO, 저농도 화학물질, 저선량 방사선, 검증된 백신 등)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 7em; font-weight: bold;">
+위해지각 무
+</td>
+<td style="text-align:left;">
+3유형(무시된 위해): 피해가능성이 있는데 위해가 아니라고 지각.
+(예: 손실용량을 초과하는 위해이나 위해민감도가 현저하게 낮은 경우: 흡연, 음주, 과식, 가당음료 섭취, 운전 등)
+</td>
+<td style="text-align:left;">
+4유형: 피해가능성이 미미하고 위해가 아니라고 지각(사실상 위험이 아닌 유형) (예: 손실용량을 초과하지 않고, 사회적으로 친숙한 대상: 김치, 젓갈, 삼겹살구이 등에 포함된 발암물질)
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>위험1유형</strong></li>
+</ul>
+<p>진양성인 위험이다. 피해가능성이 실재하고 이를 위해로서 지각하는 유형이다.</p>
+<ul>
+<li><strong>위험2유형(유령위험)</strong></li>
+</ul>
+<p>위양성인 위험이다. 무시해도 되는 수준의 위해를 심각한 위해로 지각하는 유형이다. 피해가능성이 없는 위해이나 위험으로 지각해 위험으로 작용한다. 피해가 없는 위험으로 지각해 생기는 위험이므로 유령위험이라고 한다.</p>
+<ul>
+<li><strong>위험3유형(무시된 위해)</strong></li>
+</ul>
+<p>위음성인 위험이다. 피해가능성이 있는데도 위해로 대응하지 않는 유형이다. 무시된 위해다.</p>
+<ul>
+<li><strong>위험4유형</strong></li>
+</ul>
+<p>진음성인 위험이다. 피해가능성이 없고 위해로 대응하지 않는 유형이다. 모형에만 개념적으로 포함돼 있지 사실상 위험이 아니다.</p>
+</div>
+<div id="위험과-기회" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> 위험과 기회</h3>
+<p>생존과 번식의 문제를 해결하기 위해서는 위험에 대한 지각 뿐 아니라 기회에 대해서도 정확한 지각이 필요하다. 위험-기회 모형은 위험 4유형을 문제해결의 틀에서 유용과 기회를 추가해, 위험에 대한 회피와 기회에 대한 접근을 통합적으로 구현했다. 위험-기회 모형은 크게 존재, 작용, 지각 및 결과 등 4단계의 작용과정으로 구성돼 있다. 존재는 유해(harm), 작용은 위해(hazard)와 유용(usefulness), 지각은 위험(risk)와 기회(opportunity), 결과는 안전(safety), 피해(damage), 혜택(benefit) 등으로 이뤄져 있다 (안도현, 2021b) (Table <a href="literature.html#tab:lit3">2.2</a>)</p>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:lit4">Table 2.3: </span>위험-기회 모형의 주요 개념
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+단계
+</th>
+<th style="text-align:left;">
+개념
+</th>
+<th style="text-align:left;">
+정의
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 5em; font-weight: bold;">
+존재
+</td>
+<td style="text-align:left;width: 9em; ">
+유해(harm)
+</td>
+<td style="text-align:left;">
+손실(loss)의 잠재적 요인
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5em; font-weight: bold;">
+작용
+</td>
+<td style="text-align:left;width: 9em; ">
+위해(hazard)
+</td>
+<td style="text-align:left;">
+손실용량 초과하는 유해가 피해(damage)로 이어지도록 하는 손실(loss) 가능성
+(노출강도 X 노출빈도 X 노출확률)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5em; font-weight: bold;">
+</td>
+<td style="text-align:left;width: 9em; ">
+유용(usefulness)
+</td>
+<td style="text-align:left;">
+손실용량을 초과하지 않는 유해가 혜택(benefit)으로 이어지도록 하는 편익(gain) 가능성
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5em; font-weight: bold;">
+지각
+</td>
+<td style="text-align:left;width: 9em; ">
+위험(risk)
+</td>
+<td style="text-align:left;">
+위해에 대한 주관적 평가
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5em; font-weight: bold;">
+</td>
+<td style="text-align:left;width: 9em; ">
+기회(opportunity)
+</td>
+<td style="text-align:left;">
+유용에 대한 주관적 평가
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5em; font-weight: bold;">
+결과
+</td>
+<td style="text-align:left;width: 9em; ">
+안전(safety)
+</td>
+<td style="text-align:left;">
+손실을 회피한 결과
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5em; font-weight: bold;">
+</td>
+<td style="text-align:left;width: 9em; ">
+피해(damage)
+</td>
+<td style="text-align:left;">
+손실이 발생한 결과
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5em; font-weight: bold;">
+</td>
+<td style="text-align:left;width: 9em; ">
+혜택(benefit)
+</td>
+<td style="text-align:left;">
+편익이 발생한 결과
+</td>
+</tr>
+</tbody>
+</table>
+<p>존재-작용-지각-결과의 과정을 그림으로 구성하면 다음과 같다 (Figure <a href="literature.html#fig:lit5">2.1</a>).</p>
+<div class="figure"><span id="fig:lit5"></span>
+<img src="images/risk_opp.JPG" alt="위험-기회 모형" width="668" />
+<p class="caption">
+Figure 2.1: 위험-기회 모형
+</p>
+</div>
+<div id="존재-유해" class="section level4 unnumbered">
+<h4>존재: 유해</h4>
+<p>유해(harm)는 손실(loss)의 원천이 되는 사물, 사건 혹은 상황이다. 손실의 잠재적 요인으로서 작용 대상과 맥락에 따라 위해 혹은 유용으로 작용할 수 있는 가능성 단계다. 위해와 유용으로 작용할 가능성이 모두 있지만, 위험-기회 모형에서는 유해로 개념화했다. 무해로 전제하는 것 보다 유해로 접근하는 것이 생존과 번식에 유리하기 때문이다.</p>
+</div>
+<div id="작용-위해와-유용" class="section level4 unnumbered">
+<h4>작용: 위해와 유용</h4>
+<p>존재 단계는 가능성이라면, 작용 단계는 존재가 실제로 작용하는 과정이다. 손실용량을 초과해 어떤 대상에 대해 피해로 이어진다면 위해가 되고, 손실용량을 초과하지 않아 혜택(benefit)으로 이어진다면 유용이 된다. 용량반응 관계(dose-response relationship)에 따르면 유해는 용량에 따라 위해로 작용하기도 하고 유용으로 작용하기도 한다. 독성학에서는 모든 것은 독으로서 오직 용량만이 독성여부를 결정한다고 본다 (Frank &amp; Ottoboni, 2011)</p>
+</div>
+<div id="지각-위험과-기회" class="section level4 unnumbered">
+<h4>지각: 위험과 기회</h4>
+<p>지각 단계는 위험과 기회에 대한 지각 4종으로 이뤄져 있다. 위해 및 유용의 작용과 손실 및 편익 가능성의 유무에 따라 위험, 무시된 위해/유령기회, 유령위험/무시된 유용, 및 기회 등이다. 위험과 기회는 실재와 인식이 일치하는 경우이며, 무시된 위해/유령기회와 유령위험/무시된 유용은 실재와 인식이 불일치하는 경우다.</p>
+<p><strong>위험과 기회</strong></p>
+<p>위험은 위해에 대한 주관적 평가이며 기회는 유용에 대한 주관적 평가로서 실재와 인식이 일치하는 지각 작용이다. 위해를 위험으로 지각하면 적절하게 대응해 안전을 달성할 수 있으며, 유용을 기회로 지각하면 혜택을 향유할 수 있게 된다.</p>
+<p>위험과 기회는 상반된 지각작용으로서 전자는 회피동기, 후자는 접근동기가 작용하지만, 위험과 기회의 구분은 명확하지 않다. 심지어 국제표준화기구(International Organization for Standardization)은 위험을 “목표에 대한 불확실성의 효과”로 정의하면서 그 효과를 부정성에만 국한지 않고 긍정성을 포함시킴으로써 위험의 정의에 기회를 포함시키고 있다 (ISO, 2018).</p>
+<p>위험과 기회의 구분이 명확하지 않은 이유는 위험감수가 없으면 기회를 포착할 수 없기 때문이다. 실제로 인류진보의 원천은 위험을 감수하는 모험에 있다. 이러한 위험과 기회의 혼재성이 위해와 유용에 대한 오지각의 원인이기도 하다.</p>
+<p>비록 위험과 기회가 실제 상황에서는 구분이 모호하고 혼재하더라도 개념적으로 구분할 필요가 있다. 위험과 기회에 작동하는 동기가 회피와 접근으로서 전혀 다른 작용의 결과로서 인간 행동 양식에 근본적인 차이가 있기 때문이다.</p>
+<p><strong>무시된 위해/유령기회</strong></p>
+<p>존재와 인식의 불일치로서 위해를 무시하거나 심지어 기회로 여기는 오지각 현상이다. 무시된 위해는 위해와 피해에 대한 인과성이 확립돼 있음에도 불구하고 위해를 무시하는 경우다. 규범, 문화, 인지 편향 당 다양한 사회적 혹은 심리적 요인 등이 작용한다. 유령기회는 위해를 무시할 뿐 아니라 기회로 오판함으로써 초래하는 위험이다.</p>
+<p><strong>유령위험/무시된 유용</strong></p>
+<p>유령위험(phantom risk)은 위해와 피해에 대한 인과성이 없거나 무시해도 될 정도로 미미함에도 불구하고 위험으로 지각하는 위험이다. 실제하지 위해를 위험으로 지각하기 때문에 유령위험이라고 한다. 유령위험의 지각 대상에 위해성이 없으나, 위해가 아닌 대상에 대해 위해로 지각해 대응하기 때문에 진양성의 위험보다 더 큰 피해를 초래할 수 있다. 무시된 유용은 유용을 과소평가하거나 유용을 위해로 오지각하는 위험이다. 유용을 향유할 기회를 상실하기 때문에 피해로 이어지게 된다.</p>
+</div>
+</div>
+</div>
+<div id="해결지향-감염병보도" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> 해결지향 감염병보도</h2>
+<div id="해결지향-보도의-정의" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> 해결지향 보도의 정의</h3>
+<p>해결지향 보도에 대해서는 해법저널리즘(solutions journalism)과 건설적 저널리즘(constructive journalism) 등의 명칭으로 언론현장과 학계의 접근이 있어 왔다. 여러 쟁점이 있지만, 해결지향 보도의 강조점에 차이가 있다. 한편으로는 사회현상을 적절하게 반영하는 기능을 강조하고, 다른 한편에서는 사회 현상에 대한 능동적 개입을 강조한다. 해결지향 보도를 관찰자로서 사회현상의 모든 측면(부정사건과 긍정사건의 실제 발생 비율에 맞춰 전달)을 전달하는 보도양식인지 혹은 능동적으로 개입해 사회변화 유도. 사회문제에 대한 가능한 해법을 비판적으로 탐색하는 보도 양식인지에 대한 구분이다 (Bro, 2008; Lough &amp; McIntyre, 2019)</p>
+<p>두 접근을 통합하면 해결지향 보도는 사회현상을 실재와 가능한 일치하도록 반영하면서, 증거와 효과에 기반해 문제해결의 틀 형성에 기여하는 보도로서 다음과 같이 정의할 수 있다.</p>
+<blockquote>
+<p>사회문제에 대한 체계적 대응을 증거와 효과에 기반해 면밀하게 전달함으로써 사회 현상의 본질을 전달해 개인과 사회가 문제해결의 목적을 달성할 수 있도록 기여하는 보도 방식</p>
+</blockquote>
+</div>
+<div id="감염병보도의-가치" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> 감염병보도의 가치</h3>
+<p>해결지향 보도의 3가지 요소(현실 반영, 문제해결 틀, 증거와 효과)를 감염병 보도에 적용하면, 감염병보도의 가치는 1) 감염병 상황을 ‘있는 그대로‘ 반영하는가? 2) 감염병 창궐의 문제 해결에 기여하는가?등 2가지로 요소로 압축할 수 있다.</p>
+<p>위험-기회 모형의 틀에서 감염병보도의 가치를 판단한다면, 감염병으로 인한 위해를 공중이 위험으로 지각하도록 하고, 감염병 대응에 필요한 유용한 자원을 기회로 지각하도록 하는지와 이를 증거와 효과에 기반해 구체적으로 전달하는지의 여부를 활용할 수 있다.</p>
+<p>해결지향 감염병보도는 다음과 같이 정의할 수 있다.</p>
+<blockquote>
+<p>감염병문제에 대한 체계적 대응을 증거와 효과에 기반해 면밀하게 전달함으로써 위해를 위험으로 지각하고 유용을 기회로 지각하도록 하는 보도</p>
+</blockquote>
+</div>
+</div>
+<div id="품질측정" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> 품질측정</h2>
+<p>해결지향 감염병보도의 가치요소를 기반으로 보도 품질에 대한 지표는 크게 정확성, 구체성 그리고 관심성 등 3개 요소로 요약할 수 있다. 정확성에는 위험지각의 정확성(위해성에 대한 정확한 반영)과 기회지각의 정확성(유용성에 대한 정확한 반영)이 있다. 구체성은 감염병 보도에 증거, 과정 및 효과 등이 포함되는 여부다. 관심성은 중요성(생존과 번식에 미치는 영향의 정도)과 일탈성(생존과 번식에 대한 잠재성 영향 가능성)이 있다.</p>
+<p>품질측정을 위해서는 정확성, 구체성, 및 관심성 3개 요소를 모두 포괄해야 하나, 이 연구에서는 우선 정확성 지표만 다루기로 한다.</p>
+<p>감염병보도에서 정확성은 위험과 기회 지각이 위해성과 유용성에 대한 정확하게 반영하는 정도다. 정확성은 개별 기사 차원과 집합기사 차원으로 구분 가능하다. 개별 기사 차원의 정확성은 개별 기사의 내용이 현실을 반영하는 정도이며, 집합 기사 차원의 정확성은 기사 양의 현실 반영 정도를 의미한다. 즉, 언론보도의 정확성은 보도하는 주제의 분포에 의해 판단할 수 있다.</p>
+<div id="보도해야-하는-내용" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> 보도해야 하는 내용</h3>
+<p>감염병이 창궐하는 상황에서 언론이 다뤄쟈 하는 주제는 크게 위해와 유용으로 구분된다. 위해의 영역에서는 위험과 무시된위해/유령위험에 대한 내용이 보도돼야 하고, 유용의 영역에서는 유령위험/무시된 유용과 기회에 대한 내용이 보도돼야 한다.</p>
+<p><strong>위해-위험</strong>
+코로나19 위해에 대한 체계적 정보 전달(감염 및 위해 대응 현황 등)</p>
+<p><strong>위해-무시된위해/유령기회</strong>
+허위정보 현황 및 그로 인한 피해</p>
+<p><strong>유용-유령위험/무시된유용</strong>
+백신미접종에 따른 중증 및 사망 현황
+백신접종에 따른 피해보다는 백신 미접종에 대한 피해 사례가 압도적으로 많기 때문에, 일탈성의 뉴스가치를 고려해도, 백신미접종으로 인한 피해에 대한 보도가 백신접종으로 인한 피해보도보다 훨씬 양이 많아야 한다.</p>
+<p><strong>유용-기회</strong>
+백신접종, 검사 및 의료자원 투입 현황 및 이로 인한 성과</p>
 
 </div>
 </div>
@@ -446,7 +520,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="method.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

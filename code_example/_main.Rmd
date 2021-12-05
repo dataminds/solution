@@ -1,0 +1,587 @@
+--- 
+title: "R로 하는 텍스트마이닝"
+author: "안도현"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "R로 하는 텍스트마이닝"
+---
+
+# Welcome {-}
+
+Placeholder
+
+
+## 머리말
+## 구성
+#### R기초
+#### 분석 전단계
+#### 분석 I
+#### 분석 II (예정)
+## 도움받은 자료
+
+<!--chapter:end:index.Rmd-->
+
+# 구성 {-}
+
+## 쟁점과 과제
+
+해결지향 감염병 보도 개념화와 조작화
+
+안도현(제주대), 정의철(상지대), 이규원(솔루션저널리즘네트워크), 이미나(숙명여대), 이정환(미디어오늘), 조동찬(SBS)
+
+## 해결지향과 보도품질 개념
+
+언론이 위기의 경고자이자 정보제공자로서의 역할을 수행하면서도 과장·선정·편파보도를 통해 과도한 공포와 불안을 조성하는 이유는 뉴스생산과정과 보도관행에서 찾을 수 있다. 
+
+관행에 따른 과도한 부정편향을 극복하기 위해서는 감염병보도준칙의 제정만으로는 충분하지 않으며, 해법중심으로의 근본적인 관점의 전환이 필요하다.
+
+사회의 부정적인 측면을 부각하는 작업은 필요하나, 부정성에만 집중할 경우, 과도한 불안과 공포를 조장해 문제를 해결하기보다는 무관심하거나 둔감하게 만들고 결과적으로 사회에 해악을 끼치게 된다.
+
+안도현(제주대)
+
+## 측정 방법론
+
+전통적으로 언론보도의 진단은 내용분석에 의존했다. 수작업에 의지하는 내용분석은 비교적 정확하게 보도내용을 진달할 수 있지만, 많은 자원을 소모해 신속한 진단이 어렵다. 
+
+기계학습을 이용한 텍스트마이닝은 내용분석만큼 정밀하지는 못해도 대량의 문서를 신속하게 진단할 수 있는 장점이 있다.
+
+텍스트마이닝은 크게 지도학습방식(예: 감정분석)과 비지도학습(예: 주제모형(topic modeling)) 등으로 구분할 수 있는데 현장에 적용하기에는 한계가 많다. 
+
+지도학습방식은 대규모의 라벨링 작업이 필요하다. 비지도학습은 재현성이 부족하고 문서 사이의 주제(topic)가 등장하는 빈도를 비교할 수 없다는 단점이 있다. 
+
+지도학습과 비지도학습을 결합한 반지도학습(semisupervised learning)이나 자연어 생성을 이용한 방법 등 효율성과 정밀성을 함께 제고할 수 있는 방법이 필요하다. 
+
+
+### 반지도학습
+
+위험-기회 모형을 이용한 해결지향 감염병보도 품질측정 제안
+안도현(제주대)
+
+### 자연어 생성
+자연어 생성을 통한 감염병 보도 기사 품질 측정의 원리에 관한 고찰
+윤호영(이화여대)
+
+
+
+
+<!--chapter:end:00-about-the-author.Rmd-->
+
+
+# 도입 {#intro}
+
+Placeholder
+
+
+## 사회과학 방법론
+## 내용분석(Content Analysis)
+### 내용분석의 정의
+### 컴퓨터보조 내용분석
+### 근거이론(grounded theory)
+### 컴퓨터 기반 근거이론
+### 전산사회과학(Computational Social Science) 디지털인문학(Digital Humanities)
+#### 전산언어학(Computational Linguistics)
+## 텍스트마이닝
+## 텍스트데이터
+### 텍스트의 단위
+
+<!--chapter:end:01-intro.Rmd-->
+
+
+# 준비1: R기초 {#prep1}
+
+Placeholder
+
+
+## 기본 개념
+### 컴퓨터
+#### 하드웨어
+#### 소프트웨어
+#### 프로그래밍 언어
+### R
+#### R 약사
+#### R의 장점
+## R시작하기
+### 로컬컴퓨터에 설치하기
+### R의 기능구현
+#### 함수(function)
+#### 객체(object)
+##### 연습
+#### 인자(argument, parameter)
+#### 기술문(statement)
+##### 기술문 사례
+#### 결과의 재사용
+#### 코멘트 `#`
+#### 도움말
+### 작업공간(workspace)
+### 중요: 작업디렉토리(working directory)
+#### 연습: C드라이브의 data폴더를 작업디렉토리로 설정하시오. 
+#### 팁
+## IDE(통합개발환경: Integrated Development Environment)
+### RStudio 설치 
+### 프로젝트 만들기
+### 편집창 열기
+### 코드 실행
+### 한글사용 설정
+## 데이터의 유형(data type)
+#### 숫자형(numeric)
+#### 논리형(logical)
+#### 문자형(character/string)
+#### 특수한 값(value)
+##### `NA`
+##### `NULL`
+##### `NaN`
+##### `Inf`
+## 데이터구조
+### 벡터 `c()`
+#### 요인(factor)
+#### 부분선택(subsetting)
+#### 연습
+### 데이터프레임 `data.frame()`
+#### 부분선택(subsetting)
+#### 파이프(pipe) `%>%`
+### 리스트 `list()`
+#### 부분선택
+### 매트릭스와 어레이
+#### 매트릭스 `matrix()`
+#### 어레이 `array()`
+## 시각화 
+### 시각화를 하는 이유
+### `ggplot2`
+
+<!--chapter:end:02-prep1.Rmd-->
+
+
+# 준비2 {#prep2}
+
+Placeholder
+
+
+## 패키지(Package)
+### `rtools`
+### tidyverse
+## 오류(error)
+## 흔한 오류
+### 오자와 탈자 
+### 괄호의 불일치
+### 보이지 않는 코드 
+### 패키지 설치시 겪을 수 있는 오류 
+### 실행할 때 겪을 수 있는 오류
+## 여러 패키지 한번에 설치
+## 코딩 스타일
+## 파일경로(path) 표시
+### 슬래시 /
+#### 퀴즈 
+### 마침표 . .. 
+### 물결 ~
+## 파일과 객체
+### 하드디스크에 있는 파일을 다루는 함수
+### R환경내 객체를 다루는 함수
+## 따옴표와 백틱
+### 겹따옴표 홑따옴표
+### 백틱(backquote/backtick) `
+## 주의(중요)
+### 글꼴 
+## 기타
+### `NA`와 `NULL`의 차이
+
+<!--chapter:end:03-prep2.Rmd-->
+
+
+# 틀잡기 {#browse}
+
+Placeholder
+
+
+## 수집
+## 정제(전처리)
+### 정돈텍스트(tidy text)
+### 토큰화: `unnest_tokens` 함수 
+## 분석
+### 빈도: `count` 함수 
+## 소통
+### 시각화 
+## 연습
+### 과제
+
+<!--chapter:end:04-browse.Rmd-->
+
+
+# 수집: 불러오기 {#data}
+
+Placeholder
+
+
+## 바이너리 파일
+### 불러오기(이입: import)
+## 일반텍스트(plain text) 파일
+## HTML 파일
+### HTML문서 불러오기 `read_html()` 
+### HTLM요소 추출하기 `html_node()`
+### 내용 추출하기 `html_text`
+## 내보내기(export: 이출)
+## 인코딩(encoding: 부호화)
+## 테이블구조 문서
+## 기타 파일 형식 
+## 연습
+### 과제
+
+<!--chapter:end:05-data.Rmd-->
+
+
+# 정제도구  {#cleantool}
+
+Placeholder
+
+
+#### 주요 정제 도구
+#### 토큰화(tokenization)
+#### 불용어(stop words) 제거
+#### 정규화(normalization)
+#### 문자형과 따옴표
+## `stringr` 
+### 개괄
+#### 패턴 일치(Pattern matching)
+##### 탐지와 찾기(detect & locate)
+##### 부분선택, 추출, 일치(subset, extract & match)
+##### 문자열 변환(Mutate Strings)
+##### 결합과 분리(Join and Split)
+#### 공백문자(Whitespace)
+#### 로케일 민감(Locale sensitive)
+#### 기타 도우미(Other helpers)
+### 탐지와 찾기(detect & locate)
+#### `str_detect(string, pattern, negate = FALSE)`
+#### `str_which(string, pattern, negate = FALSE))`
+#### `str_count(string, pattern = "")`
+#### `str_locate(string, pattern)` 
+### 부분선택, 추출, 일치(subset, extract & match)
+#### `str_sub(start = 1L, end = -1L)`
+#### `str_subset(string, pattern, negate = FALSE)` 
+#### `str_extract(string, pattern)` 
+#### `str_match(string, pattern)` 
+### 문자열 변환(Mutate Strings)
+#### `str_replace(string, pattern, replacement)` 
+#### `str_remove(string, pattern)` 
+### 결합과 분리(Join and Split)
+#### `str_c(..., sep = "", collapse = NULL)` 
+#### `str_split(string, pattern, n = Inf, simplify = FALSE)` 
+### 공백문자(Whitespace)
+#### `str_squish(x)` 
+####  `str_trim(string, side = c("both", "left", "right"))` 
+### 과제
+## `dplyr` 
+### 개괄
+#### 기본 함수
+### `dplyr`의 구성
+#### 묶음 동사(group cases)
+#### 요약 동사(summrise cases)
+##### 요약 함수(summarize functions)
+#### 행 조작 동사(manipulate cases)
+#### 열 조작 동사(manipulate variables) 
+##### 벡터 함수(vector functions)
+#### 테이블 결합동사
+##### 행 결합
+##### 열 결합
+###### 단순 병합
+###### 변환 병합(Mutating Join)
+###### 열 추출 병합(Filtering Join)
+#### 동일성 확인
+### 묶음 동사(group cases)
+#### `group_by()` 
+#### `ungroup()` 
+### 요약 동사와 요약 함수
+#### `count(df, ..., sort = FALSE)`와 `summarise(df, 요약함수)`
+#### `n_distinct(x)`
+#### 요약함수 활용
+### 행 조작 동사(manipulate cases)
+#### `filter(df, ...)`
+#### `distinct(df)`
+#### `arrange(df, ..., .by_group = FALSE)`
+#### `add_row(df, ..., .before = NULL, .after = NULL)`
+#### `slice(df, ..., .)` 
+##### `slice_head(df, ..., n, prop)` 
+##### `slice_tail(df, ..., n, prop)`
+##### `slice_max(df, order_by, ..., n, prop, with_ties = TRUE)`
+##### `slice_min(df, order_by, ..., n, prop, with_ties = TRUE)`
+##### `slice_sample(df, ..., n. prop., weited_by = NULL, replace = F)`
+### 열 조작 동사(manipulate variables) 
+#### `select(df, ...)` 
+#### `add_column(df, ..., .before = NULL, .after = NULL)` 
+#### `rename(df, ... )` 
+#### `mutate(df, ... )` 
+### 벡터 함수(vector functions)
+#### `recode(x, old1 = "new1", old2 = "new2")`
+#### `if_else(condition, true, false, missing = NULL)` 
+#### `case_when(...)` 
+### 테이블 결합동사(행방향)
+#### `bind_rows(x, y, .id = NULL)` 
+#### `intersect(x, y)` 
+#### `setdiff(x, y)` 
+#### `union()` 
+### 테이블 결합동사(열방향)
+#### `bind_cols(...)`
+#### 열 추출 병합(Filtering Join)
+##### `anti_join(x, y, by = NULL)` 
+##### `semi_join(x, y, by = NULL)`
+#### 변환 결합(Mutating Join)
+##### `inner_join(x, y, by = NULL, suffix = c(."x, ".y"))` 
+##### `left_join(x, y, by = NULL, suffix = c(."x, ".y"))` 
+##### `right_join(x, y, by = NULL, suffix = c(."x, ".y"))` 
+##### `full_join(x, y, by = NULL, suffix = c(."x, ".y"))` 
+### 연습1
+### 연습2
+#### 과제
+## `purrr`
+### 개괄
+#### 반복계산
+#### 산출유형별 
+#### 리스트 재구성
+### 반복계산
+#### `map(.x, .f)`
+#### `map2(.x, .y, .f., ...)`
+#### `pmap(.l, .f, ...)`
+## `tidyr`
+### 개괄
+#### 축전환(pivoting)
+#### 분리와 결합
+#### 결측값`NA` 처리
+### 축전환(pivoting)
+#### `pivot_longer(df, cols, names_to, values_to)`
+#### `pivot_wider(df, names_from, values_from)`
+### 분리와 결합
+#### `separate(df, col, into, sep = [^[:alnum:]]+)`
+#### `separate_rows(df, ..., sep = "[^[:alnum:].]+", convert = FALSE)`
+#### `extract(df, col, into, regex = "([[:alnum:]]+)", remove = TRUE, convert = FALSE, ...)`
+#### `unite(df, col, ..., sep = "_", remove = TRUE, na.rm = FALSE)`
+### 연습1
+### 연습2
+#### 과제
+## 연산자(operators) 
+### 산술연산자(Arithmatic Operators)
+#### 재활용(recycle) 연산
+### 관계연산자(Relational Operators)
+### 논리연산자(Logical Operators)
+### 포함 연산자(Inclusion Operator)
+#### `%in%` 
+## 정규표현식(regular expressions)
+#### 일치하는 문자
+#### 공백문자(whiatespace)
+#### 또는(alternates)
+#### 묶음(groups)
+#### 앵커(anchors)
+#### 주변(look around)   
+#### 반복일치(quantifiers) 
+### 일반문자와 기능문자 
+### 일치하는 문자(Match Characters) 
+#### `.` 
+#### `\w` `[:alpha:]` `[:lower:]` `[:upper:]`
+#### `\d`
+#### `[:punct:]` `[:graph:]`
+### 공백문자(whitespace)
+### 또는
+### 묶음
+### 앵커
+### 주변(look around)
+### 반복일치
+### 유용한 정규표현식 
+### 연습
+#### 정규표현식 과제
+
+<!--chapter:end:06-cleantool.Rmd-->
+
+
+# 정제(전처리)  {#clean}
+
+Placeholder
+
+
+## 토큰화
+### `unnest_tokens(df, output, input, token = "words", format = c("text", "man", "latex", "html", "xml"), to_lower = TRUE, drop = TRUE, collapse = NULL, ...)`
+##### 단어
+#####  글자 토큰
+##### 복수의 글자
+##### 복수의 단어(n-gram)
+##### 정규표현식
+### `format = c("text", "man", "latex", "html", "xml")`
+### `to_lower = TRUE` 
+### `strip_punct = `
+## 불용어(stop words) 제거
+### 불용어 사전
+#### 본문 수정
+#### 불용어 사전 수정1
+#### 불용어 사전 수정2
+#### 불용어 목록 만들기
+### `filter()`
+## 정규화(Normalization)
+### 개괄
+### 형태소(morpheme)
+##### 품사태깅(Parts of Speech Tagging: PoS Tagging)
+### 형태소 추출
+#### `RcppMeCab`
+#### `KoNLP`
+### RcppMeCab
+#### `join = FALSE`
+#### `format = "data.frame"`
+#### `posParallel(x)`
+### `KoNLP`
+#### 자바JDK
+#### `rtools`
+#### 의존패키지
+### `KoNLPy`
+### 연습
+#### `KoNLP`
+#### `RcppMeCab`
+#### 형태소 미추출
+#### 비교
+### 어간(stem) 추출
+### 표제어(lemme) 추출 
+#### 어간(stem)과 표제어(lemme)의 차이
+#### `spacyr`
+##### 미니콘다 설치
+##### `spacyr` 패키지 설치
+##### `reticulate` 패키지 설치
+##### `spacy_initialize()`
+##### 파이썬 설정 오류
+###### RStudio에서 설정
+###### `Sys.setevn()` 함수 이용
+###### `reticulate::use_python()` 함수 이용
+###### 설정 변경 확인
+##### `spacyr` 설치 확인
+### 연습
+#### `SnowballC`
+#### `spacyr`
+#### 비교
+### 과제
+
+<!--chapter:end:07-clean.Rmd-->
+
+
+# 분석1: 감정어 빈도 {#anal1freq}
+
+Placeholder
+
+
+## 국문 감정사전
+### 사전 데이터프레임 만들기
+##### 사전내용
+### 연습 
+## 감정분석
+### 수집
+### 정제
+### 분석 및 소통
+### 문서의 감정점수 계산
+### 감정 극성별 단어빈도
+### 단어구름에 극성별 단어빈도 표시
+### 문장 전개에 따른 감정 변화
+
+<!--chapter:end:08-anal1freq.Rmd-->
+
+
+# 분석2: 상대빈도 {#anal2comp }
+
+Placeholder
+
+
+## 개관  
+## tf_idf
+### 공식
+##### tf(term frequency)
+##### df(document frequency)
+##### idf(inverse document frequency)
+##### tf_idf
+### 적용 
+#### tf
+#### df(document frequency)
+#### idf(inverse document frequency)
+#### tf_idf
+### `bind_tf_idf(tbl, term, document, n)`
+## 승산비(odds ratio)
+### 자료준비
+#### 자료 준비
+#### 승산비 계산
+### 로그승산비
+## 가중로그승산비
+### `bind_log_odds(tbl, set, feature, n, uninformative = FALSE, unweighted = FALSE)`
+### 지표 비교
+#### 로그승산비
+#### tf_idf
+#### 비교 
+## 연습
+### 빅카인즈
+#### 백신관련 보도 수집
+### 정제 
+### 분석 및 소통 
+#### 언론사별 총빈도
+#### 언론사별 가중로그승산비
+### 총빈도와 상대빈도 비교
+#### 과제
+
+<!--chapter:end:09-anal2comp.Rmd-->
+
+
+# 분석3: 주제모형 {#anal3topic}
+
+Placeholder
+
+
+## 패키지 로드
+## 삽입
+### 그림 + 참조
+## 자료 준비
+### 자료 이입 
+### 정제
+#### 토큰화
+#### 불용어 제거
+### stm 말뭉치
+## 분석
+### 주제의 수(K) 설정
+### 주제모형 구성
+## 소통
+### 주제별 단어 분포
+### 주제별 문서 분포
+### 주제별 단어-문서 분포
+#### 주제별 상위 5개 단어 추출
+#### 주제별 감마 평균 계산
+### 과제 
+
+<!--chapter:end:10-anal3topic.Rmd-->
+
+
+# 분석4: 주제모형(공변인) {#anal4topic}
+
+Placeholder
+
+
+## 주제 명명과 공변인 주제모형
+### 개관
+## 자료 준비
+### 수집
+### (선택) 표집
+### 정제
+#### 토큰화
+#### 불용어 처리
+### `stm`말뭉치
+## 분석
+### 주제(topic)의 수 설정
+### 모형 구성
+## 주제 이름짓기
+### 주제별 단어와 원문 결합
+### 주제 이름 목록
+### 주제별 단어 분포도
+### 주제별 문서 분포도
+### 주제별 단어-문서 분포
+## 공변인 분석
+### 문서 내용 확인
+### 공변인 분석 시각화 
+#### 정치성향에 따른 주제분포  
+#### 시간대별 주제 변화
+### 주제 사이 상관성
+### 과제
+
+<!--chapter:end:11-anal4topic.Rmd-->
+

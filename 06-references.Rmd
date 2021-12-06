@@ -2,18 +2,34 @@
 # References {-}
 '`
 
-김영욱 진민정 강신규 (2014) 저널리즘의 품질: 평가 기준과 모델. <한국언론진흥재단 연구서 2014-05>.
+강준만. (2019). 지역언론의 활성화는 가능한가?: 지역에서의 ‘넛지-솔루션 저널리즘’을 위한 제언. <사회과학연구>, 58(1), 247-279.
+
+김영욱 진민정 강신규 (2014) 저널리즘의 품질: 평가 기준과 모델. 한국언론진흥재단
 
 네이버검색 (2021.7.21). 네이버 뉴스 추천 알고리즘에 대해 (Part 2). https://blog.naver.com/naver_search/222439351406.
 
-오세욱 송해엽 (2020) 뉴스기사 신뢰도 측정방안: 뉴스트러스트 사례를 중심으로, <언론진흥재단 연구서 2020-03>.
+오세욱 송해엽 (2020) 뉴스기사 신뢰도 측정방안: 뉴스트러스트 사례를 중심으로, 한국언론진흥재단.
 
 안도현 (2021a). 유령위험과 무시된 위해: 위험의 개념화와 유형화. <언론정보연구>, 58(2), 5-65.
 
 안도현 (2021b) 위험-기회 모형과 성공적인 방역소통의 조건. <팬데믹 시대 감염병 대응을 위한 사회적 소통과 공공PR> (정의철 편 pp. 200-234) 지금.
 
+이규원 이미나 (2021) 솔루션 저널리즘. 커뮤니케이션북스.
 
-Blei, D. M., Ng, A. Y., Jordan, M. I. (2003). Latent Dirichlet Allocation. _Journal of Machine Learning Research, 3_, 993–1022
+이상기. (2018). 사회병리학과 해법 저널리즘. <커뮤니케이션 이론>, 14(4), 58-101.
+
+이정환 (2019.8.30)  솔루션 저널리즘, 질문으로 시작하자. <슬로우뉴스> https://slownews.kr/74089.
+
+이정환 (2019.10.23) 본질과 구조에 대한 질문, 해법과 과정을 추적하라. <이정환닷컴> 
+https://www.leejeonghwan.com/3781.
+
+이정환 (2020.7.13) “기자들이 모르는 세계, 누군가는 답을 알고 있다.” <이정환닷컴>. https://www.leejeonghwan.com/4941.
+
+이정환 (2021). 문제해결 저널리즘. 인물과 사상사.
+
+진민정 이준형 (2019) 솔루션 저널리즘의 현황과 가능성. 한국언론진흥재단. 
+
+Blei, D. M., Ng, A. Y., Jordan, M. I. (2003). Latent Dirichlet Allocation. _Journal of Machine Learning Research, 3_, 993–1022.
 
 Bro, P. (2008). Normative navigation in the news media. _Journalism, 9_(3), 309-329.
 
@@ -25,8 +41,14 @@ ISO (2018). Risk management – guidelines. ISO 31000:2018(en). https://www.iso.
 
 Lough, K., & McIntyre, K. (2019). Visualizing the Solution: An analysis of the images that accompany solutions-oriented news stories. _Journalism, 20_(4), 583-599.
 
+McIntyre, K. E., & Lough, K. (2021). Toward a clearer conceptualization and operationalization of solutions journalism. _Journalism, 22_(6), 1558-1573.
+
 Shoemaker, P. J. (1996). Hardwired for news: Using biological and cultural evolution to explain the surveillance function. _Journal of communication, 46_(3), 32-47.
 
 Shoemaker, P. J., Danielian, L. H., & Brendlinger, N. (1991). Deviant acts, risky business and US interests: The newsworthiness of world events. _Journalism Quarterly, 68_(4), 781-795.
+
+Solutions Journalism. (2020.12.10). Solutions Journalism: What is it and why should I care? _The Whole Story_ https://thewholestory.solutionsjournalism.org/solutions-journalism-what-is-it-and-why-should-i-care-e5acd0ab5332
+
+Solutions Journalism. (n.d). Basic toolkit. _J Learning Lab_ https://learninglab.solutionsjournalism.org/en/courses/basic-toolkit/chapters/introduction/sections/welcome
 
 Watanabe, K., & Zhou, Y. (2020). Theory-driven analysis of large corpora: Semisupervised topic classification of the UN speeches. _Social Science Computer Review_, 0894439320907027.

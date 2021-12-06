@@ -213,3 +213,4 @@ fig:lit5
 사전분석dictionary-analysis
 반지도학습semisupervised-learing
 씨앗주제어-구성
+기존-분석밥법의-한계

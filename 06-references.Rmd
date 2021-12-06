@@ -27,6 +27,8 @@ https://www.leejeonghwan.com/3781.
 
 이정환 (2021). 문제해결 저널리즘. 인물과 사상사.
 
+조동찬 (2021). 해결지향. 한국헬스커뮤니케이션학회 해결지향감염병보도 집중워크숍 발표
+
 진민정 이준형 (2019) 솔루션 저널리즘의 현황과 가능성. 한국언론진흥재단. 
 
 Blei, D. M., Ng, A. Y., Jordan, M. I. (2003). Latent Dirichlet Allocation. _Journal of Machine Learning Research, 3_, 993–1022.

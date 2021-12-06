@@ -128,10 +128,10 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="method.html"><a href="method.html"><i class="fa fa-check"></i><b>3</b> 방법론</a>
 <ul>
-<li class="chapter" data-level="" data-path="method.html"><a href="method.html#품질-측정의-자동화와-한계"><i class="fa fa-check"></i>품질 측정의 자동화와 한계</a></li>
 <li class="chapter" data-level="3.1" data-path="method.html"><a href="method.html#품질측정1-이론기반-토픽모델링"><i class="fa fa-check"></i><b>3.1</b> 품질측정1: 이론기반 토픽모델링</a>
 <ul>
 <li class="chapter" data-level="" data-path="method.html"><a href="method.html#이론기반-토픽모델링과-분석절차"><i class="fa fa-check"></i>이론기반 토픽모델링과 분석절차</a></li>
+<li class="chapter" data-level="" data-path="method.html"><a href="method.html#품질-측정의-자동화와-한계"><i class="fa fa-check"></i>품질 측정의 자동화와 한계</a></li>
 <li class="chapter" data-level="3.1.1" data-path="method.html"><a href="method.html#기존-분석방법의-한계"><i class="fa fa-check"></i><b>3.1.1</b> 기존 분석방법의 한계</a></li>
 <li class="chapter" data-level="3.1.2" data-path="method.html"><a href="method.html#반지도학습semisupervised-learing"><i class="fa fa-check"></i><b>3.1.2</b> 반지도학습(semisupervised learing)</a></li>
 <li class="chapter" data-level="3.1.3" data-path="method.html"><a href="method.html#절차"><i class="fa fa-check"></i><b>3.1.3</b> 절차</a></li>
@@ -145,6 +145,7 @@
 </ul></li>
 <li class="chapter" data-level="4" data-path="application.html"><a href="application.html"><i class="fa fa-check"></i><b>4</b> 분석사례</a>
 <ul>
+<li class="chapter" data-level="" data-path="application.html"><a href="application.html#이론기반-토픽모델링을-이용한-감염병보도-분석-위험-기회모형의-적용-1"><i class="fa fa-check"></i>이론기반 토픽모델링을 이용한 감염병보도 분석: 위험-기회모형의 적용</a></li>
 <li class="chapter" data-level="4.1" data-path="application.html"><a href="application.html#자료준비"><i class="fa fa-check"></i><b>4.1</b> 자료준비</a>
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="application.html"><a href="application.html#기사-자료-확보"><i class="fa fa-check"></i><b>4.1.1</b> 기사 자료 확보</a></li>
@@ -157,7 +158,7 @@
 <li class="chapter" data-level="4.3" data-path="application.html"><a href="application.html#비지도-lda"><i class="fa fa-check"></i><b>4.3</b> 비지도 LDA</a></li>
 <li class="chapter" data-level="4.4" data-path="application.html"><a href="application.html#반지도-lda"><i class="fa fa-check"></i><b>4.4</b> 반지도 LDA</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="application.html"><a href="application.html#씨앗주제어-사전-구성"><i class="fa fa-check"></i><b>4.4.1</b> 씨앗주제어 사전 구성</a></li>
+<li class="chapter" data-level="4.4.1" data-path="application.html"><a href="application.html#씨앗주제어-구성"><i class="fa fa-check"></i><b>4.4.1</b> 씨앗주제어 구성</a></li>
 <li class="chapter" data-level="4.4.2" data-path="application.html"><a href="application.html#seededlda"><i class="fa fa-check"></i><b>4.4.2</b> seededlda</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="application.html"><a href="application.html#검정"><i class="fa fa-check"></i><b>4.5</b> 검정</a></li>
@@ -186,14 +187,7 @@
             <section class="normal" id="section-">
 <div id="method" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> 방법론</h1>
-<div id="품질-측정의-자동화와-한계" class="section level3 unnumbered">
-<h3>품질 측정의 자동화와 한계</h3>
-<p>전통적으로 언론보도에 대한 품질측정은 인간의 수작업에 의해 이뤄졌다. 사람은 복잡한 알고리듬을 적용할 수 있어 내용 분석의 정밀성이 높기 때문이다. 단점은 일관성이 떨어지고 다룰 수 있는 데이터의 적다는 데 있다. 반면 기계는 일관성이 높고 많은 양의 데이터를 다룰 수 있는 장점이 있지만 단순한 알고리듬을 적용해 정밀성이 떨어진다는 단점이 있다.</p>
-<p>이런 이유로 뉴스 품질을 측정하다는 알고리듬(예: 네이버 뉴스 추천 알고리듬)이 실제로 적용하는 기준은 품질이 아니라 사용자의 선호도다. 네이버가 공개한 자동화 방식의 뉴스품질 측정에 따르면 각 뉴스 기사의 제목, 본문 등 콘텐츠 정보와 네이버 뉴스르 이용하는 사용자들의 클릭수와 체류시간을 고려한다 (네이버검색, 2021.7.21). 사용자의 관점에서 만족스럽게 읽은 기사를 고품질의 기사로 판단한다는 것인데, 여기서 만족의 지표는 클릭스와 체류시간이다. 클릭수가 높은데 체류시간이 짧으면 만족도가 떨어진다고 판단한 것이다. 클릭 후 이탈없이 적정시간 동안 체류하며 읽은 기사를 만족도가 높은 기사로서 고품질이라고 분류했다. 그러나, 네이버가 측정지표로 활용한 클릭수와 체류시간은 관심성의 지표로 활용할 수 있지만, 정확성와 구체성의 지표에는 해당하지 않는다.</p>
-<p>보다 체계적인 접근은 보도품질에 대한 계량적인 평가요인을 추출하려는 시도다. 오세욱과 송해엽(2020)은 뉴스 트러스트 위원회 활동을 통해 기자명, 기사의 길이, 인용문 수, 제목의 길이, 제목의 물음표 및 느낌표 수, 수치 인용 수, 이미지의 수, 평균 문장의 길이, 제목의 부사 수, 문장 당 평균 부사 수, 기사 본문 중 인용문 비중 등 11개 평가기준을 알고리듬의 요인으로 제시했다. 뉴스 트러스트 위원회의 11개 지표 역시 뉴스의 길이를 제외하면 정확성, 구체성, 및 관심성을 반영하는 지표라 할 수 없다.</p>
-<p>품질측정을 온전하게 자동화할 수 없는 이유는 현재 기술로는 언론보도의 상황과 맥락을 기계가 지각할 수 없기 때문이다. 따라서 품질측정을 위해서는 인간의 개입이 불가피하다.</p>
-<p>기계를 이용한 분석의 장점은 대용량의 데이터 처리이나 분석의 정밀성이 떨어진다는 단점이 있다. 정밀한 분석은 사람이 직접 수행해야 하지만 대용량의 데이터를 처리할 수 없는 한계가 있다. 두 방법을 혼용해 기계를 이용해 대용량의 데이터에서 기본적인 분석을 수행하고, 이를 토대로 사람이 추가적으로 분석을 수행한다면 대용량의 데이터를 보다 정밀하게 분석할 수 있다.</p>
-</div>
+<p>품질측정 자동화를 위해 이론기반 토픽모델링(안도현)과 자연어 생성(윤호영)을 이용한 방법을 제안했다. 안도현은 이론기반 토픽모델링은 비지도학습 방식의 기계학습을 통한 군집이 데이터중심에서 오는 몰이론성을 극복하기 위해 반지도학습(semi-supervised learning)을 텍스트마이닝에 적용한 방법이다. 윤호영은 자연어생성은 지도학습 방식의 비효율성을 극복하기 위해 비지도학습 방식으로 다양한 종류의 자연어를 생성하는 방식이다.</p>
 <div id="품질측정1-이론기반-토픽모델링" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> 품질측정1: 이론기반 토픽모델링</h2>
 <div id="이론기반-토픽모델링과-분석절차" class="section level3 unnumbered">
@@ -201,6 +195,14 @@
 <div id="안도현-1" class="section level5 unnumbered">
 <h5>안도현</h5>
 </div>
+</div>
+<div id="품질-측정의-자동화와-한계" class="section level3 unnumbered">
+<h3>품질 측정의 자동화와 한계</h3>
+<p>전통적으로 언론보도에 대한 품질측정은 인간의 수작업에 의해 이뤄졌다. 사람은 복잡한 알고리듬을 적용할 수 있어 내용 분석의 정밀성이 높기 때문이다. 단점은 일관성이 떨어지고 다룰 수 있는 데이터의 적다는 데 있다. 반면 기계는 일관성이 높고 많은 양의 데이터를 다룰 수 있는 장점이 있지만 단순한 알고리듬을 적용해 정밀성이 떨어진다는 단점이 있다.</p>
+<p>이런 이유로 뉴스 품질을 측정하다는 알고리듬(예: 네이버 뉴스 추천 알고리듬)이 실제로 적용하는 기준은 품질이 아니라 사용자의 선호도다. 네이버가 공개한 자동화 방식의 뉴스품질 측정에 따르면 각 뉴스 기사의 제목, 본문 등 콘텐츠 정보와 네이버 뉴스르 이용하는 사용자들의 클릭수와 체류시간을 고려한다 (네이버검색, 2021.7.21). 사용자의 관점에서 만족스럽게 읽은 기사를 고품질의 기사로 판단한다는 것인데, 여기서 만족의 지표는 클릭스와 체류시간이다. 클릭수가 높은데 체류시간이 짧으면 만족도가 떨어진다고 판단한 것이다. 클릭 후 이탈없이 적정시간 동안 체류하며 읽은 기사를 만족도가 높은 기사로서 고품질이라고 분류했다. 그러나, 네이버가 측정지표로 활용한 클릭수와 체류시간은 관심성의 지표로 활용할 수 있지만, 정확성와 구체성의 지표에는 해당하지 않는다.</p>
+<p>보다 체계적인 접근은 보도품질에 대한 계량적인 평가요인을 추출하려는 시도다. 오세욱과 송해엽(2020)은 뉴스 트러스트 위원회 활동을 통해 기자명, 기사의 길이, 인용문 수, 제목의 길이, 제목의 물음표 및 느낌표 수, 수치 인용 수, 이미지의 수, 평균 문장의 길이, 제목의 부사 수, 문장 당 평균 부사 수, 기사 본문 중 인용문 비중 등 11개 평가기준을 알고리듬의 요인으로 제시했다. 뉴스 트러스트 위원회의 11개 지표 역시 뉴스의 길이를 제외하면 정확성, 구체성, 및 관심성을 반영하는 지표라 할 수 없다.</p>
+<p>품질측정을 온전하게 자동화할 수 없는 이유는 현재 기술로는 언론보도의 상황과 맥락을 기계가 지각할 수 없기 때문이다. 따라서 품질측정을 위해서는 인간의 개입이 불가피하다.</p>
+<p>기계를 이용한 분석의 장점은 대용량의 데이터 처리이나 분석의 정밀성이 떨어진다는 단점이 있다. 정밀한 분석은 사람이 직접 수행해야 하지만 대용량의 데이터를 처리할 수 없는 한계가 있다. 두 방법을 혼용해 기계를 이용해 대용량의 데이터에서 기본적인 분석을 수행하고, 이를 토대로 사람이 추가적으로 분석을 수행한다면 대용량의 데이터를 보다 정밀하게 분석할 수 있다.</p>
 </div>
 <div id="기존-분석방법의-한계" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> 기존 분석방법의 한계</h3>

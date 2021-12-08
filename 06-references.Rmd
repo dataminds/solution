@@ -41,19 +41,21 @@ Curry, A., Stroud, N. J., & McGregor, S. (2016). Solutions journalism and news e
 
 Frank, P., & Ottoboni, M. A. (2011). The dose makes the poison: A plain-language guide to toxicology(3rd Ed.). Wiley.
 
-Solutions Journalism Network (2021.4). The secret weapon for any newsroom that wants to be No. 1. https://sjn-static.s3.amazonaws.com/SmithGeiger2020.pdf
-
 Grimmer, J., & Stewart, B. M. (2013). Text as data: The promise and pitfalls of automatic content analysis methods for political texts. _Political analysis, 21_(3), 267-297.
 
 ISO (2018). Risk management – guidelines. ISO 31000:2018(en). https://www.iso.org/obp/ui/#iso:std:iso:31000:ed-2:v1:en
 
 Lough, K., & McIntyre, K. (2019). Visualizing the Solution: An analysis of the images that accompany solutions-oriented news stories. _Journalism, 20_(4), 583-599.
 
+Loizzo J, Watson SL and Watson WR (2017) Examining instructor and learner experiences and attitude change in a journalism for social change massive open online course: A mixed-methods case study. _Journalism & Mass Communication Educator 73_, 392–409.
+
 McIntyre, K. (2019). Solutions journalism: The effects of including solution information in news stories about social problems. _Journalism Practice, 13_(1), 16-34.
 
 McIntyre, K. E., & Lough, K. (2021). Toward a clearer conceptualization and operationalization of solutions journalism. _Journalism, 22_(6), 1558-1573.
 
 Meier, K. (2018). How does the audience respond to constructive journalism? Two experiments with multifaceted results. _Journalism Practice, 12_(6), 764-780.
+
+Midberry J and Dahmen NS (2017) Picturing the solution? An analysis of visuals in solutions journalism. Newspaper & online news division, annual conference of the association for education in journalism and mass communication, Chicago, IL, 11 August
 
 Newman et al. (2017) Reuters Institute Digital News Report 2017. 
 https://reutersinstitute.politics.ox.ac.uk/sites/default/files/Digital%20News%20Report%202017%20web_0.pdf
@@ -62,8 +64,12 @@ Shoemaker, P. J. (1996). Hardwired for news: Using biological and cultural evolu
 
 Shoemaker, P. J., Danielian, L. H., & Brendlinger, N. (1991). Deviant acts, risky business and US interests: The newsworthiness of world events. _Journalism Quarterly, 68_(4), 781-795.
 
+Solutions Journalism Network (2021.4). The secret weapon for any newsroom that wants to be No. 1. https://sjn-static.s3.amazonaws.com/SmithGeiger2020.pdf
+
 Solutions Journalism. (2020.12.10). Solutions Journalism: What is it and why should I care? _The Whole Story_ https://thewholestory.solutionsjournalism.org/solutions-journalism-what-is-it-and-why-should-i-care-e5acd0ab5332
 
 Solutions Journalism. (n.d). Basic toolkit. _J Learning Lab_ https://learninglab.solutionsjournalism.org/en/courses/basic-toolkit/chapters/introduction/sections/welcome
+
+Thier K (2016) Opportunities and challenges for initial implementation of solutions journalism coursework. _Journalism & Mass Communication Educator 71_(3), 329–343.
 
 Watanabe, K., & Zhou, Y. (2020). Theory-driven analysis of large corpora: Semisupervised topic classification of the UN speeches. _Social Science Computer Review_, 0894439320907027.

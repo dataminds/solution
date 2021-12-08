@@ -35,7 +35,13 @@ Blei, D. M., Ng, A. Y., Jordan, M. I. (2003). Latent Dirichlet Allocation. _Jour
 
 Bro, P. (2008). Normative navigation in the news media. _Journalism, 9_(3), 309-329.
 
+Curry, A. L., & Hammonds, K. H. (2014). The power of solutions journalism. _Solutions Journalism Network, 7_, 1-14. https://mediaengagement.org/wp-content/uploads/2014/06/ENP_SJN-report.pdf
+
+Curry, A., Stroud, N. J., & McGregor, S. (2016). Solutions journalism and news engagement. _Engaging News Project/Annette Strauss Institute for Civic Life at the University of Texas Austin_. https://mediaengagement.org/wp-content/uploads/2016/03/ENP-Solutions-Journalism-News-Engagement.pdf
+
 Frank, P., & Ottoboni, M. A. (2011). The dose makes the poison: A plain-language guide to toxicology(3rd Ed.). Wiley.
+
+Solutions Journalism Network (2021.4). The secret weapon for any newsroom that wants to be No. 1. https://sjn-static.s3.amazonaws.com/SmithGeiger2020.pdf
 
 Grimmer, J., & Stewart, B. M. (2013). Text as data: The promise and pitfalls of automatic content analysis methods for political texts. _Political analysis, 21_(3), 267-297.
 
@@ -43,7 +49,14 @@ ISO (2018). Risk management – guidelines. ISO 31000:2018(en). https://www.iso.
 
 Lough, K., & McIntyre, K. (2019). Visualizing the Solution: An analysis of the images that accompany solutions-oriented news stories. _Journalism, 20_(4), 583-599.
 
+McIntyre, K. (2019). Solutions journalism: The effects of including solution information in news stories about social problems. _Journalism Practice, 13_(1), 16-34.
+
 McIntyre, K. E., & Lough, K. (2021). Toward a clearer conceptualization and operationalization of solutions journalism. _Journalism, 22_(6), 1558-1573.
+
+Meier, K. (2018). How does the audience respond to constructive journalism? Two experiments with multifaceted results. _Journalism Practice, 12_(6), 764-780.
+
+Newman et al. (2017) Reuters Institute Digital News Report 2017. 
+https://reutersinstitute.politics.ox.ac.uk/sites/default/files/Digital%20News%20Report%202017%20web_0.pdf
 
 Shoemaker, P. J. (1996). Hardwired for news: Using biological and cultural evolution to explain the surveillance function. _Journal of communication, 46_(3), 32-47.
 
